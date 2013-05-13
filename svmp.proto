@@ -92,9 +92,29 @@ message Proxy
 // Cross platform intent & notification IPC
 //=====================================================================
 
+enum IntentAction
+{
+//TODO: fill out with supported actions
+}
+
 // C<->S
 message Intent {
-  // TODO
+  //Corresponds to Intent 'action' parameter, but limited to supported actions
+  required IntentAction action = 1;
+  
+  //Encode all bundle extras as strings, and decode them later into specific data types
+  repeated Tuple extras = 2;
+  
+  //Correspond to optional Intent parameters
+  optional string data = 3;
+  repeated int32 flags = 4;
+  repeated string categories = 5;
+  
+  //For approximating a Java Map structure (Map<String,String>)
+  message Tuple {
+	required string key = 1;
+	required string value = 2;
+  }
 }
 
 // C<->S
