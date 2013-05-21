@@ -122,11 +122,11 @@ message Intent {
 message Notification {
   //All of the following correspond directly to fields in Android's Notification object,
   //with the exception of the icon fields which directly include image data rather than references
-  optional string contentTitle = 1;
-  optional string contentText = 2;
-  optional bytes smallIcon = 3;
+  required string contentTitle = 1;
+  required string contentText = 2;
+  required bytes smallIcon = 3;
   optional bytes largeIcon = 4;
-  // TODO: complete/alter this later as necessary
+  // TODO: add additional optional notification fields as necessary
 }
 
 //=====================================================================
