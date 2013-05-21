@@ -8,41 +8,18 @@ public final class SVMPProtocol {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  /**
-   * Protobuf enum {@code svmp.IntentAction}
-   */
   public enum IntentAction
       implements com.google.protobuf.Internal.EnumLite {
-    /**
-     * <code>ACTION_VIEW = 1;</code>
-     */
     ACTION_VIEW(0, 1),
-    /**
-     * <code>ACTION_DIAL = 2;</code>
-     *
-     * <pre>
-     *TODO: fill out with supported actions
-     * </pre>
-     */
     ACTION_DIAL(1, 2),
     ;
-
-    /**
-     * <code>ACTION_VIEW = 1;</code>
-     */
+    
     public static final int ACTION_VIEW_VALUE = 1;
-    /**
-     * <code>ACTION_DIAL = 2;</code>
-     *
-     * <pre>
-     *TODO: fill out with supported actions
-     * </pre>
-     */
     public static final int ACTION_DIAL_VALUE = 2;
-
-
+    
+    
     public final int getNumber() { return value; }
-
+    
     public static IntentAction valueOf(int value) {
       switch (value) {
         case 1: return ACTION_VIEW;
@@ -50,7 +27,7 @@ public final class SVMPProtocol {
         default: return null;
       }
     }
-
+    
     public static com.google.protobuf.Internal.EnumLiteMap<IntentAction>
         internalGetValueMap() {
       return internalValueMap;
@@ -62,131 +39,50 @@ public final class SVMPProtocol {
               return IntentAction.valueOf(number);
             }
           };
-
+    
     private final int value;
-
+    
     private IntentAction(int index, int value) {
       this.value = value;
     }
-
+    
     // @@protoc_insertion_point(enum_scope:svmp.IntentAction)
   }
-
-  /**
-   * Protobuf enum {@code svmp.SensorType}
-   */
+  
   public enum SensorType
       implements com.google.protobuf.Internal.EnumLite {
-    /**
-     * <code>ACCELEROMETER = 1;</code>
-     */
     ACCELEROMETER(0, 1),
-    /**
-     * <code>MAGNETIC_FIELD = 2;</code>
-     */
     MAGNETIC_FIELD(1, 2),
-    /**
-     * <code>ORIENTATION = 3;</code>
-     */
     ORIENTATION(2, 3),
-    /**
-     * <code>GYROSCOPE = 4;</code>
-     */
     GYROSCOPE(3, 4),
-    /**
-     * <code>LIGHT = 5;</code>
-     */
     LIGHT(4, 5),
-    /**
-     * <code>PRESSURE = 6;</code>
-     */
     PRESSURE(5, 6),
-    /**
-     * <code>TEMPERATURE = 7;</code>
-     */
     TEMPERATURE(6, 7),
-    /**
-     * <code>PROXIMITY = 8;</code>
-     */
     PROXIMITY(7, 8),
-    /**
-     * <code>GRAVITY = 9;</code>
-     */
     GRAVITY(8, 9),
-    /**
-     * <code>LINEAR_ACCELERATION = 10;</code>
-     */
     LINEAR_ACCELERATION(9, 10),
-    /**
-     * <code>ROTATION_VECTOR = 11;</code>
-     */
     ROTATION_VECTOR(10, 11),
-    /**
-     * <code>RELATIVE_HUMIDITY = 12;</code>
-     */
     RELATIVE_HUMIDITY(11, 12),
-    /**
-     * <code>AMBIENT_TEMPERATURE = 13;</code>
-     */
     AMBIENT_TEMPERATURE(12, 13),
     ;
-
-    /**
-     * <code>ACCELEROMETER = 1;</code>
-     */
+    
     public static final int ACCELEROMETER_VALUE = 1;
-    /**
-     * <code>MAGNETIC_FIELD = 2;</code>
-     */
     public static final int MAGNETIC_FIELD_VALUE = 2;
-    /**
-     * <code>ORIENTATION = 3;</code>
-     */
     public static final int ORIENTATION_VALUE = 3;
-    /**
-     * <code>GYROSCOPE = 4;</code>
-     */
     public static final int GYROSCOPE_VALUE = 4;
-    /**
-     * <code>LIGHT = 5;</code>
-     */
     public static final int LIGHT_VALUE = 5;
-    /**
-     * <code>PRESSURE = 6;</code>
-     */
     public static final int PRESSURE_VALUE = 6;
-    /**
-     * <code>TEMPERATURE = 7;</code>
-     */
     public static final int TEMPERATURE_VALUE = 7;
-    /**
-     * <code>PROXIMITY = 8;</code>
-     */
     public static final int PROXIMITY_VALUE = 8;
-    /**
-     * <code>GRAVITY = 9;</code>
-     */
     public static final int GRAVITY_VALUE = 9;
-    /**
-     * <code>LINEAR_ACCELERATION = 10;</code>
-     */
     public static final int LINEAR_ACCELERATION_VALUE = 10;
-    /**
-     * <code>ROTATION_VECTOR = 11;</code>
-     */
     public static final int ROTATION_VECTOR_VALUE = 11;
-    /**
-     * <code>RELATIVE_HUMIDITY = 12;</code>
-     */
     public static final int RELATIVE_HUMIDITY_VALUE = 12;
-    /**
-     * <code>AMBIENT_TEMPERATURE = 13;</code>
-     */
     public static final int AMBIENT_TEMPERATURE_VALUE = 13;
-
-
+    
+    
     public final int getNumber() { return value; }
-
+    
     public static SensorType valueOf(int value) {
       switch (value) {
         case 1: return ACCELEROMETER;
@@ -205,7 +101,7 @@ public final class SVMPProtocol {
         default: return null;
       }
     }
-
+    
     public static com.google.protobuf.Internal.EnumLiteMap<SensorType>
         internalGetValueMap() {
       return internalValueMap;
@@ -217,356 +113,87 @@ public final class SVMPProtocol {
               return SensorType.valueOf(number);
             }
           };
-
+    
     private final int value;
-
+    
     private SensorType(int index, int value) {
       this.value = value;
     }
-
+    
     // @@protoc_insertion_point(enum_scope:svmp.SensorType)
   }
-
+  
   public interface RequestOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.Request.RequestType type = 1;
-    /**
-     * <code>required .svmp.Request.RequestType type = 1;</code>
-     *
-     * <pre>
-     *required int32 type = 1;
-     * </pre>
-     */
     boolean hasType();
-    /**
-     * <code>required .svmp.Request.RequestType type = 1;</code>
-     *
-     * <pre>
-     *required int32 type = 1;
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType getType();
-
+    
     // optional .svmp.Authentication authentication = 2;
-    /**
-     * <code>optional .svmp.Authentication authentication = 2;</code>
-     */
     boolean hasAuthentication();
-    /**
-     * <code>optional .svmp.Authentication authentication = 2;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Authentication getAuthentication();
-
+    
     // optional .svmp.Proxy proxy = 3;
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     boolean hasProxy();
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Proxy getProxy();
-
+    
     // optional .svmp.TouchEvent touch = 4;
-    /**
-     * <code>optional .svmp.TouchEvent touch = 4;</code>
-     *
-     * <pre>
-     * TODO Move away from raw byte proxying to these
-     * </pre>
-     */
     boolean hasTouch();
-    /**
-     * <code>optional .svmp.TouchEvent touch = 4;</code>
-     *
-     * <pre>
-     * TODO Move away from raw byte proxying to these
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.TouchEvent getTouch();
-
+    
     // optional .svmp.SensorEvent sensor = 5;
-    /**
-     * <code>optional .svmp.SensorEvent sensor = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasSensor();
-    /**
-     * <code>optional .svmp.SensorEvent sensor = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.SensorEvent getSensor();
-
+    
     // optional .svmp.LocationUpdate location = 6;
-    /**
-     * <code>optional .svmp.LocationUpdate location = 6;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasLocation();
-    /**
-     * <code>optional .svmp.LocationUpdate location = 6;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate getLocation();
-
+    
     // optional .svmp.Intent intent = 7;
-    /**
-     * <code>optional .svmp.Intent intent = 7;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasIntent();
-    /**
-     * <code>optional .svmp.Intent intent = 7;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Intent getIntent();
   }
-  /**
-   * Protobuf type {@code svmp.Request}
-   *
-   * <pre>
-   * Client to server message wrapper
-   * </pre>
-   */
   public static final class Request extends
       com.google.protobuf.GeneratedMessageLite
       implements RequestOrBuilder {
     // Use Request.newBuilder() to construct.
-    private Request(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private Request(Builder builder) {
       super(builder);
-
     }
     private Request(boolean noInit) {}
-
+    
     private static final Request defaultInstance;
     public static Request getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Request getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private Request(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType value = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.valueOf(rawValue);
-              if (value != null) {
-                bitField0_ |= 0x00000001;
-                type_ = value;
-              }
-              break;
-            }
-            case 18: {
-              org.mitre.svmp.protocol.SVMPProtocol.Authentication.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = authentication_.toBuilder();
-              }
-              authentication_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Authentication.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authentication_);
-                authentication_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-            case 26: {
-              org.mitre.svmp.protocol.SVMPProtocol.Proxy.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                subBuilder = proxy_.toBuilder();
-              }
-              proxy_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Proxy.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(proxy_);
-                proxy_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 34: {
-              org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                subBuilder = touch_.toBuilder();
-              }
-              touch_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(touch_);
-                touch_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-            case 42: {
-              org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                subBuilder = sensor_.toBuilder();
-              }
-              sensor_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sensor_);
-                sensor_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000010;
-              break;
-            }
-            case 50: {
-              org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                subBuilder = location_.toBuilder();
-              }
-              location_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(location_);
-                location_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000020;
-              break;
-            }
-            case 58: {
-              org.mitre.svmp.protocol.SVMPProtocol.Intent.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000040) == 0x00000040)) {
-                subBuilder = intent_.toBuilder();
-              }
-              intent_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Intent.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(intent_);
-                intent_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000040;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<Request> PARSER =
-        new com.google.protobuf.AbstractParser<Request>() {
-      public Request parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Request(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Request> getParserForType() {
-      return PARSER;
-    }
-
-    /**
-     * Protobuf enum {@code svmp.Request.RequestType}
-     */
+    
     public enum RequestType
         implements com.google.protobuf.Internal.EnumLite {
-      /**
-       * <code>USERAUTH = 0;</code>
-       */
       USERAUTH(0, 0),
-      /**
-       * <code>RAWINPUTPROXY = 1;</code>
-       */
       RAWINPUTPROXY(1, 1),
-      /**
-       * <code>TOUCHEVENT = 2;</code>
-       */
       TOUCHEVENT(2, 2),
-      /**
-       * <code>SENSOREVENT = 3;</code>
-       */
       SENSOREVENT(3, 3),
-      /**
-       * <code>LOCATION = 4;</code>
-       */
       LOCATION(4, 4),
-      /**
-       * <code>INTENT = 5;</code>
-       */
       INTENT(5, 5),
-      /**
-       * <code>SCREENINFO = 6;</code>
-       */
       SCREENINFO(6, 6),
       ;
-
-      /**
-       * <code>USERAUTH = 0;</code>
-       */
+      
       public static final int USERAUTH_VALUE = 0;
-      /**
-       * <code>RAWINPUTPROXY = 1;</code>
-       */
       public static final int RAWINPUTPROXY_VALUE = 1;
-      /**
-       * <code>TOUCHEVENT = 2;</code>
-       */
       public static final int TOUCHEVENT_VALUE = 2;
-      /**
-       * <code>SENSOREVENT = 3;</code>
-       */
       public static final int SENSOREVENT_VALUE = 3;
-      /**
-       * <code>LOCATION = 4;</code>
-       */
       public static final int LOCATION_VALUE = 4;
-      /**
-       * <code>INTENT = 5;</code>
-       */
       public static final int INTENT_VALUE = 5;
-      /**
-       * <code>SCREENINFO = 6;</code>
-       */
       public static final int SCREENINFO_VALUE = 6;
-
-
+      
+      
       public final int getNumber() { return value; }
-
+      
       public static RequestType valueOf(int value) {
         switch (value) {
           case 0: return USERAUTH;
@@ -579,7 +206,7 @@ public final class SVMPProtocol {
           default: return null;
         }
       }
-
+      
       public static com.google.protobuf.Internal.EnumLiteMap<RequestType>
           internalGetValueMap() {
         return internalValueMap;
@@ -591,169 +218,87 @@ public final class SVMPProtocol {
                 return RequestType.valueOf(number);
               }
             };
-
+      
       private final int value;
-
+      
       private RequestType(int index, int value) {
         this.value = value;
       }
-
+      
       // @@protoc_insertion_point(enum_scope:svmp.Request.RequestType)
     }
-
+    
     private int bitField0_;
     // required .svmp.Request.RequestType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType type_;
-    /**
-     * <code>required .svmp.Request.RequestType type = 1;</code>
-     *
-     * <pre>
-     *required int32 type = 1;
-     * </pre>
-     */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required .svmp.Request.RequestType type = 1;</code>
-     *
-     * <pre>
-     *required int32 type = 1;
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType getType() {
       return type_;
     }
-
+    
     // optional .svmp.Authentication authentication = 2;
     public static final int AUTHENTICATION_FIELD_NUMBER = 2;
     private org.mitre.svmp.protocol.SVMPProtocol.Authentication authentication_;
-    /**
-     * <code>optional .svmp.Authentication authentication = 2;</code>
-     */
     public boolean hasAuthentication() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional .svmp.Authentication authentication = 2;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Authentication getAuthentication() {
       return authentication_;
     }
-
+    
     // optional .svmp.Proxy proxy = 3;
     public static final int PROXY_FIELD_NUMBER = 3;
     private org.mitre.svmp.protocol.SVMPProtocol.Proxy proxy_;
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     public boolean hasProxy() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Proxy getProxy() {
       return proxy_;
     }
-
+    
     // optional .svmp.TouchEvent touch = 4;
     public static final int TOUCH_FIELD_NUMBER = 4;
     private org.mitre.svmp.protocol.SVMPProtocol.TouchEvent touch_;
-    /**
-     * <code>optional .svmp.TouchEvent touch = 4;</code>
-     *
-     * <pre>
-     * TODO Move away from raw byte proxying to these
-     * </pre>
-     */
     public boolean hasTouch() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
-    /**
-     * <code>optional .svmp.TouchEvent touch = 4;</code>
-     *
-     * <pre>
-     * TODO Move away from raw byte proxying to these
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent getTouch() {
       return touch_;
     }
-
+    
     // optional .svmp.SensorEvent sensor = 5;
     public static final int SENSOR_FIELD_NUMBER = 5;
     private org.mitre.svmp.protocol.SVMPProtocol.SensorEvent sensor_;
-    /**
-     * <code>optional .svmp.SensorEvent sensor = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasSensor() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
-    /**
-     * <code>optional .svmp.SensorEvent sensor = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.SensorEvent getSensor() {
       return sensor_;
     }
-
+    
     // optional .svmp.LocationUpdate location = 6;
     public static final int LOCATION_FIELD_NUMBER = 6;
     private org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate location_;
-    /**
-     * <code>optional .svmp.LocationUpdate location = 6;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
-    /**
-     * <code>optional .svmp.LocationUpdate location = 6;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate getLocation() {
       return location_;
     }
-
+    
     // optional .svmp.Intent intent = 7;
     public static final int INTENT_FIELD_NUMBER = 7;
     private org.mitre.svmp.protocol.SVMPProtocol.Intent intent_;
-    /**
-     * <code>optional .svmp.Intent intent = 7;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasIntent() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
-    /**
-     * <code>optional .svmp.Intent intent = 7;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Intent getIntent() {
       return intent_;
     }
-
+    
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.USERAUTH;
       authentication_ = org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance();
@@ -767,7 +312,7 @@ public final class SVMPProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasType()) {
         memoizedIsInitialized = 0;
         return false;
@@ -805,7 +350,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -831,12 +376,12 @@ public final class SVMPProtocol {
         output.writeMessage(7, intent_);
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -869,81 +414,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Request parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Request prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.Request}
-     *
-     * <pre>
-     * Client to server message wrapper
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.Request, Builder>
@@ -952,13 +504,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.USERAUTH;
@@ -977,15 +529,15 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Request getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.Request.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Request build() {
         org.mitre.svmp.protocol.SVMPProtocol.Request result = buildPartial();
         if (!result.isInitialized()) {
@@ -993,7 +545,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.Request buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Request buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.Request result = new org.mitre.svmp.protocol.SVMPProtocol.Request(this);
         int from_bitField0_ = bitField0_;
@@ -1029,7 +591,7 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Request other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.Request.getDefaultInstance()) return this;
         if (other.hasType()) {
@@ -1055,7 +617,7 @@ public final class SVMPProtocol {
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasType()) {
           
@@ -1093,55 +655,101 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.Request parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Request) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType value = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.valueOf(rawValue);
+              if (value != null) {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              org.mitre.svmp.protocol.SVMPProtocol.Authentication.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Authentication.newBuilder();
+              if (hasAuthentication()) {
+                subBuilder.mergeFrom(getAuthentication());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setAuthentication(subBuilder.buildPartial());
+              break;
+            }
+            case 26: {
+              org.mitre.svmp.protocol.SVMPProtocol.Proxy.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Proxy.newBuilder();
+              if (hasProxy()) {
+                subBuilder.mergeFrom(getProxy());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setProxy(subBuilder.buildPartial());
+              break;
+            }
+            case 34: {
+              org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.newBuilder();
+              if (hasTouch()) {
+                subBuilder.mergeFrom(getTouch());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTouch(subBuilder.buildPartial());
+              break;
+            }
+            case 42: {
+              org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.newBuilder();
+              if (hasSensor()) {
+                subBuilder.mergeFrom(getSensor());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setSensor(subBuilder.buildPartial());
+              break;
+            }
+            case 50: {
+              org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.newBuilder();
+              if (hasLocation()) {
+                subBuilder.mergeFrom(getLocation());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setLocation(subBuilder.buildPartial());
+              break;
+            }
+            case 58: {
+              org.mitre.svmp.protocol.SVMPProtocol.Intent.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Intent.newBuilder();
+              if (hasIntent()) {
+                subBuilder.mergeFrom(getIntent());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setIntent(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required .svmp.Request.RequestType type = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.USERAUTH;
-      /**
-       * <code>required .svmp.Request.RequestType type = 1;</code>
-       *
-       * <pre>
-       *required int32 type = 1;
-       * </pre>
-       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.Request.RequestType type = 1;</code>
-       *
-       * <pre>
-       *required int32 type = 1;
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType getType() {
         return type_;
       }
-      /**
-       * <code>required .svmp.Request.RequestType type = 1;</code>
-       *
-       * <pre>
-       *required int32 type = 1;
-       * </pre>
-       */
       public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1151,59 +759,37 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.Request.RequestType type = 1;</code>
-       *
-       * <pre>
-       *required int32 type = 1;
-       * </pre>
-       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.USERAUTH;
         
         return this;
       }
-
+      
       // optional .svmp.Authentication authentication = 2;
       private org.mitre.svmp.protocol.SVMPProtocol.Authentication authentication_ = org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance();
-      /**
-       * <code>optional .svmp.Authentication authentication = 2;</code>
-       */
       public boolean hasAuthentication() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional .svmp.Authentication authentication = 2;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Authentication getAuthentication() {
         return authentication_;
       }
-      /**
-       * <code>optional .svmp.Authentication authentication = 2;</code>
-       */
       public Builder setAuthentication(org.mitre.svmp.protocol.SVMPProtocol.Authentication value) {
         if (value == null) {
           throw new NullPointerException();
         }
         authentication_ = value;
-
+        
         bitField0_ |= 0x00000002;
         return this;
       }
-      /**
-       * <code>optional .svmp.Authentication authentication = 2;</code>
-       */
       public Builder setAuthentication(
           org.mitre.svmp.protocol.SVMPProtocol.Authentication.Builder builderForValue) {
         authentication_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000002;
         return this;
       }
-      /**
-       * <code>optional .svmp.Authentication authentication = 2;</code>
-       */
       public Builder mergeAuthentication(org.mitre.svmp.protocol.SVMPProtocol.Authentication value) {
         if (((bitField0_ & 0x00000002) == 0x00000002) &&
             authentication_ != org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance()) {
@@ -1212,59 +798,41 @@ public final class SVMPProtocol {
         } else {
           authentication_ = value;
         }
-
+        
         bitField0_ |= 0x00000002;
         return this;
       }
-      /**
-       * <code>optional .svmp.Authentication authentication = 2;</code>
-       */
       public Builder clearAuthentication() {
         authentication_ = org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       // optional .svmp.Proxy proxy = 3;
       private org.mitre.svmp.protocol.SVMPProtocol.Proxy proxy_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance();
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public boolean hasProxy() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Proxy getProxy() {
         return proxy_;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder setProxy(org.mitre.svmp.protocol.SVMPProtocol.Proxy value) {
         if (value == null) {
           throw new NullPointerException();
         }
         proxy_ = value;
-
+        
         bitField0_ |= 0x00000004;
         return this;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder setProxy(
           org.mitre.svmp.protocol.SVMPProtocol.Proxy.Builder builderForValue) {
         proxy_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000004;
         return this;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder mergeProxy(org.mitre.svmp.protocol.SVMPProtocol.Proxy value) {
         if (((bitField0_ & 0x00000004) == 0x00000004) &&
             proxy_ != org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance()) {
@@ -1273,79 +841,41 @@ public final class SVMPProtocol {
         } else {
           proxy_ = value;
         }
-
+        
         bitField0_ |= 0x00000004;
         return this;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder clearProxy() {
         proxy_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-
+      
       // optional .svmp.TouchEvent touch = 4;
       private org.mitre.svmp.protocol.SVMPProtocol.TouchEvent touch_ = org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.getDefaultInstance();
-      /**
-       * <code>optional .svmp.TouchEvent touch = 4;</code>
-       *
-       * <pre>
-       * TODO Move away from raw byte proxying to these
-       * </pre>
-       */
       public boolean hasTouch() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
-      /**
-       * <code>optional .svmp.TouchEvent touch = 4;</code>
-       *
-       * <pre>
-       * TODO Move away from raw byte proxying to these
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent getTouch() {
         return touch_;
       }
-      /**
-       * <code>optional .svmp.TouchEvent touch = 4;</code>
-       *
-       * <pre>
-       * TODO Move away from raw byte proxying to these
-       * </pre>
-       */
       public Builder setTouch(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent value) {
         if (value == null) {
           throw new NullPointerException();
         }
         touch_ = value;
-
+        
         bitField0_ |= 0x00000008;
         return this;
       }
-      /**
-       * <code>optional .svmp.TouchEvent touch = 4;</code>
-       *
-       * <pre>
-       * TODO Move away from raw byte proxying to these
-       * </pre>
-       */
       public Builder setTouch(
           org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.Builder builderForValue) {
         touch_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000008;
         return this;
       }
-      /**
-       * <code>optional .svmp.TouchEvent touch = 4;</code>
-       *
-       * <pre>
-       * TODO Move away from raw byte proxying to these
-       * </pre>
-       */
       public Builder mergeTouch(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent value) {
         if (((bitField0_ & 0x00000008) == 0x00000008) &&
             touch_ != org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.getDefaultInstance()) {
@@ -1354,83 +884,41 @@ public final class SVMPProtocol {
         } else {
           touch_ = value;
         }
-
+        
         bitField0_ |= 0x00000008;
         return this;
       }
-      /**
-       * <code>optional .svmp.TouchEvent touch = 4;</code>
-       *
-       * <pre>
-       * TODO Move away from raw byte proxying to these
-       * </pre>
-       */
       public Builder clearTouch() {
         touch_ = org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
-
+      
       // optional .svmp.SensorEvent sensor = 5;
       private org.mitre.svmp.protocol.SVMPProtocol.SensorEvent sensor_ = org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.getDefaultInstance();
-      /**
-       * <code>optional .svmp.SensorEvent sensor = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasSensor() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
-      /**
-       * <code>optional .svmp.SensorEvent sensor = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.SensorEvent getSensor() {
         return sensor_;
       }
-      /**
-       * <code>optional .svmp.SensorEvent sensor = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setSensor(org.mitre.svmp.protocol.SVMPProtocol.SensorEvent value) {
         if (value == null) {
           throw new NullPointerException();
         }
         sensor_ = value;
-
+        
         bitField0_ |= 0x00000010;
         return this;
       }
-      /**
-       * <code>optional .svmp.SensorEvent sensor = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setSensor(
           org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.Builder builderForValue) {
         sensor_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000010;
         return this;
       }
-      /**
-       * <code>optional .svmp.SensorEvent sensor = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeSensor(org.mitre.svmp.protocol.SVMPProtocol.SensorEvent value) {
         if (((bitField0_ & 0x00000010) == 0x00000010) &&
             sensor_ != org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.getDefaultInstance()) {
@@ -1439,83 +927,41 @@ public final class SVMPProtocol {
         } else {
           sensor_ = value;
         }
-
+        
         bitField0_ |= 0x00000010;
         return this;
       }
-      /**
-       * <code>optional .svmp.SensorEvent sensor = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearSensor() {
         sensor_ = org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
-
+      
       // optional .svmp.LocationUpdate location = 6;
       private org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate location_ = org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.getDefaultInstance();
-      /**
-       * <code>optional .svmp.LocationUpdate location = 6;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasLocation() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
-      /**
-       * <code>optional .svmp.LocationUpdate location = 6;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate getLocation() {
         return location_;
       }
-      /**
-       * <code>optional .svmp.LocationUpdate location = 6;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setLocation(org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate value) {
         if (value == null) {
           throw new NullPointerException();
         }
         location_ = value;
-
+        
         bitField0_ |= 0x00000020;
         return this;
       }
-      /**
-       * <code>optional .svmp.LocationUpdate location = 6;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setLocation(
           org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.Builder builderForValue) {
         location_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000020;
         return this;
       }
-      /**
-       * <code>optional .svmp.LocationUpdate location = 6;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeLocation(org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate value) {
         if (((bitField0_ & 0x00000020) == 0x00000020) &&
             location_ != org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.getDefaultInstance()) {
@@ -1524,83 +970,41 @@ public final class SVMPProtocol {
         } else {
           location_ = value;
         }
-
+        
         bitField0_ |= 0x00000020;
         return this;
       }
-      /**
-       * <code>optional .svmp.LocationUpdate location = 6;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearLocation() {
         location_ = org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
-
+      
       // optional .svmp.Intent intent = 7;
       private org.mitre.svmp.protocol.SVMPProtocol.Intent intent_ = org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance();
-      /**
-       * <code>optional .svmp.Intent intent = 7;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasIntent() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
-      /**
-       * <code>optional .svmp.Intent intent = 7;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Intent getIntent() {
         return intent_;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 7;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setIntent(org.mitre.svmp.protocol.SVMPProtocol.Intent value) {
         if (value == null) {
           throw new NullPointerException();
         }
         intent_ = value;
-
+        
         bitField0_ |= 0x00000040;
         return this;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 7;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setIntent(
           org.mitre.svmp.protocol.SVMPProtocol.Intent.Builder builderForValue) {
         intent_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000040;
         return this;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 7;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeIntent(org.mitre.svmp.protocol.SVMPProtocol.Intent value) {
         if (((bitField0_ & 0x00000040) == 0x00000040) &&
             intent_ != org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance()) {
@@ -1609,444 +1013,103 @@ public final class SVMPProtocol {
         } else {
           intent_ = value;
         }
-
+        
         bitField0_ |= 0x00000040;
         return this;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 7;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearIntent() {
         intent_ = org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.Request)
     }
-
+    
     static {
       defaultInstance = new Request(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.Request)
   }
-
+  
   public interface ResponseOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.Response.ResponseType type = 1;
-    /**
-     * <code>required .svmp.Response.ResponseType type = 1;</code>
-     */
     boolean hasType();
-    /**
-     * <code>required .svmp.Response.ResponseType type = 1;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType getType();
-
+    
     // optional string message = 2;
-    /**
-     * <code>optional string message = 2;</code>
-     */
     boolean hasMessage();
-    /**
-     * <code>optional string message = 2;</code>
-     */
-    java.lang.String getMessage();
-    /**
-     * <code>optional string message = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-
+    String getMessage();
+    
     // optional .svmp.Proxy proxy = 3;
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     boolean hasProxy();
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Proxy getProxy();
-
+    
     // optional .svmp.Intent intent = 4;
-    /**
-     * <code>optional .svmp.Intent intent = 4;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasIntent();
-    /**
-     * <code>optional .svmp.Intent intent = 4;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Intent getIntent();
-
+    
     // optional .svmp.Notification notification = 5;
-    /**
-     * <code>optional .svmp.Notification notification = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasNotification();
-    /**
-     * <code>optional .svmp.Notification notification = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Notification getNotification();
-
+    
     // optional .svmp.ScreenInfo screen_info = 16;
-    /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasScreenInfo();
-    /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo();
-
+    
     // optional .svmp.VideoStreamInfo video_info = 17;
-    /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     boolean hasVideoInfo();
-    /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo();
   }
-  /**
-   * Protobuf type {@code svmp.Response}
-   *
-   * <pre>
-   * Server to client message wrapper
-   * </pre>
-   */
   public static final class Response extends
       com.google.protobuf.GeneratedMessageLite
       implements ResponseOrBuilder {
     // Use Response.newBuilder() to construct.
-    private Response(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private Response(Builder builder) {
       super(builder);
-
     }
     private Response(boolean noInit) {}
-
+    
     private static final Response defaultInstance;
     public static Response getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Response getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private Response(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType value = org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType.valueOf(rawValue);
-              if (value != null) {
-                bitField0_ |= 0x00000001;
-                type_ = value;
-              }
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              message_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              org.mitre.svmp.protocol.SVMPProtocol.Proxy.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                subBuilder = proxy_.toBuilder();
-              }
-              proxy_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Proxy.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(proxy_);
-                proxy_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-            case 34: {
-              org.mitre.svmp.protocol.SVMPProtocol.Intent.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                subBuilder = intent_.toBuilder();
-              }
-              intent_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Intent.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(intent_);
-                intent_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-            case 42: {
-              org.mitre.svmp.protocol.SVMPProtocol.Notification.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                subBuilder = notification_.toBuilder();
-              }
-              notification_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Notification.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(notification_);
-                notification_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000010;
-              break;
-            }
-            case 130: {
-              org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                subBuilder = screenInfo_.toBuilder();
-              }
-              screenInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(screenInfo_);
-                screenInfo_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000020;
-              break;
-            }
-            case 138: {
-              org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000040) == 0x00000040)) {
-                subBuilder = videoInfo_.toBuilder();
-              }
-              videoInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(videoInfo_);
-                videoInfo_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000040;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<Response> PARSER =
-        new com.google.protobuf.AbstractParser<Response>() {
-      public Response parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Response(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Response> getParserForType() {
-      return PARSER;
-    }
-
-    /**
-     * Protobuf enum {@code svmp.Response.ResponseType}
-     */
+    
     public enum ResponseType
         implements com.google.protobuf.Internal.EnumLite {
-      /**
-       * <code>ERROR = 0;</code>
-       *
-       * <pre>
-       * 'message' should contain a useful error string
-       * </pre>
-       */
       ERROR(0, 0),
-      /**
-       * <code>AUTHOK = 1;</code>
-       */
       AUTHOK(1, 1),
-      /**
-       * <code>VMREADY = 2;</code>
-       *
-       * <pre>
-       * 'message' should contain any extra info needed to contact the VM
-       * </pre>
-       */
       VMREADY(2, 2),
-      /**
-       * <code>SCREENINFO = 3;</code>
-       *
-       * <pre>
-       * touch screen coordinate scaling info
-       * </pre>
-       */
       SCREENINFO(3, 3),
-      /**
-       * <code>VIDSTREAMINFO = 4;</code>
-       *
-       * <pre>
-       * IP/Port info for video stream
-       * </pre>
-       */
       VIDSTREAMINFO(4, 4),
-      /**
-       * <code>INTENT = 5;</code>
-       *
-       * <pre>
-       * intent data in 'proxy'
-       * </pre>
-       */
       INTENT(5, 5),
-      /**
-       * <code>NOTIFICATION = 6;</code>
-       *
-       * <pre>
-       * notification data in 'proxy'
-       * </pre>
-       */
       NOTIFICATION(6, 6),
-      /**
-       * <code>GLDATA = 7;</code>
-       *
-       * <pre>
-       * raw GL stream data in 'proxy'
-       * </pre>
-       */
       GLDATA(7, 7),
-      /**
-       * <code>AUDIODATA = 8;</code>
-       *
-       * <pre>
-       * raw audio stream data in 'proxy'
-       * </pre>
-       */
       AUDIODATA(8, 8),
       ;
-
-      /**
-       * <code>ERROR = 0;</code>
-       *
-       * <pre>
-       * 'message' should contain a useful error string
-       * </pre>
-       */
+      
       public static final int ERROR_VALUE = 0;
-      /**
-       * <code>AUTHOK = 1;</code>
-       */
       public static final int AUTHOK_VALUE = 1;
-      /**
-       * <code>VMREADY = 2;</code>
-       *
-       * <pre>
-       * 'message' should contain any extra info needed to contact the VM
-       * </pre>
-       */
       public static final int VMREADY_VALUE = 2;
-      /**
-       * <code>SCREENINFO = 3;</code>
-       *
-       * <pre>
-       * touch screen coordinate scaling info
-       * </pre>
-       */
       public static final int SCREENINFO_VALUE = 3;
-      /**
-       * <code>VIDSTREAMINFO = 4;</code>
-       *
-       * <pre>
-       * IP/Port info for video stream
-       * </pre>
-       */
       public static final int VIDSTREAMINFO_VALUE = 4;
-      /**
-       * <code>INTENT = 5;</code>
-       *
-       * <pre>
-       * intent data in 'proxy'
-       * </pre>
-       */
       public static final int INTENT_VALUE = 5;
-      /**
-       * <code>NOTIFICATION = 6;</code>
-       *
-       * <pre>
-       * notification data in 'proxy'
-       * </pre>
-       */
       public static final int NOTIFICATION_VALUE = 6;
-      /**
-       * <code>GLDATA = 7;</code>
-       *
-       * <pre>
-       * raw GL stream data in 'proxy'
-       * </pre>
-       */
       public static final int GLDATA_VALUE = 7;
-      /**
-       * <code>AUDIODATA = 8;</code>
-       *
-       * <pre>
-       * raw audio stream data in 'proxy'
-       * </pre>
-       */
       public static final int AUDIODATA_VALUE = 8;
-
-
+      
+      
       public final int getNumber() { return value; }
-
+      
       public static ResponseType valueOf(int value) {
         switch (value) {
           case 0: return ERROR;
@@ -2061,7 +1124,7 @@ public final class SVMPProtocol {
           default: return null;
         }
       }
-
+      
       public static com.google.protobuf.Internal.EnumLiteMap<ResponseType>
           internalGetValueMap() {
         return internalValueMap;
@@ -2073,188 +1136,109 @@ public final class SVMPProtocol {
                 return ResponseType.valueOf(number);
               }
             };
-
+      
       private final int value;
-
+      
       private ResponseType(int index, int value) {
         this.value = value;
       }
-
+      
       // @@protoc_insertion_point(enum_scope:svmp.Response.ResponseType)
     }
-
+    
     private int bitField0_;
     // required .svmp.Response.ResponseType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType type_;
-    /**
-     * <code>required .svmp.Response.ResponseType type = 1;</code>
-     */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required .svmp.Response.ResponseType type = 1;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType getType() {
       return type_;
     }
-
+    
     // optional string message = 2;
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private java.lang.Object message_;
-    /**
-     * <code>optional string message = 2;</code>
-     */
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional string message = 2;</code>
-     */
-    public java.lang.String getMessage() {
+    public String getMessage() {
       java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           message_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string message = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
+    private com.google.protobuf.ByteString getMessageBytes() {
       java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         message_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // optional .svmp.Proxy proxy = 3;
     public static final int PROXY_FIELD_NUMBER = 3;
     private org.mitre.svmp.protocol.SVMPProtocol.Proxy proxy_;
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     public boolean hasProxy() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    /**
-     * <code>optional .svmp.Proxy proxy = 3;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Proxy getProxy() {
       return proxy_;
     }
-
+    
     // optional .svmp.Intent intent = 4;
     public static final int INTENT_FIELD_NUMBER = 4;
     private org.mitre.svmp.protocol.SVMPProtocol.Intent intent_;
-    /**
-     * <code>optional .svmp.Intent intent = 4;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasIntent() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
-    /**
-     * <code>optional .svmp.Intent intent = 4;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Intent getIntent() {
       return intent_;
     }
-
+    
     // optional .svmp.Notification notification = 5;
     public static final int NOTIFICATION_FIELD_NUMBER = 5;
     private org.mitre.svmp.protocol.SVMPProtocol.Notification notification_;
-    /**
-     * <code>optional .svmp.Notification notification = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasNotification() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
-    /**
-     * <code>optional .svmp.Notification notification = 5;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Notification getNotification() {
       return notification_;
     }
-
+    
     // optional .svmp.ScreenInfo screen_info = 16;
     public static final int SCREEN_INFO_FIELD_NUMBER = 16;
     private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_;
-    /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasScreenInfo() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
-    /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo() {
       return screenInfo_;
     }
-
+    
     // optional .svmp.VideoStreamInfo video_info = 17;
     public static final int VIDEO_INFO_FIELD_NUMBER = 17;
     private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_;
-    /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public boolean hasVideoInfo() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
-    /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-     *
-     * <pre>
-     * placeholder for future use
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
       return videoInfo_;
     }
-
+    
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType.ERROR;
       message_ = "";
@@ -2268,7 +1252,7 @@ public final class SVMPProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasType()) {
         memoizedIsInitialized = 0;
         return false;
@@ -2285,6 +1269,12 @@ public final class SVMPProtocol {
           return false;
         }
       }
+      if (hasNotification()) {
+        if (!getNotification().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       if (hasScreenInfo()) {
         if (!getScreenInfo().isInitialized()) {
           memoizedIsInitialized = 0;
@@ -2294,7 +1284,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -2320,12 +1310,12 @@ public final class SVMPProtocol {
         output.writeMessage(17, videoInfo_);
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2358,81 +1348,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Response parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Response prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.Response}
-     *
-     * <pre>
-     * Server to client message wrapper
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.Response, Builder>
@@ -2441,13 +1438,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         type_ = org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType.ERROR;
@@ -2466,15 +1463,15 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Response getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.Response.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Response build() {
         org.mitre.svmp.protocol.SVMPProtocol.Response result = buildPartial();
         if (!result.isInitialized()) {
@@ -2482,7 +1479,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.Response buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Response buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.Response result = new org.mitre.svmp.protocol.SVMPProtocol.Response(this);
         int from_bitField0_ = bitField0_;
@@ -2518,16 +1525,14 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Response other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.Response.getDefaultInstance()) return this;
         if (other.hasType()) {
           setType(other.getType());
         }
         if (other.hasMessage()) {
-          bitField0_ |= 0x00000002;
-          message_ = other.message_;
-          
+          setMessage(other.getMessage());
         }
         if (other.hasProxy()) {
           mergeProxy(other.getProxy());
@@ -2546,7 +1551,7 @@ public final class SVMPProtocol {
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasType()) {
           
@@ -2564,6 +1569,12 @@ public final class SVMPProtocol {
             return false;
           }
         }
+        if (hasNotification()) {
+          if (!getNotification().isInitialized()) {
+            
+            return false;
+          }
+        }
         if (hasScreenInfo()) {
           if (!getScreenInfo().isInitialized()) {
             
@@ -2572,43 +1583,97 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.Response parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Response) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType value = org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType.valueOf(rawValue);
+              if (value != null) {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              message_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              org.mitre.svmp.protocol.SVMPProtocol.Proxy.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Proxy.newBuilder();
+              if (hasProxy()) {
+                subBuilder.mergeFrom(getProxy());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setProxy(subBuilder.buildPartial());
+              break;
+            }
+            case 34: {
+              org.mitre.svmp.protocol.SVMPProtocol.Intent.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Intent.newBuilder();
+              if (hasIntent()) {
+                subBuilder.mergeFrom(getIntent());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setIntent(subBuilder.buildPartial());
+              break;
+            }
+            case 42: {
+              org.mitre.svmp.protocol.SVMPProtocol.Notification.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Notification.newBuilder();
+              if (hasNotification()) {
+                subBuilder.mergeFrom(getNotification());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setNotification(subBuilder.buildPartial());
+              break;
+            }
+            case 130: {
+              org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.newBuilder();
+              if (hasScreenInfo()) {
+                subBuilder.mergeFrom(getScreenInfo());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setScreenInfo(subBuilder.buildPartial());
+              break;
+            }
+            case 138: {
+              org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.newBuilder();
+              if (hasVideoInfo()) {
+                subBuilder.mergeFrom(getVideoInfo());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setVideoInfo(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required .svmp.Response.ResponseType type = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType type_ = org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType.ERROR;
-      /**
-       * <code>required .svmp.Response.ResponseType type = 1;</code>
-       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.Response.ResponseType type = 1;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType getType() {
         return type_;
       }
-      /**
-       * <code>required .svmp.Response.ResponseType type = 1;</code>
-       */
       public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2618,59 +1683,29 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.Response.ResponseType type = 1;</code>
-       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = org.mitre.svmp.protocol.SVMPProtocol.Response.ResponseType.ERROR;
         
         return this;
       }
-
+      
       // optional string message = 2;
       private java.lang.Object message_ = "";
-      /**
-       * <code>optional string message = 2;</code>
-       */
       public boolean hasMessage() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional string message = 2;</code>
-       */
-      public java.lang.String getMessage() {
+      public String getMessage() {
         java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           message_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string message = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string message = 2;</code>
-       */
-      public Builder setMessage(
-          java.lang.String value) {
+      public Builder setMessage(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2679,68 +1714,42 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional string message = 2;</code>
-       */
       public Builder clearMessage() {
         bitField0_ = (bitField0_ & ~0x00000002);
         message_ = getDefaultInstance().getMessage();
         
         return this;
       }
-      /**
-       * <code>optional string message = 2;</code>
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      void setMessage(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
         message_ = value;
         
-        return this;
       }
-
+      
       // optional .svmp.Proxy proxy = 3;
       private org.mitre.svmp.protocol.SVMPProtocol.Proxy proxy_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance();
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public boolean hasProxy() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Proxy getProxy() {
         return proxy_;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder setProxy(org.mitre.svmp.protocol.SVMPProtocol.Proxy value) {
         if (value == null) {
           throw new NullPointerException();
         }
         proxy_ = value;
-
+        
         bitField0_ |= 0x00000004;
         return this;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder setProxy(
           org.mitre.svmp.protocol.SVMPProtocol.Proxy.Builder builderForValue) {
         proxy_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000004;
         return this;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder mergeProxy(org.mitre.svmp.protocol.SVMPProtocol.Proxy value) {
         if (((bitField0_ & 0x00000004) == 0x00000004) &&
             proxy_ != org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance()) {
@@ -2749,79 +1758,41 @@ public final class SVMPProtocol {
         } else {
           proxy_ = value;
         }
-
+        
         bitField0_ |= 0x00000004;
         return this;
       }
-      /**
-       * <code>optional .svmp.Proxy proxy = 3;</code>
-       */
       public Builder clearProxy() {
         proxy_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-
+      
       // optional .svmp.Intent intent = 4;
       private org.mitre.svmp.protocol.SVMPProtocol.Intent intent_ = org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance();
-      /**
-       * <code>optional .svmp.Intent intent = 4;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasIntent() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
-      /**
-       * <code>optional .svmp.Intent intent = 4;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Intent getIntent() {
         return intent_;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 4;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setIntent(org.mitre.svmp.protocol.SVMPProtocol.Intent value) {
         if (value == null) {
           throw new NullPointerException();
         }
         intent_ = value;
-
+        
         bitField0_ |= 0x00000008;
         return this;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 4;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setIntent(
           org.mitre.svmp.protocol.SVMPProtocol.Intent.Builder builderForValue) {
         intent_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000008;
         return this;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 4;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeIntent(org.mitre.svmp.protocol.SVMPProtocol.Intent value) {
         if (((bitField0_ & 0x00000008) == 0x00000008) &&
             intent_ != org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance()) {
@@ -2830,83 +1801,41 @@ public final class SVMPProtocol {
         } else {
           intent_ = value;
         }
-
+        
         bitField0_ |= 0x00000008;
         return this;
       }
-      /**
-       * <code>optional .svmp.Intent intent = 4;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearIntent() {
         intent_ = org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
-
+      
       // optional .svmp.Notification notification = 5;
       private org.mitre.svmp.protocol.SVMPProtocol.Notification notification_ = org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance();
-      /**
-       * <code>optional .svmp.Notification notification = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasNotification() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
-      /**
-       * <code>optional .svmp.Notification notification = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Notification getNotification() {
         return notification_;
       }
-      /**
-       * <code>optional .svmp.Notification notification = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setNotification(org.mitre.svmp.protocol.SVMPProtocol.Notification value) {
         if (value == null) {
           throw new NullPointerException();
         }
         notification_ = value;
-
+        
         bitField0_ |= 0x00000010;
         return this;
       }
-      /**
-       * <code>optional .svmp.Notification notification = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setNotification(
           org.mitre.svmp.protocol.SVMPProtocol.Notification.Builder builderForValue) {
         notification_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000010;
         return this;
       }
-      /**
-       * <code>optional .svmp.Notification notification = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeNotification(org.mitre.svmp.protocol.SVMPProtocol.Notification value) {
         if (((bitField0_ & 0x00000010) == 0x00000010) &&
             notification_ != org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance()) {
@@ -2915,83 +1844,41 @@ public final class SVMPProtocol {
         } else {
           notification_ = value;
         }
-
+        
         bitField0_ |= 0x00000010;
         return this;
       }
-      /**
-       * <code>optional .svmp.Notification notification = 5;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearNotification() {
         notification_ = org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
-
+      
       // optional .svmp.ScreenInfo screen_info = 16;
       private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
-      /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasScreenInfo() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
-      /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo() {
         return screenInfo_;
       }
-      /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
         screenInfo_ = value;
-
+        
         bitField0_ |= 0x00000020;
         return this;
       }
-      /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setScreenInfo(
           org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder builderForValue) {
         screenInfo_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000020;
         return this;
       }
-      /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
         if (((bitField0_ & 0x00000020) == 0x00000020) &&
             screenInfo_ != org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance()) {
@@ -3000,83 +1887,41 @@ public final class SVMPProtocol {
         } else {
           screenInfo_ = value;
         }
-
+        
         bitField0_ |= 0x00000020;
         return this;
       }
-      /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearScreenInfo() {
         screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
-
+      
       // optional .svmp.VideoStreamInfo video_info = 17;
       private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
-      /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public boolean hasVideoInfo() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
-      /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
         return videoInfo_;
       }
-      /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
         if (value == null) {
           throw new NullPointerException();
         }
         videoInfo_ = value;
-
+        
         bitField0_ |= 0x00000040;
         return this;
       }
-      /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder setVideoInfo(
           org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder builderForValue) {
         videoInfo_ = builderForValue.build();
-
+        
         bitField0_ |= 0x00000040;
         return this;
       }
-      /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder mergeVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
         if (((bitField0_ & 0x00000040) == 0x00000040) &&
             videoInfo_ != org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance()) {
@@ -3085,106 +1930,345 @@ public final class SVMPProtocol {
         } else {
           videoInfo_ = value;
         }
-
+        
         bitField0_ |= 0x00000040;
         return this;
       }
-      /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
-       *
-       * <pre>
-       * placeholder for future use
-       * </pre>
-       */
       public Builder clearVideoInfo() {
         videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
-
+        
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.Response)
     }
-
+    
     static {
       defaultInstance = new Response(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.Response)
   }
-
+  
   public interface ProxyOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.Proxy.ServiceType type = 1;
-    /**
-     * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-     *
-     * <pre>
-     *required int32 service = 1;
-     * </pre>
-     */
     boolean hasType();
-    /**
-     * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-     *
-     * <pre>
-     *required int32 service = 1;
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType getType();
-
+    
     // optional bytes data = 2;
-    /**
-     * <code>optional bytes data = 2;</code>
-     */
     boolean hasData();
-    /**
-     * <code>optional bytes data = 2;</code>
-     */
     com.google.protobuf.ByteString getData();
   }
-  /**
-   * Protobuf type {@code svmp.Proxy}
-   */
   public static final class Proxy extends
       com.google.protobuf.GeneratedMessageLite
       implements ProxyOrBuilder {
     // Use Proxy.newBuilder() to construct.
-    private Proxy(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private Proxy(Builder builder) {
       super(builder);
-
     }
     private Proxy(boolean noInit) {}
-
+    
     private static final Proxy defaultInstance;
     public static Proxy getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Proxy getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private Proxy(
-        com.google.protobuf.CodedInputStream input,
+    
+    public enum ServiceType
+        implements com.google.protobuf.Internal.EnumLite {
+      INPUT(0, 0),
+      INTENT(1, 1),
+      ;
+      
+      public static final int INPUT_VALUE = 0;
+      public static final int INTENT_VALUE = 1;
+      
+      
+      public final int getNumber() { return value; }
+      
+      public static ServiceType valueOf(int value) {
+        switch (value) {
+          case 0: return INPUT;
+          case 1: return INTENT;
+          default: return null;
+        }
+      }
+      
+      public static com.google.protobuf.Internal.EnumLiteMap<ServiceType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<ServiceType>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ServiceType>() {
+              public ServiceType findValueByNumber(int number) {
+                return ServiceType.valueOf(number);
+              }
+            };
+      
+      private final int value;
+      
+      private ServiceType(int index, int value) {
+        this.value = value;
+      }
+      
+      // @@protoc_insertion_point(enum_scope:svmp.Proxy.ServiceType)
+    }
+    
+    private int bitField0_;
+    // required .svmp.Proxy.ServiceType type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType type_;
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType getType() {
+      return type_;
+    }
+    
+    // optional bytes data = 2;
+    public static final int DATA_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString data_;
+    public boolean hasData() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+    
+    private void initFields() {
+      type_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType.INPUT;
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, data_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, data_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
+        com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Proxy prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.Proxy, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.ProxyOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.Proxy.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        type_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType.INPUT;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        data_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.Proxy getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance();
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.Proxy build() {
+        org.mitre.svmp.protocol.SVMPProtocol.Proxy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.Proxy buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.Proxy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.Proxy buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.Proxy result = new org.mitre.svmp.protocol.SVMPProtocol.Proxy(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.data_ = data_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Proxy other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasData()) {
+          setData(other.getData());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              
+              return this;
             default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
               }
               break;
             }
@@ -3204,382 +2288,18 @@ public final class SVMPProtocol {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
       }
-    }
-    public static com.google.protobuf.Parser<Proxy> PARSER =
-        new com.google.protobuf.AbstractParser<Proxy>() {
-      public Proxy parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Proxy(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Proxy> getParserForType() {
-      return PARSER;
-    }
-
-    /**
-     * Protobuf enum {@code svmp.Proxy.ServiceType}
-     */
-    public enum ServiceType
-        implements com.google.protobuf.Internal.EnumLite {
-      /**
-       * <code>INPUT = 0;</code>
-       *
-       * <pre>
-       * to &amp; from input service (touch and sensor events)
-       * </pre>
-       */
-      INPUT(0, 0),
-      /**
-       * <code>INTENT = 1;</code>
-       *
-       * <pre>
-       * to &amp; from the intent/notification service
-       * </pre>
-       */
-      INTENT(1, 1),
-      ;
-
-      /**
-       * <code>INPUT = 0;</code>
-       *
-       * <pre>
-       * to &amp; from input service (touch and sensor events)
-       * </pre>
-       */
-      public static final int INPUT_VALUE = 0;
-      /**
-       * <code>INTENT = 1;</code>
-       *
-       * <pre>
-       * to &amp; from the intent/notification service
-       * </pre>
-       */
-      public static final int INTENT_VALUE = 1;
-
-
-      public final int getNumber() { return value; }
-
-      public static ServiceType valueOf(int value) {
-        switch (value) {
-          case 0: return INPUT;
-          case 1: return INTENT;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ServiceType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static com.google.protobuf.Internal.EnumLiteMap<ServiceType>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ServiceType>() {
-              public ServiceType findValueByNumber(int number) {
-                return ServiceType.valueOf(number);
-              }
-            };
-
-      private final int value;
-
-      private ServiceType(int index, int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:svmp.Proxy.ServiceType)
-    }
-
-    private int bitField0_;
-    // required .svmp.Proxy.ServiceType type = 1;
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType type_;
-    /**
-     * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-     *
-     * <pre>
-     *required int32 service = 1;
-     * </pre>
-     */
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-     *
-     * <pre>
-     *required int32 service = 1;
-     * </pre>
-     */
-    public org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType getType() {
-      return type_;
-    }
-
-    // optional bytes data = 2;
-    public static final int DATA_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString data_;
-    /**
-     * <code>optional bytes data = 2;</code>
-     */
-    public boolean hasData() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional bytes data = 2;</code>
-     */
-    public com.google.protobuf.ByteString getData() {
-      return data_;
-    }
-
-    private void initFields() {
-      type_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType.INPUT;
-      data_ = com.google.protobuf.ByteString.EMPTY;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, data_);
-      }
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, data_);
-      }
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Proxy parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Proxy prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.Proxy}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          org.mitre.svmp.protocol.SVMPProtocol.Proxy, Builder>
-        implements org.mitre.svmp.protocol.SVMPProtocol.ProxyOrBuilder {
-      // Construct using org.mitre.svmp.protocol.SVMPProtocol.Proxy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        type_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType.INPUT;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        data_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.Proxy getDefaultInstanceForType() {
-        return org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance();
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.Proxy build() {
-        org.mitre.svmp.protocol.SVMPProtocol.Proxy result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.Proxy buildPartial() {
-        org.mitre.svmp.protocol.SVMPProtocol.Proxy result = new org.mitre.svmp.protocol.SVMPProtocol.Proxy(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.data_ = data_;
-        result.bitField0_ = to_bitField0_;
-        return result;
-      }
-
-      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Proxy other) {
-        if (other == org.mitre.svmp.protocol.SVMPProtocol.Proxy.getDefaultInstance()) return this;
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        if (other.hasData()) {
-          setData(other.getData());
-        }
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasType()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.Proxy parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Proxy) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+      
       private int bitField0_;
-
+      
       // required .svmp.Proxy.ServiceType type = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType type_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType.INPUT;
-      /**
-       * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-       *
-       * <pre>
-       *required int32 service = 1;
-       * </pre>
-       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-       *
-       * <pre>
-       *required int32 service = 1;
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType getType() {
         return type_;
       }
-      /**
-       * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-       *
-       * <pre>
-       *required int32 service = 1;
-       * </pre>
-       */
       public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -3589,37 +2309,21 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.Proxy.ServiceType type = 1;</code>
-       *
-       * <pre>
-       *required int32 service = 1;
-       * </pre>
-       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = org.mitre.svmp.protocol.SVMPProtocol.Proxy.ServiceType.INPUT;
         
         return this;
       }
-
+      
       // optional bytes data = 2;
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes data = 2;</code>
-       */
       public boolean hasData() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional bytes data = 2;</code>
-       */
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
-      /**
-       * <code>optional bytes data = 2;</code>
-       */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3629,472 +2333,163 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional bytes data = 2;</code>
-       */
       public Builder clearData() {
         bitField0_ = (bitField0_ & ~0x00000002);
         data_ = getDefaultInstance().getData();
         
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.Proxy)
     }
-
+    
     static {
       defaultInstance = new Proxy(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.Proxy)
   }
-
+  
   public interface IntentOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.IntentAction action = 1;
-    /**
-     * <code>required .svmp.IntentAction action = 1;</code>
-     *
-     * <pre>
-     *Corresponds to Intent 'action' parameter, but limited to supported actions
-     * </pre>
-     */
     boolean hasAction();
-    /**
-     * <code>required .svmp.IntentAction action = 1;</code>
-     *
-     * <pre>
-     *Corresponds to Intent 'action' parameter, but limited to supported actions
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.IntentAction getAction();
-
+    
     // repeated .svmp.Intent.Tuple extras = 2;
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     java.util.List<org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple> 
         getExtrasList();
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple getExtras(int index);
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     int getExtrasCount();
-
+    
     // optional string data = 3;
-    /**
-     * <code>optional string data = 3;</code>
-     *
-     * <pre>
-     *Correspond to optional Intent parameters
-     * </pre>
-     */
     boolean hasData();
-    /**
-     * <code>optional string data = 3;</code>
-     *
-     * <pre>
-     *Correspond to optional Intent parameters
-     * </pre>
-     */
-    java.lang.String getData();
-    /**
-     * <code>optional string data = 3;</code>
-     *
-     * <pre>
-     *Correspond to optional Intent parameters
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getDataBytes();
-
+    String getData();
+    
     // repeated int32 flags = 4;
-    /**
-     * <code>repeated int32 flags = 4;</code>
-     */
     java.util.List<java.lang.Integer> getFlagsList();
-    /**
-     * <code>repeated int32 flags = 4;</code>
-     */
     int getFlagsCount();
-    /**
-     * <code>repeated int32 flags = 4;</code>
-     */
     int getFlags(int index);
-
+    
     // repeated string categories = 5;
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
-    java.util.List<java.lang.String>
-    getCategoriesList();
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
+    java.util.List<String> getCategoriesList();
     int getCategoriesCount();
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
-    java.lang.String getCategories(int index);
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getCategoriesBytes(int index);
+    String getCategories(int index);
   }
-  /**
-   * Protobuf type {@code svmp.Intent}
-   *
-   * <pre>
-   * C&lt;-&gt;S
-   * </pre>
-   */
   public static final class Intent extends
       com.google.protobuf.GeneratedMessageLite
       implements IntentOrBuilder {
     // Use Intent.newBuilder() to construct.
-    private Intent(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private Intent(Builder builder) {
       super(builder);
-
     }
     private Intent(boolean noInit) {}
-
+    
     private static final Intent defaultInstance;
     public static Intent getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Intent getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private Intent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              org.mitre.svmp.protocol.SVMPProtocol.IntentAction value = org.mitre.svmp.protocol.SVMPProtocol.IntentAction.valueOf(rawValue);
-              if (value != null) {
-                bitField0_ |= 0x00000001;
-                action_ = value;
-              }
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                extras_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              extras_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.PARSER, extensionRegistry));
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000002;
-              data_ = input.readBytes();
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                flags_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              flags_.add(input.readInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                flags_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                flags_.add(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                categories_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              categories_.add(input.readBytes());
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          extras_ = java.util.Collections.unmodifiableList(extras_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          flags_ = java.util.Collections.unmodifiableList(flags_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          categories_ = new com.google.protobuf.UnmodifiableLazyStringList(categories_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<Intent> PARSER =
-        new com.google.protobuf.AbstractParser<Intent>() {
-      public Intent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Intent(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Intent> getParserForType() {
-      return PARSER;
-    }
-
+    
     public interface TupleOrBuilder
         extends com.google.protobuf.MessageLiteOrBuilder {
-
+      
       // required string key = 1;
-      /**
-       * <code>required string key = 1;</code>
-       */
       boolean hasKey();
-      /**
-       * <code>required string key = 1;</code>
-       */
-      java.lang.String getKey();
-      /**
-       * <code>required string key = 1;</code>
-       */
-      com.google.protobuf.ByteString
-          getKeyBytes();
-
+      String getKey();
+      
       // required string value = 2;
-      /**
-       * <code>required string value = 2;</code>
-       */
       boolean hasValue();
-      /**
-       * <code>required string value = 2;</code>
-       */
-      java.lang.String getValue();
-      /**
-       * <code>required string value = 2;</code>
-       */
-      com.google.protobuf.ByteString
-          getValueBytes();
+      String getValue();
     }
-    /**
-     * Protobuf type {@code svmp.Intent.Tuple}
-     *
-     * <pre>
-     *For approximating a Java Map structure (Map&lt;String,String&gt;)
-     * </pre>
-     */
     public static final class Tuple extends
         com.google.protobuf.GeneratedMessageLite
         implements TupleOrBuilder {
       // Use Tuple.newBuilder() to construct.
-      private Tuple(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      private Tuple(Builder builder) {
         super(builder);
-
       }
       private Tuple(boolean noInit) {}
-
+      
       private static final Tuple defaultInstance;
       public static Tuple getDefaultInstance() {
         return defaultInstance;
       }
-
+      
       public Tuple getDefaultInstanceForType() {
         return defaultInstance;
       }
-
-      private Tuple(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                bitField0_ |= 0x00000001;
-                key_ = input.readBytes();
-                break;
-              }
-              case 18: {
-                bitField0_ |= 0x00000002;
-                value_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
-        }
-      }
-      public static com.google.protobuf.Parser<Tuple> PARSER =
-          new com.google.protobuf.AbstractParser<Tuple>() {
-        public Tuple parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Tuple(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Tuple> getParserForType() {
-        return PARSER;
-      }
-
+      
       private int bitField0_;
       // required string key = 1;
       public static final int KEY_FIELD_NUMBER = 1;
       private java.lang.Object key_;
-      /**
-       * <code>required string key = 1;</code>
-       */
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public java.lang.String getKey() {
+      public String getKey() {
         java.lang.Object ref = key_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
+        if (ref instanceof String) {
+          return (String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
+          String s = bs.toStringUtf8();
+          if (com.google.protobuf.Internal.isValidUtf8(bs)) {
             key_ = s;
           }
           return s;
         }
       }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
+      private com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
-        if (ref instanceof java.lang.String) {
+        if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8((String) ref);
           key_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
+      
       // required string value = 2;
       public static final int VALUE_FIELD_NUMBER = 2;
       private java.lang.Object value_;
-      /**
-       * <code>required string value = 2;</code>
-       */
       public boolean hasValue() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>required string value = 2;</code>
-       */
-      public java.lang.String getValue() {
+      public String getValue() {
         java.lang.Object ref = value_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
+        if (ref instanceof String) {
+          return (String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
+          String s = bs.toStringUtf8();
+          if (com.google.protobuf.Internal.isValidUtf8(bs)) {
             value_ = s;
           }
           return s;
         }
       }
-      /**
-       * <code>required string value = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
+      private com.google.protobuf.ByteString getValueBytes() {
         java.lang.Object ref = value_;
-        if (ref instanceof java.lang.String) {
+        if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8((String) ref);
           value_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
+      
       private void initFields() {
         key_ = "";
         value_ = "";
@@ -4103,7 +2498,7 @@ public final class SVMPProtocol {
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized != -1) return isInitialized == 1;
-
+        
         if (!hasKey()) {
           memoizedIsInitialized = 0;
           return false;
@@ -4115,7 +2510,7 @@ public final class SVMPProtocol {
         memoizedIsInitialized = 1;
         return true;
       }
-
+      
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
@@ -4126,12 +2521,12 @@ public final class SVMPProtocol {
           output.writeBytes(2, getValueBytes());
         }
       }
-
+      
       private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
         int size = memoizedSerializedSize;
         if (size != -1) return size;
-
+      
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
@@ -4144,81 +2539,88 @@ public final class SVMPProtocol {
         memoizedSerializedSize = size;
         return size;
       }
-
+      
       private static final long serialVersionUID = 0L;
       @java.lang.Override
       protected java.lang.Object writeReplace()
           throws java.io.ObjectStreamException {
         return super.writeReplace();
       }
-
+      
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return newBuilder().mergeFrom(data).buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return newBuilder().mergeFrom(data, extensionRegistry)
+                 .buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
+        return newBuilder().mergeFrom(data).buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
+        return newBuilder().mergeFrom(data, extensionRegistry)
+                 .buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return newBuilder().mergeFrom(input).buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return newBuilder().mergeFrom(input, extensionRegistry)
+                 .buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
+        Builder builder = newBuilder();
+        if (builder.mergeDelimitedFrom(input)) {
+          return builder.buildParsed();
+        } else {
+          return null;
+        }
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+        Builder builder = newBuilder();
+        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+          return builder.buildParsed();
+        } else {
+          return null;
+        }
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return newBuilder().mergeFrom(input).buildParsed();
       }
       public static org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return newBuilder().mergeFrom(input, extensionRegistry)
+                 .buildParsed();
       }
-
+      
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
-
-      /**
-       * Protobuf type {@code svmp.Intent.Tuple}
-       *
-       * <pre>
-       *For approximating a Java Map structure (Map&lt;String,String&gt;)
-       * </pre>
-       */
+      
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageLite.Builder<
             org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple, Builder>
@@ -4227,13 +2629,13 @@ public final class SVMPProtocol {
         private Builder() {
           maybeForceBuilderInitialization();
         }
-
+        
         private void maybeForceBuilderInitialization() {
         }
         private static Builder create() {
           return new Builder();
         }
-
+        
         public Builder clear() {
           super.clear();
           key_ = "";
@@ -4242,15 +2644,15 @@ public final class SVMPProtocol {
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
-
+        
         public Builder clone() {
           return create().mergeFrom(buildPartial());
         }
-
+        
         public org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple getDefaultInstanceForType() {
           return org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.getDefaultInstance();
         }
-
+        
         public org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple build() {
           org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple result = buildPartial();
           if (!result.isInitialized()) {
@@ -4258,7 +2660,17 @@ public final class SVMPProtocol {
           }
           return result;
         }
-
+        
+        private org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple buildParsed()
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(
+              result).asInvalidProtocolBufferException();
+          }
+          return result;
+        }
+        
         public org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple buildPartial() {
           org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple result = new org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple(this);
           int from_bitField0_ = bitField0_;
@@ -4274,22 +2686,18 @@ public final class SVMPProtocol {
           result.bitField0_ = to_bitField0_;
           return result;
         }
-
+        
         public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple other) {
           if (other == org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.getDefaultInstance()) return this;
           if (other.hasKey()) {
-            bitField0_ |= 0x00000001;
-            key_ = other.key_;
-            
+            setKey(other.getKey());
           }
           if (other.hasValue()) {
-            bitField0_ |= 0x00000002;
-            value_ = other.value_;
-            
+            setValue(other.getValue());
           }
           return this;
         }
-
+        
         public final boolean isInitialized() {
           if (!hasKey()) {
             
@@ -4301,69 +2709,56 @@ public final class SVMPProtocol {
           }
           return true;
         }
-
+        
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
+          while (true) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                
+                return this;
+              default: {
+                if (!parseUnknownField(input, extensionRegistry, tag)) {
+                  
+                  return this;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                key_ = input.readBytes();
+                break;
+              }
+              case 18: {
+                bitField0_ |= 0x00000002;
+                value_ = input.readBytes();
+                break;
+              }
             }
           }
-          return this;
         }
+        
         private int bitField0_;
-
+        
         // required string key = 1;
         private java.lang.Object key_ = "";
-        /**
-         * <code>required string key = 1;</code>
-         */
         public boolean hasKey() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-        /**
-         * <code>required string key = 1;</code>
-         */
-        public java.lang.String getKey() {
+        public String getKey() {
           java.lang.Object ref = key_;
-          if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
+          if (!(ref instanceof String)) {
+            String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
             key_ = s;
             return s;
           } else {
-            return (java.lang.String) ref;
+            return (String) ref;
           }
         }
-        /**
-         * <code>required string key = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getKeyBytes() {
-          java.lang.Object ref = key_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            key_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>required string key = 1;</code>
-         */
-        public Builder setKey(
-            java.lang.String value) {
+        public Builder setKey(String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -4372,72 +2767,34 @@ public final class SVMPProtocol {
           
           return this;
         }
-        /**
-         * <code>required string key = 1;</code>
-         */
         public Builder clearKey() {
           bitField0_ = (bitField0_ & ~0x00000001);
           key_ = getDefaultInstance().getKey();
           
           return this;
         }
-        /**
-         * <code>required string key = 1;</code>
-         */
-        public Builder setKeyBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+        void setKey(com.google.protobuf.ByteString value) {
+          bitField0_ |= 0x00000001;
           key_ = value;
           
-          return this;
         }
-
+        
         // required string value = 2;
         private java.lang.Object value_ = "";
-        /**
-         * <code>required string value = 2;</code>
-         */
         public boolean hasValue() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
-        /**
-         * <code>required string value = 2;</code>
-         */
-        public java.lang.String getValue() {
+        public String getValue() {
           java.lang.Object ref = value_;
-          if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
+          if (!(ref instanceof String)) {
+            String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
             value_ = s;
             return s;
           } else {
-            return (java.lang.String) ref;
+            return (String) ref;
           }
         }
-        /**
-         * <code>required string value = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-            getValueBytes() {
-          java.lang.Object ref = value_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            value_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>required string value = 2;</code>
-         */
-        public Builder setValue(
-            java.lang.String value) {
+        public Builder setValue(String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -4446,241 +2803,133 @@ public final class SVMPProtocol {
           
           return this;
         }
-        /**
-         * <code>required string value = 2;</code>
-         */
         public Builder clearValue() {
           bitField0_ = (bitField0_ & ~0x00000002);
           value_ = getDefaultInstance().getValue();
           
           return this;
         }
-        /**
-         * <code>required string value = 2;</code>
-         */
-        public Builder setValueBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+        void setValue(com.google.protobuf.ByteString value) {
+          bitField0_ |= 0x00000002;
           value_ = value;
           
-          return this;
         }
-
+        
         // @@protoc_insertion_point(builder_scope:svmp.Intent.Tuple)
       }
-
+      
       static {
         defaultInstance = new Tuple(true);
         defaultInstance.initFields();
       }
-
+      
       // @@protoc_insertion_point(class_scope:svmp.Intent.Tuple)
     }
-
+    
     private int bitField0_;
     // required .svmp.IntentAction action = 1;
     public static final int ACTION_FIELD_NUMBER = 1;
     private org.mitre.svmp.protocol.SVMPProtocol.IntentAction action_;
-    /**
-     * <code>required .svmp.IntentAction action = 1;</code>
-     *
-     * <pre>
-     *Corresponds to Intent 'action' parameter, but limited to supported actions
-     * </pre>
-     */
     public boolean hasAction() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required .svmp.IntentAction action = 1;</code>
-     *
-     * <pre>
-     *Corresponds to Intent 'action' parameter, but limited to supported actions
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.IntentAction getAction() {
       return action_;
     }
-
+    
     // repeated .svmp.Intent.Tuple extras = 2;
     public static final int EXTRAS_FIELD_NUMBER = 2;
     private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple> extras_;
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple> getExtrasList() {
       return extras_;
     }
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.Intent.TupleOrBuilder> 
         getExtrasOrBuilderList() {
       return extras_;
     }
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     public int getExtrasCount() {
       return extras_.size();
     }
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple getExtras(int index) {
       return extras_.get(index);
     }
-    /**
-     * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-     *
-     * <pre>
-     *Encode all bundle extras as strings, and decode them later into specific data types
-     * </pre>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.Intent.TupleOrBuilder getExtrasOrBuilder(
         int index) {
       return extras_.get(index);
     }
-
+    
     // optional string data = 3;
     public static final int DATA_FIELD_NUMBER = 3;
     private java.lang.Object data_;
-    /**
-     * <code>optional string data = 3;</code>
-     *
-     * <pre>
-     *Correspond to optional Intent parameters
-     * </pre>
-     */
     public boolean hasData() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>optional string data = 3;</code>
-     *
-     * <pre>
-     *Correspond to optional Intent parameters
-     * </pre>
-     */
-    public java.lang.String getData() {
+    public String getData() {
       java.lang.Object ref = data_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           data_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>optional string data = 3;</code>
-     *
-     * <pre>
-     *Correspond to optional Intent parameters
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getDataBytes() {
+    private com.google.protobuf.ByteString getDataBytes() {
       java.lang.Object ref = data_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         data_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // repeated int32 flags = 4;
     public static final int FLAGS_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Integer> flags_;
-    /**
-     * <code>repeated int32 flags = 4;</code>
-     */
     public java.util.List<java.lang.Integer>
         getFlagsList() {
       return flags_;
     }
-    /**
-     * <code>repeated int32 flags = 4;</code>
-     */
     public int getFlagsCount() {
       return flags_.size();
     }
-    /**
-     * <code>repeated int32 flags = 4;</code>
-     */
     public int getFlags(int index) {
       return flags_.get(index);
     }
-
+    
     // repeated string categories = 5;
     public static final int CATEGORIES_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList categories_;
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
-    public java.util.List<java.lang.String>
+    public java.util.List<String>
         getCategoriesList() {
       return categories_;
     }
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
     public int getCategoriesCount() {
       return categories_.size();
     }
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
-    public java.lang.String getCategories(int index) {
+    public String getCategories(int index) {
       return categories_.get(index);
     }
-    /**
-     * <code>repeated string categories = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCategoriesBytes(int index) {
-      return categories_.getByteString(index);
-    }
-
+    
     private void initFields() {
       action_ = org.mitre.svmp.protocol.SVMPProtocol.IntentAction.ACTION_VIEW;
       extras_ = java.util.Collections.emptyList();
       data_ = "";
-      flags_ = java.util.Collections.emptyList();
+      flags_ = java.util.Collections.emptyList();;
       categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasAction()) {
         memoizedIsInitialized = 0;
         return false;
@@ -4694,7 +2943,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -4714,12 +2963,12 @@ public final class SVMPProtocol {
         output.writeBytes(5, categories_.getByteString(i));
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4754,81 +3003,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Intent parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Intent prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.Intent}
-     *
-     * <pre>
-     * C&lt;-&gt;S
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.Intent, Builder>
@@ -4837,13 +3093,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         action_ = org.mitre.svmp.protocol.SVMPProtocol.IntentAction.ACTION_VIEW;
@@ -4852,21 +3108,21 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         data_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        flags_ = java.util.Collections.emptyList();
+        flags_ = java.util.Collections.emptyList();;
         bitField0_ = (bitField0_ & ~0x00000008);
         categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Intent getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Intent build() {
         org.mitre.svmp.protocol.SVMPProtocol.Intent result = buildPartial();
         if (!result.isInitialized()) {
@@ -4874,7 +3130,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.Intent buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.Intent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Intent buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.Intent result = new org.mitre.svmp.protocol.SVMPProtocol.Intent(this);
         int from_bitField0_ = bitField0_;
@@ -4906,7 +3172,7 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Intent other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance()) return this;
         if (other.hasAction()) {
@@ -4923,9 +3189,7 @@ public final class SVMPProtocol {
           
         }
         if (other.hasData()) {
-          bitField0_ |= 0x00000004;
-          data_ = other.data_;
-          
+          setData(other.getData());
         }
         if (!other.flags_.isEmpty()) {
           if (flags_.isEmpty()) {
@@ -4949,7 +3213,7 @@ public final class SVMPProtocol {
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasAction()) {
           
@@ -4963,55 +3227,77 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.Intent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Intent) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.mitre.svmp.protocol.SVMPProtocol.IntentAction value = org.mitre.svmp.protocol.SVMPProtocol.IntentAction.valueOf(rawValue);
+              if (value != null) {
+                bitField0_ |= 0x00000001;
+                action_ = value;
+              }
+              break;
+            }
+            case 18: {
+              org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addExtras(subBuilder.buildPartial());
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              data_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              ensureFlagsIsMutable();
+              flags_.add(input.readInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                addFlags(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 42: {
+              ensureCategoriesIsMutable();
+              categories_.add(input.readBytes());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required .svmp.IntentAction action = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.IntentAction action_ = org.mitre.svmp.protocol.SVMPProtocol.IntentAction.ACTION_VIEW;
-      /**
-       * <code>required .svmp.IntentAction action = 1;</code>
-       *
-       * <pre>
-       *Corresponds to Intent 'action' parameter, but limited to supported actions
-       * </pre>
-       */
       public boolean hasAction() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.IntentAction action = 1;</code>
-       *
-       * <pre>
-       *Corresponds to Intent 'action' parameter, but limited to supported actions
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.IntentAction getAction() {
         return action_;
       }
-      /**
-       * <code>required .svmp.IntentAction action = 1;</code>
-       *
-       * <pre>
-       *Corresponds to Intent 'action' parameter, but limited to supported actions
-       * </pre>
-       */
       public Builder setAction(org.mitre.svmp.protocol.SVMPProtocol.IntentAction value) {
         if (value == null) {
           throw new NullPointerException();
@@ -5021,20 +3307,13 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.IntentAction action = 1;</code>
-       *
-       * <pre>
-       *Corresponds to Intent 'action' parameter, but limited to supported actions
-       * </pre>
-       */
       public Builder clearAction() {
         bitField0_ = (bitField0_ & ~0x00000001);
         action_ = org.mitre.svmp.protocol.SVMPProtocol.IntentAction.ACTION_VIEW;
         
         return this;
       }
-
+      
       // repeated .svmp.Intent.Tuple extras = 2;
       private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple> extras_ =
         java.util.Collections.emptyList();
@@ -5044,44 +3323,16 @@ public final class SVMPProtocol {
           bitField0_ |= 0x00000002;
          }
       }
-
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
+      
       public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple> getExtrasList() {
         return java.util.Collections.unmodifiableList(extras_);
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public int getExtrasCount() {
         return extras_.size();
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple getExtras(int index) {
         return extras_.get(index);
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder setExtras(
           int index, org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple value) {
         if (value == null) {
@@ -5089,46 +3340,25 @@ public final class SVMPProtocol {
         }
         ensureExtrasIsMutable();
         extras_.set(index, value);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder setExtras(
           int index, org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.Builder builderForValue) {
         ensureExtrasIsMutable();
         extras_.set(index, builderForValue.build());
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder addExtras(org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple value) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureExtrasIsMutable();
         extras_.add(value);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder addExtras(
           int index, org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple value) {
         if (value == null) {
@@ -5136,137 +3366,59 @@ public final class SVMPProtocol {
         }
         ensureExtrasIsMutable();
         extras_.add(index, value);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder addExtras(
           org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.Builder builderForValue) {
         ensureExtrasIsMutable();
         extras_.add(builderForValue.build());
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder addExtras(
           int index, org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple.Builder builderForValue) {
         ensureExtrasIsMutable();
         extras_.add(index, builderForValue.build());
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder addAllExtras(
           java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.Intent.Tuple> values) {
         ensureExtrasIsMutable();
         super.addAll(values, extras_);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder clearExtras() {
         extras_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.Intent.Tuple extras = 2;</code>
-       *
-       * <pre>
-       *Encode all bundle extras as strings, and decode them later into specific data types
-       * </pre>
-       */
       public Builder removeExtras(int index) {
         ensureExtrasIsMutable();
         extras_.remove(index);
-
+        
         return this;
       }
-
+      
       // optional string data = 3;
       private java.lang.Object data_ = "";
-      /**
-       * <code>optional string data = 3;</code>
-       *
-       * <pre>
-       *Correspond to optional Intent parameters
-       * </pre>
-       */
       public boolean hasData() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>optional string data = 3;</code>
-       *
-       * <pre>
-       *Correspond to optional Intent parameters
-       * </pre>
-       */
-      public java.lang.String getData() {
+      public String getData() {
         java.lang.Object ref = data_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           data_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string data = 3;</code>
-       *
-       * <pre>
-       *Correspond to optional Intent parameters
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getDataBytes() {
-        java.lang.Object ref = data_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          data_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string data = 3;</code>
-       *
-       * <pre>
-       *Correspond to optional Intent parameters
-       * </pre>
-       */
-      public Builder setData(
-          java.lang.String value) {
+      public Builder setData(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5275,67 +3427,36 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional string data = 3;</code>
-       *
-       * <pre>
-       *Correspond to optional Intent parameters
-       * </pre>
-       */
       public Builder clearData() {
         bitField0_ = (bitField0_ & ~0x00000004);
         data_ = getDefaultInstance().getData();
         
         return this;
       }
-      /**
-       * <code>optional string data = 3;</code>
-       *
-       * <pre>
-       *Correspond to optional Intent parameters
-       * </pre>
-       */
-      public Builder setDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+      void setData(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
         data_ = value;
         
-        return this;
       }
-
+      
       // repeated int32 flags = 4;
-      private java.util.List<java.lang.Integer> flags_ = java.util.Collections.emptyList();
+      private java.util.List<java.lang.Integer> flags_ = java.util.Collections.emptyList();;
       private void ensureFlagsIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           flags_ = new java.util.ArrayList<java.lang.Integer>(flags_);
           bitField0_ |= 0x00000008;
          }
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public java.util.List<java.lang.Integer>
           getFlagsList() {
         return java.util.Collections.unmodifiableList(flags_);
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public int getFlagsCount() {
         return flags_.size();
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public int getFlags(int index) {
         return flags_.get(index);
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public Builder setFlags(
           int index, int value) {
         ensureFlagsIsMutable();
@@ -5343,18 +3464,12 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public Builder addFlags(int value) {
         ensureFlagsIsMutable();
         flags_.add(value);
         
         return this;
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public Builder addAllFlags(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureFlagsIsMutable();
@@ -5362,16 +3477,13 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>repeated int32 flags = 4;</code>
-       */
       public Builder clearFlags() {
-        flags_ = java.util.Collections.emptyList();
+        flags_ = java.util.Collections.emptyList();;
         bitField0_ = (bitField0_ & ~0x00000008);
         
         return this;
       }
-
+      
       // repeated string categories = 5;
       private com.google.protobuf.LazyStringList categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureCategoriesIsMutable() {
@@ -5380,37 +3492,18 @@ public final class SVMPProtocol {
           bitField0_ |= 0x00000010;
          }
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
-      public java.util.List<java.lang.String>
+      public java.util.List<String>
           getCategoriesList() {
         return java.util.Collections.unmodifiableList(categories_);
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
       public int getCategoriesCount() {
         return categories_.size();
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
-      public java.lang.String getCategories(int index) {
+      public String getCategories(int index) {
         return categories_.get(index);
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCategoriesBytes(int index) {
-        return categories_.getByteString(index);
-      }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
       public Builder setCategories(
-          int index, java.lang.String value) {
+          int index, String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5419,11 +3512,7 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
-      public Builder addCategories(
-          java.lang.String value) {
+      public Builder addCategories(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5432,170 +3521,434 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
       public Builder addAllCategories(
-          java.lang.Iterable<java.lang.String> values) {
+          java.lang.Iterable<String> values) {
         ensureCategoriesIsMutable();
         super.addAll(values, categories_);
         
         return this;
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
       public Builder clearCategories() {
         categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
         
         return this;
       }
-      /**
-       * <code>repeated string categories = 5;</code>
-       */
-      public Builder addCategoriesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureCategoriesIsMutable();
+      void addCategories(com.google.protobuf.ByteString value) {
+        ensureCategoriesIsMutable();
         categories_.add(value);
         
-        return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.Intent)
     }
-
+    
     static {
       defaultInstance = new Intent(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.Intent)
   }
-
+  
   public interface NotificationOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
-    // optional string contentTitle = 1;
-    /**
-     * <code>optional string contentTitle = 1;</code>
-     *
-     * <pre>
-     *All of the following correspond directly to fields in Android's Notification object,
-     *with the exception of the icon fields which directly include image data rather than references
-     * </pre>
-     */
+    
+    // required string contentTitle = 1;
     boolean hasContentTitle();
-    /**
-     * <code>optional string contentTitle = 1;</code>
-     *
-     * <pre>
-     *All of the following correspond directly to fields in Android's Notification object,
-     *with the exception of the icon fields which directly include image data rather than references
-     * </pre>
-     */
-    java.lang.String getContentTitle();
-    /**
-     * <code>optional string contentTitle = 1;</code>
-     *
-     * <pre>
-     *All of the following correspond directly to fields in Android's Notification object,
-     *with the exception of the icon fields which directly include image data rather than references
-     * </pre>
-     */
-    com.google.protobuf.ByteString
-        getContentTitleBytes();
-
-    // optional string contentText = 2;
-    /**
-     * <code>optional string contentText = 2;</code>
-     */
+    String getContentTitle();
+    
+    // required string contentText = 2;
     boolean hasContentText();
-    /**
-     * <code>optional string contentText = 2;</code>
-     */
-    java.lang.String getContentText();
-    /**
-     * <code>optional string contentText = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getContentTextBytes();
-
-    // optional bytes smallIcon = 3;
-    /**
-     * <code>optional bytes smallIcon = 3;</code>
-     */
+    String getContentText();
+    
+    // required bytes smallIcon = 3;
     boolean hasSmallIcon();
-    /**
-     * <code>optional bytes smallIcon = 3;</code>
-     */
     com.google.protobuf.ByteString getSmallIcon();
-
+    
     // optional bytes largeIcon = 4;
-    /**
-     * <code>optional bytes largeIcon = 4;</code>
-     *
-     * <pre>
-     * TODO: complete/alter this later as necessary
-     * </pre>
-     */
     boolean hasLargeIcon();
-    /**
-     * <code>optional bytes largeIcon = 4;</code>
-     *
-     * <pre>
-     * TODO: complete/alter this later as necessary
-     * </pre>
-     */
     com.google.protobuf.ByteString getLargeIcon();
   }
-  /**
-   * Protobuf type {@code svmp.Notification}
-   *
-   * <pre>
-   * C&lt;-&gt;S
-   * </pre>
-   */
   public static final class Notification extends
       com.google.protobuf.GeneratedMessageLite
       implements NotificationOrBuilder {
     // Use Notification.newBuilder() to construct.
-    private Notification(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private Notification(Builder builder) {
       super(builder);
-
     }
     private Notification(boolean noInit) {}
-
+    
     private static final Notification defaultInstance;
     public static Notification getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Notification getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private Notification(
-        com.google.protobuf.CodedInputStream input,
+    
+    private int bitField0_;
+    // required string contentTitle = 1;
+    public static final int CONTENTTITLE_FIELD_NUMBER = 1;
+    private java.lang.Object contentTitle_;
+    public boolean hasContentTitle() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getContentTitle() {
+      java.lang.Object ref = contentTitle_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          contentTitle_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getContentTitleBytes() {
+      java.lang.Object ref = contentTitle_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        contentTitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string contentText = 2;
+    public static final int CONTENTTEXT_FIELD_NUMBER = 2;
+    private java.lang.Object contentText_;
+    public boolean hasContentText() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getContentText() {
+      java.lang.Object ref = contentText_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          contentText_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getContentTextBytes() {
+      java.lang.Object ref = contentText_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        contentText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required bytes smallIcon = 3;
+    public static final int SMALLICON_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString smallIcon_;
+    public boolean hasSmallIcon() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public com.google.protobuf.ByteString getSmallIcon() {
+      return smallIcon_;
+    }
+    
+    // optional bytes largeIcon = 4;
+    public static final int LARGEICON_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString largeIcon_;
+    public boolean hasLargeIcon() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public com.google.protobuf.ByteString getLargeIcon() {
+      return largeIcon_;
+    }
+    
+    private void initFields() {
+      contentTitle_ = "";
+      contentText_ = "";
+      smallIcon_ = com.google.protobuf.ByteString.EMPTY;
+      largeIcon_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasContentTitle()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasContentText()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSmallIcon()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getContentTitleBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getContentTextBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, smallIcon_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, largeIcon_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getContentTitleBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getContentTextBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, smallIcon_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, largeIcon_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
+        com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Notification prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.Notification, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.NotificationOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.Notification.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        contentTitle_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        contentText_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        smallIcon_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        largeIcon_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.Notification getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance();
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.Notification build() {
+        org.mitre.svmp.protocol.SVMPProtocol.Notification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.Notification buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.Notification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.Notification buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.Notification result = new org.mitre.svmp.protocol.SVMPProtocol.Notification(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.contentTitle_ = contentTitle_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.contentText_ = contentText_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.smallIcon_ = smallIcon_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.largeIcon_ = largeIcon_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Notification other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance()) return this;
+        if (other.hasContentTitle()) {
+          setContentTitle(other.getContentTitle());
+        }
+        if (other.hasContentText()) {
+          setContentText(other.getContentText());
+        }
+        if (other.hasSmallIcon()) {
+          setSmallIcon(other.getSmallIcon());
+        }
+        if (other.hasLargeIcon()) {
+          setLargeIcon(other.getLargeIcon());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasContentTitle()) {
+          
+          return false;
+        }
+        if (!hasContentText()) {
+          
+          return false;
+        }
+        if (!hasSmallIcon()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              
+              return this;
             default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
               }
               break;
             }
@@ -5621,479 +3974,26 @@ public final class SVMPProtocol {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
       }
-    }
-    public static com.google.protobuf.Parser<Notification> PARSER =
-        new com.google.protobuf.AbstractParser<Notification>() {
-      public Notification parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Notification(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Notification> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // optional string contentTitle = 1;
-    public static final int CONTENTTITLE_FIELD_NUMBER = 1;
-    private java.lang.Object contentTitle_;
-    /**
-     * <code>optional string contentTitle = 1;</code>
-     *
-     * <pre>
-     *All of the following correspond directly to fields in Android's Notification object,
-     *with the exception of the icon fields which directly include image data rather than references
-     * </pre>
-     */
-    public boolean hasContentTitle() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional string contentTitle = 1;</code>
-     *
-     * <pre>
-     *All of the following correspond directly to fields in Android's Notification object,
-     *with the exception of the icon fields which directly include image data rather than references
-     * </pre>
-     */
-    public java.lang.String getContentTitle() {
-      java.lang.Object ref = contentTitle_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          contentTitle_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string contentTitle = 1;</code>
-     *
-     * <pre>
-     *All of the following correspond directly to fields in Android's Notification object,
-     *with the exception of the icon fields which directly include image data rather than references
-     * </pre>
-     */
-    public com.google.protobuf.ByteString
-        getContentTitleBytes() {
-      java.lang.Object ref = contentTitle_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        contentTitle_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional string contentText = 2;
-    public static final int CONTENTTEXT_FIELD_NUMBER = 2;
-    private java.lang.Object contentText_;
-    /**
-     * <code>optional string contentText = 2;</code>
-     */
-    public boolean hasContentText() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional string contentText = 2;</code>
-     */
-    public java.lang.String getContentText() {
-      java.lang.Object ref = contentText_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          contentText_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string contentText = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getContentTextBytes() {
-      java.lang.Object ref = contentText_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        contentText_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional bytes smallIcon = 3;
-    public static final int SMALLICON_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString smallIcon_;
-    /**
-     * <code>optional bytes smallIcon = 3;</code>
-     */
-    public boolean hasSmallIcon() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional bytes smallIcon = 3;</code>
-     */
-    public com.google.protobuf.ByteString getSmallIcon() {
-      return smallIcon_;
-    }
-
-    // optional bytes largeIcon = 4;
-    public static final int LARGEICON_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString largeIcon_;
-    /**
-     * <code>optional bytes largeIcon = 4;</code>
-     *
-     * <pre>
-     * TODO: complete/alter this later as necessary
-     * </pre>
-     */
-    public boolean hasLargeIcon() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional bytes largeIcon = 4;</code>
-     *
-     * <pre>
-     * TODO: complete/alter this later as necessary
-     * </pre>
-     */
-    public com.google.protobuf.ByteString getLargeIcon() {
-      return largeIcon_;
-    }
-
-    private void initFields() {
-      contentTitle_ = "";
-      contentText_ = "";
-      smallIcon_ = com.google.protobuf.ByteString.EMPTY;
-      largeIcon_ = com.google.protobuf.ByteString.EMPTY;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getContentTitleBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getContentTextBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, smallIcon_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, largeIcon_);
-      }
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getContentTitleBytes());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getContentTextBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, smallIcon_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, largeIcon_);
-      }
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.Notification parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Notification prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.Notification}
-     *
-     * <pre>
-     * C&lt;-&gt;S
-     * </pre>
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          org.mitre.svmp.protocol.SVMPProtocol.Notification, Builder>
-        implements org.mitre.svmp.protocol.SVMPProtocol.NotificationOrBuilder {
-      // Construct using org.mitre.svmp.protocol.SVMPProtocol.Notification.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        contentTitle_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        contentText_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        smallIcon_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        largeIcon_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.Notification getDefaultInstanceForType() {
-        return org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance();
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.Notification build() {
-        org.mitre.svmp.protocol.SVMPProtocol.Notification result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.Notification buildPartial() {
-        org.mitre.svmp.protocol.SVMPProtocol.Notification result = new org.mitre.svmp.protocol.SVMPProtocol.Notification(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.contentTitle_ = contentTitle_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.contentText_ = contentText_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.smallIcon_ = smallIcon_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.largeIcon_ = largeIcon_;
-        result.bitField0_ = to_bitField0_;
-        return result;
-      }
-
-      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Notification other) {
-        if (other == org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance()) return this;
-        if (other.hasContentTitle()) {
-          bitField0_ |= 0x00000001;
-          contentTitle_ = other.contentTitle_;
-          
-        }
-        if (other.hasContentText()) {
-          bitField0_ |= 0x00000002;
-          contentText_ = other.contentText_;
-          
-        }
-        if (other.hasSmallIcon()) {
-          setSmallIcon(other.getSmallIcon());
-        }
-        if (other.hasLargeIcon()) {
-          setLargeIcon(other.getLargeIcon());
-        }
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.Notification parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Notification) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+      
       private int bitField0_;
-
-      // optional string contentTitle = 1;
+      
+      // required string contentTitle = 1;
       private java.lang.Object contentTitle_ = "";
-      /**
-       * <code>optional string contentTitle = 1;</code>
-       *
-       * <pre>
-       *All of the following correspond directly to fields in Android's Notification object,
-       *with the exception of the icon fields which directly include image data rather than references
-       * </pre>
-       */
       public boolean hasContentTitle() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>optional string contentTitle = 1;</code>
-       *
-       * <pre>
-       *All of the following correspond directly to fields in Android's Notification object,
-       *with the exception of the icon fields which directly include image data rather than references
-       * </pre>
-       */
-      public java.lang.String getContentTitle() {
+      public String getContentTitle() {
         java.lang.Object ref = contentTitle_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           contentTitle_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string contentTitle = 1;</code>
-       *
-       * <pre>
-       *All of the following correspond directly to fields in Android's Notification object,
-       *with the exception of the icon fields which directly include image data rather than references
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getContentTitleBytes() {
-        java.lang.Object ref = contentTitle_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          contentTitle_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string contentTitle = 1;</code>
-       *
-       * <pre>
-       *All of the following correspond directly to fields in Android's Notification object,
-       *with the exception of the icon fields which directly include image data rather than references
-       * </pre>
-       */
-      public Builder setContentTitle(
-          java.lang.String value) {
+      public Builder setContentTitle(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6102,82 +4002,34 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional string contentTitle = 1;</code>
-       *
-       * <pre>
-       *All of the following correspond directly to fields in Android's Notification object,
-       *with the exception of the icon fields which directly include image data rather than references
-       * </pre>
-       */
       public Builder clearContentTitle() {
         bitField0_ = (bitField0_ & ~0x00000001);
         contentTitle_ = getDefaultInstance().getContentTitle();
         
         return this;
       }
-      /**
-       * <code>optional string contentTitle = 1;</code>
-       *
-       * <pre>
-       *All of the following correspond directly to fields in Android's Notification object,
-       *with the exception of the icon fields which directly include image data rather than references
-       * </pre>
-       */
-      public Builder setContentTitleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      void setContentTitle(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
         contentTitle_ = value;
         
-        return this;
       }
-
-      // optional string contentText = 2;
+      
+      // required string contentText = 2;
       private java.lang.Object contentText_ = "";
-      /**
-       * <code>optional string contentText = 2;</code>
-       */
       public boolean hasContentText() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional string contentText = 2;</code>
-       */
-      public java.lang.String getContentText() {
+      public String getContentText() {
         java.lang.Object ref = contentText_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           contentText_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>optional string contentText = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getContentTextBytes() {
-        java.lang.Object ref = contentText_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          contentText_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string contentText = 2;</code>
-       */
-      public Builder setContentText(
-          java.lang.String value) {
+      public Builder setContentText(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6186,46 +4038,26 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional string contentText = 2;</code>
-       */
       public Builder clearContentText() {
         bitField0_ = (bitField0_ & ~0x00000002);
         contentText_ = getDefaultInstance().getContentText();
         
         return this;
       }
-      /**
-       * <code>optional string contentText = 2;</code>
-       */
-      public Builder setContentTextBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      void setContentText(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
         contentText_ = value;
         
-        return this;
       }
-
-      // optional bytes smallIcon = 3;
+      
+      // required bytes smallIcon = 3;
       private com.google.protobuf.ByteString smallIcon_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes smallIcon = 3;</code>
-       */
       public boolean hasSmallIcon() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>optional bytes smallIcon = 3;</code>
-       */
       public com.google.protobuf.ByteString getSmallIcon() {
         return smallIcon_;
       }
-      /**
-       * <code>optional bytes smallIcon = 3;</code>
-       */
       public Builder setSmallIcon(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6235,45 +4067,21 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional bytes smallIcon = 3;</code>
-       */
       public Builder clearSmallIcon() {
         bitField0_ = (bitField0_ & ~0x00000004);
         smallIcon_ = getDefaultInstance().getSmallIcon();
         
         return this;
       }
-
+      
       // optional bytes largeIcon = 4;
       private com.google.protobuf.ByteString largeIcon_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes largeIcon = 4;</code>
-       *
-       * <pre>
-       * TODO: complete/alter this later as necessary
-       * </pre>
-       */
       public boolean hasLargeIcon() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
-      /**
-       * <code>optional bytes largeIcon = 4;</code>
-       *
-       * <pre>
-       * TODO: complete/alter this later as necessary
-       * </pre>
-       */
       public com.google.protobuf.ByteString getLargeIcon() {
         return largeIcon_;
       }
-      /**
-       * <code>optional bytes largeIcon = 4;</code>
-       *
-       * <pre>
-       * TODO: complete/alter this later as necessary
-       * </pre>
-       */
       public Builder setLargeIcon(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6283,221 +4091,378 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>optional bytes largeIcon = 4;</code>
-       *
-       * <pre>
-       * TODO: complete/alter this later as necessary
-       * </pre>
-       */
       public Builder clearLargeIcon() {
         bitField0_ = (bitField0_ & ~0x00000008);
         largeIcon_ = getDefaultInstance().getLargeIcon();
         
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.Notification)
     }
-
+    
     static {
       defaultInstance = new Notification(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.Notification)
   }
-
+  
   public interface TouchEventOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required int32 action = 1;
-    /**
-     * <code>required int32 action = 1;</code>
-     */
     boolean hasAction();
-    /**
-     * <code>required int32 action = 1;</code>
-     */
     int getAction();
-
+    
     // repeated .svmp.TouchEvent.PointerCoords items = 2;
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> 
         getItemsList();
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getItems(int index);
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     int getItemsCount();
   }
-  /**
-   * Protobuf type {@code svmp.TouchEvent}
-   *
-   * <pre>
-   * C-&gt;S
-   * </pre>
-   */
   public static final class TouchEvent extends
       com.google.protobuf.GeneratedMessageLite
       implements TouchEventOrBuilder {
     // Use TouchEvent.newBuilder() to construct.
-    private TouchEvent(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private TouchEvent(Builder builder) {
       super(builder);
-
     }
     private TouchEvent(boolean noInit) {}
-
+    
     private static final TouchEvent defaultInstance;
     public static TouchEvent getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public TouchEvent getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private TouchEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              action_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                items_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              items_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.PARSER, extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          items_ = java.util.Collections.unmodifiableList(items_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<TouchEvent> PARSER =
-        new com.google.protobuf.AbstractParser<TouchEvent>() {
-      public TouchEvent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TouchEvent(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TouchEvent> getParserForType() {
-      return PARSER;
-    }
-
+    
     public interface PointerCoordsOrBuilder
         extends com.google.protobuf.MessageLiteOrBuilder {
-
+      
       // required int32 id = 1;
-      /**
-       * <code>required int32 id = 1;</code>
-       */
       boolean hasId();
-      /**
-       * <code>required int32 id = 1;</code>
-       */
       int getId();
-
+      
       // required float x = 2;
-      /**
-       * <code>required float x = 2;</code>
-       */
       boolean hasX();
-      /**
-       * <code>required float x = 2;</code>
-       */
       float getX();
-
+      
       // required float y = 3;
-      /**
-       * <code>required float y = 3;</code>
-       */
       boolean hasY();
-      /**
-       * <code>required float y = 3;</code>
-       */
       float getY();
     }
-    /**
-     * Protobuf type {@code svmp.TouchEvent.PointerCoords}
-     */
     public static final class PointerCoords extends
         com.google.protobuf.GeneratedMessageLite
         implements PointerCoordsOrBuilder {
       // Use PointerCoords.newBuilder() to construct.
-      private PointerCoords(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      private PointerCoords(Builder builder) {
         super(builder);
-
       }
       private PointerCoords(boolean noInit) {}
-
+      
       private static final PointerCoords defaultInstance;
       public static PointerCoords getDefaultInstance() {
         return defaultInstance;
       }
-
+      
       public PointerCoords getDefaultInstanceForType() {
         return defaultInstance;
       }
-
-      private PointerCoords(
-          com.google.protobuf.CodedInputStream input,
+      
+      private int bitField0_;
+      // required int32 id = 1;
+      public static final int ID_FIELD_NUMBER = 1;
+      private int id_;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      
+      // required float x = 2;
+      public static final int X_FIELD_NUMBER = 2;
+      private float x_;
+      public boolean hasX() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public float getX() {
+        return x_;
+      }
+      
+      // required float y = 3;
+      public static final int Y_FIELD_NUMBER = 3;
+      private float y_;
+      public boolean hasY() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public float getY() {
+        return y_;
+      }
+      
+      private void initFields() {
+        id_ = 0;
+        x_ = 0F;
+        y_ = 0F;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+        
+        if (!hasId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasX()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasY()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+      
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeInt32(1, id_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeFloat(2, x_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeFloat(3, y_);
+        }
+      }
+      
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+      
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, id_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(2, x_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(3, y_);
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+      
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+      
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data).buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
+          com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
-        int mutable_bitField0_ = 0;
-        try {
-          boolean done = false;
-          while (!done) {
+        return newBuilder().mergeFrom(data, extensionRegistry)
+                 .buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data).buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data, extensionRegistry)
+                 .buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input).buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input, extensionRegistry)
+                 .buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        Builder builder = newBuilder();
+        if (builder.mergeDelimitedFrom(input)) {
+          return builder.buildParsed();
+        } else {
+          return null;
+        }
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Builder builder = newBuilder();
+        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+          return builder.buildParsed();
+        } else {
+          return null;
+        }
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input).buildParsed();
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input, extensionRegistry)
+                 .buildParsed();
+      }
+      
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+      
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords, Builder>
+          implements org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoordsOrBuilder {
+        // Construct using org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+        
+        private void maybeForceBuilderInitialization() {
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+        
+        public Builder clear() {
+          super.clear();
+          id_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          x_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          y_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          return this;
+        }
+        
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+        
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getDefaultInstanceForType() {
+          return org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.getDefaultInstance();
+        }
+        
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords build() {
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+        
+        private org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords buildParsed()
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(
+              result).asInvalidProtocolBufferException();
+          }
+          return result;
+        }
+        
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords buildPartial() {
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords result = new org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.id_ = id_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.x_ = x_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.y_ = y_;
+          result.bitField0_ = to_bitField0_;
+          return result;
+        }
+        
+        public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords other) {
+          if (other == org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.getDefaultInstance()) return this;
+          if (other.hasId()) {
+            setId(other.getId());
+          }
+          if (other.hasX()) {
+            setX(other.getX());
+          }
+          if (other.hasY()) {
+            setY(other.getY());
+          }
+          return this;
+        }
+        
+        public final boolean isInitialized() {
+          if (!hasId()) {
+            
+            return false;
+          }
+          if (!hasX()) {
+            
+            return false;
+          }
+          if (!hasY()) {
+            
+            return false;
+          }
+          return true;
+        }
+        
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          while (true) {
             int tag = input.readTag();
             switch (tag) {
               case 0:
-                done = true;
-                break;
+                
+                return this;
               default: {
-                if (!parseUnknownField(input,
-                                       extensionRegistry, tag)) {
-                  done = true;
+                if (!parseUnknownField(input, extensionRegistry, tag)) {
+                  
+                  return this;
                 }
                 break;
               }
@@ -6518,485 +4483,116 @@ public final class SVMPProtocol {
               }
             }
           }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
-        } finally {
-          makeExtensionsImmutable();
         }
-      }
-      public static com.google.protobuf.Parser<PointerCoords> PARSER =
-          new com.google.protobuf.AbstractParser<PointerCoords>() {
-        public PointerCoords parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PointerCoords(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<PointerCoords> getParserForType() {
-        return PARSER;
-      }
-
-      private int bitField0_;
-      // required int32 id = 1;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
-      /**
-       * <code>required int32 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required int32 id = 1;</code>
-       */
-      public int getId() {
-        return id_;
-      }
-
-      // required float x = 2;
-      public static final int X_FIELD_NUMBER = 2;
-      private float x_;
-      /**
-       * <code>required float x = 2;</code>
-       */
-      public boolean hasX() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required float x = 2;</code>
-       */
-      public float getX() {
-        return x_;
-      }
-
-      // required float y = 3;
-      public static final int Y_FIELD_NUMBER = 3;
-      private float y_;
-      /**
-       * <code>required float y = 3;</code>
-       */
-      public boolean hasY() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required float y = 3;</code>
-       */
-      public float getY() {
-        return y_;
-      }
-
-      private void initFields() {
-        id_ = 0;
-        x_ = 0F;
-        y_ = 0F;
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-
-        if (!hasId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasX()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasY()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeInt32(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeFloat(2, x_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeFloat(3, y_);
-        }
-      }
-
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(2, x_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(3, y_);
-        }
-        memoizedSerializedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-
-      /**
-       * Protobuf type {@code svmp.TouchEvent.PointerCoords}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords, Builder>
-          implements org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoordsOrBuilder {
-        // Construct using org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-
-        public Builder clear() {
-          super.clear();
-          id_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          x_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          y_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-
-        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getDefaultInstanceForType() {
-          return org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.getDefaultInstance();
-        }
-
-        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords build() {
-          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords buildPartial() {
-          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords result = new org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.id_ = id_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.x_ = x_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.y_ = y_;
-          result.bitField0_ = to_bitField0_;
-          return result;
-        }
-
-        public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords other) {
-          if (other == org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
-          }
-          if (other.hasX()) {
-            setX(other.getX());
-          }
-          if (other.hasY()) {
-            setY(other.getY());
-          }
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          if (!hasId()) {
-            
-            return false;
-          }
-          if (!hasX()) {
-            
-            return false;
-          }
-          if (!hasY()) {
-            
-            return false;
-          }
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
+        
         private int bitField0_;
-
+        
         // required int32 id = 1;
         private int id_ ;
-        /**
-         * <code>required int32 id = 1;</code>
-         */
         public boolean hasId() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-        /**
-         * <code>required int32 id = 1;</code>
-         */
         public int getId() {
           return id_;
         }
-        /**
-         * <code>required int32 id = 1;</code>
-         */
         public Builder setId(int value) {
           bitField0_ |= 0x00000001;
           id_ = value;
           
           return this;
         }
-        /**
-         * <code>required int32 id = 1;</code>
-         */
         public Builder clearId() {
           bitField0_ = (bitField0_ & ~0x00000001);
           id_ = 0;
           
           return this;
         }
-
+        
         // required float x = 2;
         private float x_ ;
-        /**
-         * <code>required float x = 2;</code>
-         */
         public boolean hasX() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
-        /**
-         * <code>required float x = 2;</code>
-         */
         public float getX() {
           return x_;
         }
-        /**
-         * <code>required float x = 2;</code>
-         */
         public Builder setX(float value) {
           bitField0_ |= 0x00000002;
           x_ = value;
           
           return this;
         }
-        /**
-         * <code>required float x = 2;</code>
-         */
         public Builder clearX() {
           bitField0_ = (bitField0_ & ~0x00000002);
           x_ = 0F;
           
           return this;
         }
-
+        
         // required float y = 3;
         private float y_ ;
-        /**
-         * <code>required float y = 3;</code>
-         */
         public boolean hasY() {
           return ((bitField0_ & 0x00000004) == 0x00000004);
         }
-        /**
-         * <code>required float y = 3;</code>
-         */
         public float getY() {
           return y_;
         }
-        /**
-         * <code>required float y = 3;</code>
-         */
         public Builder setY(float value) {
           bitField0_ |= 0x00000004;
           y_ = value;
           
           return this;
         }
-        /**
-         * <code>required float y = 3;</code>
-         */
         public Builder clearY() {
           bitField0_ = (bitField0_ & ~0x00000004);
           y_ = 0F;
           
           return this;
         }
-
+        
         // @@protoc_insertion_point(builder_scope:svmp.TouchEvent.PointerCoords)
       }
-
+      
       static {
         defaultInstance = new PointerCoords(true);
         defaultInstance.initFields();
       }
-
+      
       // @@protoc_insertion_point(class_scope:svmp.TouchEvent.PointerCoords)
     }
-
+    
     private int bitField0_;
     // required int32 action = 1;
     public static final int ACTION_FIELD_NUMBER = 1;
     private int action_;
-    /**
-     * <code>required int32 action = 1;</code>
-     */
     public boolean hasAction() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required int32 action = 1;</code>
-     */
     public int getAction() {
       return action_;
     }
-
+    
     // repeated .svmp.TouchEvent.PointerCoords items = 2;
     public static final int ITEMS_FIELD_NUMBER = 2;
     private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> items_;
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> getItemsList() {
       return items_;
     }
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoordsOrBuilder> 
         getItemsOrBuilderList() {
       return items_;
     }
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     public int getItemsCount() {
       return items_.size();
     }
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getItems(int index) {
       return items_.get(index);
     }
-    /**
-     * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoordsOrBuilder getItemsOrBuilder(
         int index) {
       return items_.get(index);
     }
-
+    
     private void initFields() {
       action_ = 0;
       items_ = java.util.Collections.emptyList();
@@ -7005,7 +4601,7 @@ public final class SVMPProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasAction()) {
         memoizedIsInitialized = 0;
         return false;
@@ -7019,7 +4615,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -7030,12 +4626,12 @@ public final class SVMPProtocol {
         output.writeMessage(2, items_.get(i));
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7048,81 +4644,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.TouchEvent}
-     *
-     * <pre>
-     * C-&gt;S
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.TouchEvent, Builder>
@@ -7131,13 +4734,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         action_ = 0;
@@ -7146,15 +4749,15 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent build() {
         org.mitre.svmp.protocol.SVMPProtocol.TouchEvent result = buildPartial();
         if (!result.isInitialized()) {
@@ -7162,7 +4765,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.TouchEvent buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.TouchEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.TouchEvent result = new org.mitre.svmp.protocol.SVMPProtocol.TouchEvent(this);
         int from_bitField0_ = bitField0_;
@@ -7179,7 +4792,7 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.getDefaultInstance()) return this;
         if (other.hasAction()) {
@@ -7197,7 +4810,7 @@ public final class SVMPProtocol {
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasAction()) {
           
@@ -7211,59 +4824,62 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.TouchEvent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.TouchEvent) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              action_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder subBuilder = org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addItems(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required int32 action = 1;
       private int action_ ;
-      /**
-       * <code>required int32 action = 1;</code>
-       */
       public boolean hasAction() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required int32 action = 1;</code>
-       */
       public int getAction() {
         return action_;
       }
-      /**
-       * <code>required int32 action = 1;</code>
-       */
       public Builder setAction(int value) {
         bitField0_ |= 0x00000001;
         action_ = value;
         
         return this;
       }
-      /**
-       * <code>required int32 action = 1;</code>
-       */
       public Builder clearAction() {
         bitField0_ = (bitField0_ & ~0x00000001);
         action_ = 0;
         
         return this;
       }
-
+      
       // repeated .svmp.TouchEvent.PointerCoords items = 2;
       private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> items_ =
         java.util.Collections.emptyList();
@@ -7273,28 +4889,16 @@ public final class SVMPProtocol {
           bitField0_ |= 0x00000002;
          }
       }
-
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
+      
       public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> getItemsList() {
         return java.util.Collections.unmodifiableList(items_);
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public int getItemsCount() {
         return items_.size();
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getItems(int index) {
         return items_.get(index);
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder setItems(
           int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords value) {
         if (value == null) {
@@ -7302,34 +4906,25 @@ public final class SVMPProtocol {
         }
         ensureItemsIsMutable();
         items_.set(index, value);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder setItems(
           int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder builderForValue) {
         ensureItemsIsMutable();
         items_.set(index, builderForValue.build());
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder addItems(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords value) {
         if (value == null) {
           throw new NullPointerException();
         }
         ensureItemsIsMutable();
         items_.add(value);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder addItems(
           int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords value) {
         if (value == null) {
@@ -7337,208 +4932,104 @@ public final class SVMPProtocol {
         }
         ensureItemsIsMutable();
         items_.add(index, value);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder addItems(
           org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder builderForValue) {
         ensureItemsIsMutable();
         items_.add(builderForValue.build());
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder addItems(
           int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder builderForValue) {
         ensureItemsIsMutable();
         items_.add(index, builderForValue.build());
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder addAllItems(
           java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> values) {
         ensureItemsIsMutable();
         super.addAll(values, items_);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder clearItems() {
         items_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
-
+        
         return this;
       }
-      /**
-       * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
-       */
       public Builder removeItems(int index) {
         ensureItemsIsMutable();
         items_.remove(index);
-
+        
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.TouchEvent)
     }
-
+    
     static {
       defaultInstance = new TouchEvent(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.TouchEvent)
   }
-
+  
   public interface ScreenInfoOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required int32 x = 1;
-    /**
-     * <code>required int32 x = 1;</code>
-     */
     boolean hasX();
-    /**
-     * <code>required int32 x = 1;</code>
-     */
     int getX();
-
+    
     // required int32 y = 2;
-    /**
-     * <code>required int32 y = 2;</code>
-     */
     boolean hasY();
-    /**
-     * <code>required int32 y = 2;</code>
-     */
     int getY();
   }
-  /**
-   * Protobuf type {@code svmp.ScreenInfo}
-   *
-   * <pre>
-   * S-&gt;C
-   * </pre>
-   */
   public static final class ScreenInfo extends
       com.google.protobuf.GeneratedMessageLite
       implements ScreenInfoOrBuilder {
     // Use ScreenInfo.newBuilder() to construct.
-    private ScreenInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private ScreenInfo(Builder builder) {
       super(builder);
-
     }
     private ScreenInfo(boolean noInit) {}
-
+    
     private static final ScreenInfo defaultInstance;
     public static ScreenInfo getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public ScreenInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private ScreenInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              x_ = input.readInt32();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              y_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<ScreenInfo> PARSER =
-        new com.google.protobuf.AbstractParser<ScreenInfo>() {
-      public ScreenInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScreenInfo(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ScreenInfo> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // required int32 x = 1;
     public static final int X_FIELD_NUMBER = 1;
     private int x_;
-    /**
-     * <code>required int32 x = 1;</code>
-     */
     public boolean hasX() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required int32 x = 1;</code>
-     */
     public int getX() {
       return x_;
     }
-
+    
     // required int32 y = 2;
     public static final int Y_FIELD_NUMBER = 2;
     private int y_;
-    /**
-     * <code>required int32 y = 2;</code>
-     */
     public boolean hasY() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>required int32 y = 2;</code>
-     */
     public int getY() {
       return y_;
     }
-
+    
     private void initFields() {
       x_ = 0;
       y_ = 0;
@@ -7547,7 +5038,7 @@ public final class SVMPProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasX()) {
         memoizedIsInitialized = 0;
         return false;
@@ -7559,7 +5050,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -7570,12 +5061,12 @@ public final class SVMPProtocol {
         output.writeInt32(2, y_);
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -7588,81 +5079,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.ScreenInfo}
-     *
-     * <pre>
-     * S-&gt;C
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo, Builder>
@@ -7671,13 +5169,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         x_ = 0;
@@ -7686,15 +5184,15 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo build() {
         org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -7702,7 +5200,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo result = new org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo(this);
         int from_bitField0_ = bitField0_;
@@ -7718,7 +5226,7 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance()) return this;
         if (other.hasX()) {
@@ -7729,7 +5237,7 @@ public final class SVMPProtocol {
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasX()) {
           
@@ -7741,349 +5249,187 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              x_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              y_ = input.readInt32();
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required int32 x = 1;
       private int x_ ;
-      /**
-       * <code>required int32 x = 1;</code>
-       */
       public boolean hasX() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required int32 x = 1;</code>
-       */
       public int getX() {
         return x_;
       }
-      /**
-       * <code>required int32 x = 1;</code>
-       */
       public Builder setX(int value) {
         bitField0_ |= 0x00000001;
         x_ = value;
         
         return this;
       }
-      /**
-       * <code>required int32 x = 1;</code>
-       */
       public Builder clearX() {
         bitField0_ = (bitField0_ & ~0x00000001);
         x_ = 0;
         
         return this;
       }
-
+      
       // required int32 y = 2;
       private int y_ ;
-      /**
-       * <code>required int32 y = 2;</code>
-       */
       public boolean hasY() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>required int32 y = 2;</code>
-       */
       public int getY() {
         return y_;
       }
-      /**
-       * <code>required int32 y = 2;</code>
-       */
       public Builder setY(int value) {
         bitField0_ |= 0x00000002;
         y_ = value;
         
         return this;
       }
-      /**
-       * <code>required int32 y = 2;</code>
-       */
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000002);
         y_ = 0;
         
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.ScreenInfo)
     }
-
+    
     static {
       defaultInstance = new ScreenInfo(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.ScreenInfo)
   }
-
+  
   public interface SensorEventOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.SensorType type = 1;
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     boolean hasType();
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.SensorType getType();
-
+    
     // required int32 accuracy = 2;
-    /**
-     * <code>required int32 accuracy = 2;</code>
-     */
     boolean hasAccuracy();
-    /**
-     * <code>required int32 accuracy = 2;</code>
-     */
     int getAccuracy();
-
+    
     // required int64 timestamp = 3;
-    /**
-     * <code>required int64 timestamp = 3;</code>
-     */
     boolean hasTimestamp();
-    /**
-     * <code>required int64 timestamp = 3;</code>
-     */
     long getTimestamp();
-
+    
     // repeated float values = 4;
-    /**
-     * <code>repeated float values = 4;</code>
-     */
     java.util.List<java.lang.Float> getValuesList();
-    /**
-     * <code>repeated float values = 4;</code>
-     */
     int getValuesCount();
-    /**
-     * <code>repeated float values = 4;</code>
-     */
     float getValues(int index);
   }
-  /**
-   * Protobuf type {@code svmp.SensorEvent}
-   *
-   * <pre>
-   * C-&gt;S: Sensor update event
-   * </pre>
-   */
   public static final class SensorEvent extends
       com.google.protobuf.GeneratedMessageLite
       implements SensorEventOrBuilder {
     // Use SensorEvent.newBuilder() to construct.
-    private SensorEvent(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private SensorEvent(Builder builder) {
       super(builder);
-
     }
     private SensorEvent(boolean noInit) {}
-
+    
     private static final SensorEvent defaultInstance;
     public static SensorEvent getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public SensorEvent getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private SensorEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              org.mitre.svmp.protocol.SVMPProtocol.SensorType value = org.mitre.svmp.protocol.SVMPProtocol.SensorType.valueOf(rawValue);
-              if (value != null) {
-                bitField0_ |= 0x00000001;
-                type_ = value;
-              }
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              accuracy_ = input.readInt32();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              timestamp_ = input.readInt64();
-              break;
-            }
-            case 37: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                values_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              values_.add(input.readFloat());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                values_ = new java.util.ArrayList<java.lang.Float>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                values_.add(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
-        }
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<SensorEvent> PARSER =
-        new com.google.protobuf.AbstractParser<SensorEvent>() {
-      public SensorEvent parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SensorEvent(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SensorEvent> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // required .svmp.SensorType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
     private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_;
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
       return type_;
     }
-
+    
     // required int32 accuracy = 2;
     public static final int ACCURACY_FIELD_NUMBER = 2;
     private int accuracy_;
-    /**
-     * <code>required int32 accuracy = 2;</code>
-     */
     public boolean hasAccuracy() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>required int32 accuracy = 2;</code>
-     */
     public int getAccuracy() {
       return accuracy_;
     }
-
+    
     // required int64 timestamp = 3;
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
     private long timestamp_;
-    /**
-     * <code>required int64 timestamp = 3;</code>
-     */
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
-    /**
-     * <code>required int64 timestamp = 3;</code>
-     */
     public long getTimestamp() {
       return timestamp_;
     }
-
+    
     // repeated float values = 4;
     public static final int VALUES_FIELD_NUMBER = 4;
     private java.util.List<java.lang.Float> values_;
-    /**
-     * <code>repeated float values = 4;</code>
-     */
     public java.util.List<java.lang.Float>
         getValuesList() {
       return values_;
     }
-    /**
-     * <code>repeated float values = 4;</code>
-     */
     public int getValuesCount() {
       return values_.size();
     }
-    /**
-     * <code>repeated float values = 4;</code>
-     */
     public float getValues(int index) {
       return values_.get(index);
     }
-
+    
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
       accuracy_ = 0;
       timestamp_ = 0L;
-      values_ = java.util.Collections.emptyList();
+      values_ = java.util.Collections.emptyList();;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasType()) {
         memoizedIsInitialized = 0;
         return false;
@@ -8099,7 +5445,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -8116,12 +5462,12 @@ public final class SVMPProtocol {
         output.writeFloat(4, values_.get(i));
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -8144,81 +5490,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.SensorEvent prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.SensorEvent}
-     *
-     * <pre>
-     * C-&gt;S: Sensor update event
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.SensorEvent, Builder>
@@ -8227,13 +5580,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
@@ -8242,19 +5595,19 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         timestamp_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
-        values_ = java.util.Collections.emptyList();
+        values_ = java.util.Collections.emptyList();;
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.SensorEvent getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.SensorEvent build() {
         org.mitre.svmp.protocol.SVMPProtocol.SensorEvent result = buildPartial();
         if (!result.isInitialized()) {
@@ -8262,7 +5615,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.SensorEvent buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.SensorEvent buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.SensorEvent result = new org.mitre.svmp.protocol.SVMPProtocol.SensorEvent(this);
         int from_bitField0_ = bitField0_;
@@ -8287,7 +5650,7 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.SensorEvent other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.SensorEvent.getDefaultInstance()) return this;
         if (other.hasType()) {
@@ -8311,7 +5674,7 @@ public final class SVMPProtocol {
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasType()) {
           
@@ -8327,43 +5690,71 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorEvent parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.SensorEvent) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.mitre.svmp.protocol.SVMPProtocol.SensorType value = org.mitre.svmp.protocol.SVMPProtocol.SensorType.valueOf(rawValue);
+              if (value != null) {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              accuracy_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 37: {
+              ensureValuesIsMutable();
+              values_.add(input.readFloat());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                addValues(input.readFloat());
+              }
+              input.popLimit(limit);
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required .svmp.SensorType type = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
         return type_;
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.SensorType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -8373,112 +5764,73 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
         
         return this;
       }
-
+      
       // required int32 accuracy = 2;
       private int accuracy_ ;
-      /**
-       * <code>required int32 accuracy = 2;</code>
-       */
       public boolean hasAccuracy() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>required int32 accuracy = 2;</code>
-       */
       public int getAccuracy() {
         return accuracy_;
       }
-      /**
-       * <code>required int32 accuracy = 2;</code>
-       */
       public Builder setAccuracy(int value) {
         bitField0_ |= 0x00000002;
         accuracy_ = value;
         
         return this;
       }
-      /**
-       * <code>required int32 accuracy = 2;</code>
-       */
       public Builder clearAccuracy() {
         bitField0_ = (bitField0_ & ~0x00000002);
         accuracy_ = 0;
         
         return this;
       }
-
+      
       // required int64 timestamp = 3;
       private long timestamp_ ;
-      /**
-       * <code>required int64 timestamp = 3;</code>
-       */
       public boolean hasTimestamp() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
-      /**
-       * <code>required int64 timestamp = 3;</code>
-       */
       public long getTimestamp() {
         return timestamp_;
       }
-      /**
-       * <code>required int64 timestamp = 3;</code>
-       */
       public Builder setTimestamp(long value) {
         bitField0_ |= 0x00000004;
         timestamp_ = value;
         
         return this;
       }
-      /**
-       * <code>required int64 timestamp = 3;</code>
-       */
       public Builder clearTimestamp() {
         bitField0_ = (bitField0_ & ~0x00000004);
         timestamp_ = 0L;
         
         return this;
       }
-
+      
       // repeated float values = 4;
-      private java.util.List<java.lang.Float> values_ = java.util.Collections.emptyList();
+      private java.util.List<java.lang.Float> values_ = java.util.Collections.emptyList();;
       private void ensureValuesIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           values_ = new java.util.ArrayList<java.lang.Float>(values_);
           bitField0_ |= 0x00000008;
          }
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public java.util.List<java.lang.Float>
           getValuesList() {
         return java.util.Collections.unmodifiableList(values_);
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public int getValuesCount() {
         return values_.size();
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public float getValues(int index) {
         return values_.get(index);
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public Builder setValues(
           int index, float value) {
         ensureValuesIsMutable();
@@ -8486,18 +5838,12 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public Builder addValues(float value) {
         ensureValuesIsMutable();
         values_.add(value);
         
         return this;
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public Builder addAllValues(
           java.lang.Iterable<? extends java.lang.Float> values) {
         ensureValuesIsMutable();
@@ -8505,102 +5851,300 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>repeated float values = 4;</code>
-       */
       public Builder clearValues() {
-        values_ = java.util.Collections.emptyList();
+        values_ = java.util.Collections.emptyList();;
         bitField0_ = (bitField0_ & ~0x00000008);
         
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.SensorEvent)
     }
-
+    
     static {
       defaultInstance = new SensorEvent(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.SensorEvent)
   }
-
+  
   public interface SensorSubscribeOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.SensorType type = 1;
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     boolean hasType();
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.SensorType getType();
-
+    
     // optional int32 frequency = 2;
-    /**
-     * <code>optional int32 frequency = 2;</code>
-     *
-     * <pre>
-     * update frequency in Hz
-     * </pre>
-     */
     boolean hasFrequency();
-    /**
-     * <code>optional int32 frequency = 2;</code>
-     *
-     * <pre>
-     * update frequency in Hz
-     * </pre>
-     */
     int getFrequency();
   }
-  /**
-   * Protobuf type {@code svmp.SensorSubscribe}
-   *
-   * <pre>
-   * S-&gt;C: Sensor subscribe request, or update existing subscription
-   * </pre>
-   */
   public static final class SensorSubscribe extends
       com.google.protobuf.GeneratedMessageLite
       implements SensorSubscribeOrBuilder {
     // Use SensorSubscribe.newBuilder() to construct.
-    private SensorSubscribe(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private SensorSubscribe(Builder builder) {
       super(builder);
-
     }
     private SensorSubscribe(boolean noInit) {}
-
+    
     private static final SensorSubscribe defaultInstance;
     public static SensorSubscribe getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public SensorSubscribe getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private SensorSubscribe(
-        com.google.protobuf.CodedInputStream input,
+    
+    private int bitField0_;
+    // required .svmp.SensorType type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_;
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
+      return type_;
+    }
+    
+    // optional int32 frequency = 2;
+    public static final int FREQUENCY_FIELD_NUMBER = 2;
+    private int frequency_;
+    public boolean hasFrequency() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getFrequency() {
+      return frequency_;
+    }
+    
+    private void initFields() {
+      type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
+      frequency_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, frequency_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, frequency_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
+        com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribeOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        frequency_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe.getDefaultInstance();
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe build() {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe result = new org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.frequency_ = frequency_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasFrequency()) {
+          setFrequency(other.getFrequency());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              
+              return this;
             default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
               }
               break;
             }
@@ -8620,302 +6164,18 @@ public final class SVMPProtocol {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
       }
-    }
-    public static com.google.protobuf.Parser<SensorSubscribe> PARSER =
-        new com.google.protobuf.AbstractParser<SensorSubscribe>() {
-      public SensorSubscribe parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SensorSubscribe(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SensorSubscribe> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required .svmp.SensorType type = 1;
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_;
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
-    public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
-      return type_;
-    }
-
-    // optional int32 frequency = 2;
-    public static final int FREQUENCY_FIELD_NUMBER = 2;
-    private int frequency_;
-    /**
-     * <code>optional int32 frequency = 2;</code>
-     *
-     * <pre>
-     * update frequency in Hz
-     * </pre>
-     */
-    public boolean hasFrequency() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional int32 frequency = 2;</code>
-     *
-     * <pre>
-     * update frequency in Hz
-     * </pre>
-     */
-    public int getFrequency() {
-      return frequency_;
-    }
-
-    private void initFields() {
-      type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-      frequency_ = 0;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, frequency_);
-      }
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, frequency_);
-      }
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.SensorSubscribe}
-     *
-     * <pre>
-     * S-&gt;C: Sensor subscribe request, or update existing subscription
-     * </pre>
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe, Builder>
-        implements org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribeOrBuilder {
-      // Construct using org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        frequency_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe getDefaultInstanceForType() {
-        return org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe.getDefaultInstance();
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe build() {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe buildPartial() {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe result = new org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.frequency_ = frequency_;
-        result.bitField0_ = to_bitField0_;
-        return result;
-      }
-
-      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe other) {
-        if (other == org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe.getDefaultInstance()) return this;
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        if (other.hasFrequency()) {
-          setFrequency(other.getFrequency());
-        }
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasType()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.SensorSubscribe) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+      
       private int bitField0_;
-
+      
       // required .svmp.SensorType type = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
         return type_;
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.SensorType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -8925,133 +6185,290 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
         
         return this;
       }
-
+      
       // optional int32 frequency = 2;
       private int frequency_ ;
-      /**
-       * <code>optional int32 frequency = 2;</code>
-       *
-       * <pre>
-       * update frequency in Hz
-       * </pre>
-       */
       public boolean hasFrequency() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>optional int32 frequency = 2;</code>
-       *
-       * <pre>
-       * update frequency in Hz
-       * </pre>
-       */
       public int getFrequency() {
         return frequency_;
       }
-      /**
-       * <code>optional int32 frequency = 2;</code>
-       *
-       * <pre>
-       * update frequency in Hz
-       * </pre>
-       */
       public Builder setFrequency(int value) {
         bitField0_ |= 0x00000002;
         frequency_ = value;
         
         return this;
       }
-      /**
-       * <code>optional int32 frequency = 2;</code>
-       *
-       * <pre>
-       * update frequency in Hz
-       * </pre>
-       */
       public Builder clearFrequency() {
         bitField0_ = (bitField0_ & ~0x00000002);
         frequency_ = 0;
         
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.SensorSubscribe)
     }
-
+    
     static {
       defaultInstance = new SensorSubscribe(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.SensorSubscribe)
   }
-
+  
   public interface SensorUnsubscribeOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required .svmp.SensorType type = 1;
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     boolean hasType();
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
     org.mitre.svmp.protocol.SVMPProtocol.SensorType getType();
   }
-  /**
-   * Protobuf type {@code svmp.SensorUnsubscribe}
-   *
-   * <pre>
-   * S-&gt;C: Unsubscribe from sensor update feed
-   * </pre>
-   */
   public static final class SensorUnsubscribe extends
       com.google.protobuf.GeneratedMessageLite
       implements SensorUnsubscribeOrBuilder {
     // Use SensorUnsubscribe.newBuilder() to construct.
-    private SensorUnsubscribe(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private SensorUnsubscribe(Builder builder) {
       super(builder);
-
     }
     private SensorUnsubscribe(boolean noInit) {}
-
+    
     private static final SensorUnsubscribe defaultInstance;
     public static SensorUnsubscribe getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public SensorUnsubscribe getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private SensorUnsubscribe(
-        com.google.protobuf.CodedInputStream input,
+    
+    private int bitField0_;
+    // required .svmp.SensorType type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_;
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
+      return type_;
+    }
+    
+    private void initFields() {
+      type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
+        com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribeOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe.getDefaultInstance();
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe build() {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe result = new org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              
+              return this;
             default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
               }
               break;
             }
@@ -9066,261 +6483,18 @@ public final class SVMPProtocol {
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
       }
-    }
-    public static com.google.protobuf.Parser<SensorUnsubscribe> PARSER =
-        new com.google.protobuf.AbstractParser<SensorUnsubscribe>() {
-      public SensorUnsubscribe parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SensorUnsubscribe(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SensorUnsubscribe> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    // required .svmp.SensorType type = 1;
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_;
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>required .svmp.SensorType type = 1;</code>
-     */
-    public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
-      return type_;
-    }
-
-    private void initFields() {
-      type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-
-      if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
-      }
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
-      }
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.SensorUnsubscribe}
-     *
-     * <pre>
-     * S-&gt;C: Unsubscribe from sensor update feed
-     * </pre>
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe, Builder>
-        implements org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribeOrBuilder {
-      // Construct using org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe getDefaultInstanceForType() {
-        return org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe.getDefaultInstance();
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe build() {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe buildPartial() {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe result = new org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.type_ = type_;
-        result.bitField0_ = to_bitField0_;
-        return result;
-      }
-
-      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe other) {
-        if (other == org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe.getDefaultInstance()) return this;
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        if (!hasType()) {
-          
-          return false;
-        }
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.SensorUnsubscribe) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
+      
       private int bitField0_;
-
+      
       // required .svmp.SensorType type = 1;
       private org.mitre.svmp.protocol.SVMPProtocol.SensorType type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public org.mitre.svmp.protocol.SVMPProtocol.SensorType getType() {
         return type_;
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.SensorType value) {
         if (value == null) {
           throw new NullPointerException();
@@ -9330,202 +6504,152 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required .svmp.SensorType type = 1;</code>
-       */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
         type_ = org.mitre.svmp.protocol.SVMPProtocol.SensorType.ACCELEROMETER;
         
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.SensorUnsubscribe)
     }
-
+    
     static {
       defaultInstance = new SensorUnsubscribe(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.SensorUnsubscribe)
   }
-
+  
   public interface LocationUpdateOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
   }
-  /**
-   * Protobuf type {@code svmp.LocationUpdate}
-   *
-   * <pre>
-   * C-&gt;S: Location update event
-   * </pre>
-   */
   public static final class LocationUpdate extends
       com.google.protobuf.GeneratedMessageLite
       implements LocationUpdateOrBuilder {
     // Use LocationUpdate.newBuilder() to construct.
-    private LocationUpdate(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private LocationUpdate(Builder builder) {
       super(builder);
-
     }
     private LocationUpdate(boolean noInit) {}
-
+    
     private static final LocationUpdate defaultInstance;
     public static LocationUpdate getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public LocationUpdate getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private LocationUpdate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<LocationUpdate> PARSER =
-        new com.google.protobuf.AbstractParser<LocationUpdate>() {
-      public LocationUpdate parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LocationUpdate(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LocationUpdate> getParserForType() {
-      return PARSER;
-    }
-
+    
     private void initFields() {
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.LocationUpdate}
-     *
-     * <pre>
-     * C-&gt;S: Location update event
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate, Builder>
@@ -9534,26 +6658,26 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate build() {
         org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate result = buildPartial();
         if (!result.isInitialized()) {
@@ -9561,225 +6685,192 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate result = new org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate(this);
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate.getDefaultInstance()) return this;
         return this;
       }
-
+      
       public final boolean isInitialized() {
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.LocationUpdate) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:svmp.LocationUpdate)
-    }
-
-    static {
-      defaultInstance = new LocationUpdate(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:svmp.LocationUpdate)
-  }
-
-  public interface LocationSubscribeOrBuilder
-      extends com.google.protobuf.MessageLiteOrBuilder {
-  }
-  /**
-   * Protobuf type {@code svmp.LocationSubscribe}
-   *
-   * <pre>
-   * S-&gt;C: Location subscribe request
-   * </pre>
-   */
-  public static final class LocationSubscribe extends
-      com.google.protobuf.GeneratedMessageLite
-      implements LocationSubscribeOrBuilder {
-    // Use LocationSubscribe.newBuilder() to construct.
-    private LocationSubscribe(com.google.protobuf.GeneratedMessageLite.Builder builder) {
-      super(builder);
-
-    }
-    private LocationSubscribe(boolean noInit) {}
-
-    private static final LocationSubscribe defaultInstance;
-    public static LocationSubscribe getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public LocationSubscribe getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private LocationSubscribe(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      try {
-        boolean done = false;
-        while (!done) {
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              
+              return this;
             default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
               }
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
       }
+      
+      
+      // @@protoc_insertion_point(builder_scope:svmp.LocationUpdate)
     }
-    public static com.google.protobuf.Parser<LocationSubscribe> PARSER =
-        new com.google.protobuf.AbstractParser<LocationSubscribe>() {
-      public LocationSubscribe parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LocationSubscribe(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LocationSubscribe> getParserForType() {
-      return PARSER;
+    
+    static {
+      defaultInstance = new LocationUpdate(true);
+      defaultInstance.initFields();
     }
-
+    
+    // @@protoc_insertion_point(class_scope:svmp.LocationUpdate)
+  }
+  
+  public interface LocationSubscribeOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+  }
+  public static final class LocationSubscribe extends
+      com.google.protobuf.GeneratedMessageLite
+      implements LocationSubscribeOrBuilder {
+    // Use LocationSubscribe.newBuilder() to construct.
+    private LocationSubscribe(Builder builder) {
+      super(builder);
+    }
+    private LocationSubscribe(boolean noInit) {}
+    
+    private static final LocationSubscribe defaultInstance;
+    public static LocationSubscribe getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public LocationSubscribe getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
     private void initFields() {
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.LocationSubscribe}
-     *
-     * <pre>
-     * S-&gt;C: Location subscribe request
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe, Builder>
@@ -9788,26 +6879,26 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe build() {
         org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe result = buildPartial();
         if (!result.isInitialized()) {
@@ -9815,249 +6906,158 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe result = new org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe(this);
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe.getDefaultInstance()) return this;
         return this;
       }
-
+      
       public final boolean isInitialized() {
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.LocationSubscribe) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
           }
         }
-        return this;
       }
-
+      
+      
       // @@protoc_insertion_point(builder_scope:svmp.LocationSubscribe)
     }
-
+    
     static {
       defaultInstance = new LocationSubscribe(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.LocationSubscribe)
   }
-
+  
   public interface AuthenticationOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
-
+    
     // required string un = 1;
-    /**
-     * <code>required string un = 1;</code>
-     */
     boolean hasUn();
-    /**
-     * <code>required string un = 1;</code>
-     */
-    java.lang.String getUn();
-    /**
-     * <code>required string un = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getUnBytes();
-
+    String getUn();
+    
     // required string pw = 2;
-    /**
-     * <code>required string pw = 2;</code>
-     */
     boolean hasPw();
-    /**
-     * <code>required string pw = 2;</code>
-     */
-    java.lang.String getPw();
-    /**
-     * <code>required string pw = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getPwBytes();
+    String getPw();
   }
-  /**
-   * Protobuf type {@code svmp.Authentication}
-   */
   public static final class Authentication extends
       com.google.protobuf.GeneratedMessageLite
       implements AuthenticationOrBuilder {
     // Use Authentication.newBuilder() to construct.
-    private Authentication(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private Authentication(Builder builder) {
       super(builder);
-
     }
     private Authentication(boolean noInit) {}
-
+    
     private static final Authentication defaultInstance;
     public static Authentication getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public Authentication getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private Authentication(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              un_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              pw_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<Authentication> PARSER =
-        new com.google.protobuf.AbstractParser<Authentication>() {
-      public Authentication parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Authentication(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Authentication> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // required string un = 1;
     public static final int UN_FIELD_NUMBER = 1;
     private java.lang.Object un_;
-    /**
-     * <code>required string un = 1;</code>
-     */
     public boolean hasUn() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required string un = 1;</code>
-     */
-    public java.lang.String getUn() {
+    public String getUn() {
       java.lang.Object ref = un_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           un_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>required string un = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUnBytes() {
+    private com.google.protobuf.ByteString getUnBytes() {
       java.lang.Object ref = un_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         un_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // required string pw = 2;
     public static final int PW_FIELD_NUMBER = 2;
     private java.lang.Object pw_;
-    /**
-     * <code>required string pw = 2;</code>
-     */
     public boolean hasPw() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>required string pw = 2;</code>
-     */
-    public java.lang.String getPw() {
+    public String getPw() {
       java.lang.Object ref = pw_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           pw_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>required string pw = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPwBytes() {
+    private com.google.protobuf.ByteString getPwBytes() {
       java.lang.Object ref = pw_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         pw_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     private void initFields() {
       un_ = "";
       pw_ = "";
@@ -10066,7 +7066,7 @@ public final class SVMPProtocol {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasUn()) {
         memoizedIsInitialized = 0;
         return false;
@@ -10078,7 +7078,7 @@ public final class SVMPProtocol {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -10089,12 +7089,12 @@ public final class SVMPProtocol {
         output.writeBytes(2, getPwBytes());
       }
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -10107,77 +7107,88 @@ public final class SVMPProtocol {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.Authentication parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.Authentication prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.Authentication}
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.Authentication, Builder>
@@ -10186,13 +7197,13 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         un_ = "";
@@ -10201,15 +7212,15 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Authentication getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Authentication build() {
         org.mitre.svmp.protocol.SVMPProtocol.Authentication result = buildPartial();
         if (!result.isInitialized()) {
@@ -10217,7 +7228,17 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.Authentication buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.Authentication result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.Authentication buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.Authentication result = new org.mitre.svmp.protocol.SVMPProtocol.Authentication(this);
         int from_bitField0_ = bitField0_;
@@ -10233,22 +7254,18 @@ public final class SVMPProtocol {
         result.bitField0_ = to_bitField0_;
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Authentication other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance()) return this;
         if (other.hasUn()) {
-          bitField0_ |= 0x00000001;
-          un_ = other.un_;
-          
+          setUn(other.getUn());
         }
         if (other.hasPw()) {
-          bitField0_ |= 0x00000002;
-          pw_ = other.pw_;
-          
+          setPw(other.getPw());
         }
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasUn()) {
           
@@ -10260,69 +7277,56 @@ public final class SVMPProtocol {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.Authentication parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.Authentication) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              un_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              pw_ = input.readBytes();
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required string un = 1;
       private java.lang.Object un_ = "";
-      /**
-       * <code>required string un = 1;</code>
-       */
       public boolean hasUn() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required string un = 1;</code>
-       */
-      public java.lang.String getUn() {
+      public String getUn() {
         java.lang.Object ref = un_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           un_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>required string un = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUnBytes() {
-        java.lang.Object ref = un_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          un_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string un = 1;</code>
-       */
-      public Builder setUn(
-          java.lang.String value) {
+      public Builder setUn(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -10331,72 +7335,34 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required string un = 1;</code>
-       */
       public Builder clearUn() {
         bitField0_ = (bitField0_ & ~0x00000001);
         un_ = getDefaultInstance().getUn();
         
         return this;
       }
-      /**
-       * <code>required string un = 1;</code>
-       */
-      public Builder setUnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      void setUn(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
         un_ = value;
         
-        return this;
       }
-
+      
       // required string pw = 2;
       private java.lang.Object pw_ = "";
-      /**
-       * <code>required string pw = 2;</code>
-       */
       public boolean hasPw() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>required string pw = 2;</code>
-       */
-      public java.lang.String getPw() {
+      public String getPw() {
         java.lang.Object ref = pw_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           pw_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>required string pw = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPwBytes() {
-        java.lang.Object ref = pw_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pw_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string pw = 2;</code>
-       */
-      public Builder setPw(
-          java.lang.String value) {
+      public Builder setPw(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -10405,215 +7371,157 @@ public final class SVMPProtocol {
         
         return this;
       }
-      /**
-       * <code>required string pw = 2;</code>
-       */
       public Builder clearPw() {
         bitField0_ = (bitField0_ & ~0x00000002);
         pw_ = getDefaultInstance().getPw();
         
         return this;
       }
-      /**
-       * <code>required string pw = 2;</code>
-       */
-      public Builder setPwBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      void setPw(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
         pw_ = value;
         
-        return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:svmp.Authentication)
     }
-
+    
     static {
       defaultInstance = new Authentication(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.Authentication)
   }
-
+  
   public interface VideoStreamInfoOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
   }
-  /**
-   * Protobuf type {@code svmp.VideoStreamInfo}
-   *
-   * <pre>
-   * S-&gt;C
-   * </pre>
-   */
   public static final class VideoStreamInfo extends
       com.google.protobuf.GeneratedMessageLite
       implements VideoStreamInfoOrBuilder {
     // Use VideoStreamInfo.newBuilder() to construct.
-    private VideoStreamInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+    private VideoStreamInfo(Builder builder) {
       super(builder);
-
     }
     private VideoStreamInfo(boolean noInit) {}
-
+    
     private static final VideoStreamInfo defaultInstance;
     public static VideoStreamInfo getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public VideoStreamInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private VideoStreamInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        makeExtensionsImmutable();
-      }
-    }
-    public static com.google.protobuf.Parser<VideoStreamInfo> PARSER =
-        new com.google.protobuf.AbstractParser<VideoStreamInfo>() {
-      public VideoStreamInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VideoStreamInfo(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<VideoStreamInfo> getParserForType() {
-      return PARSER;
-    }
-
+    
     private void initFields() {
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
-    /**
-     * Protobuf type {@code svmp.VideoStreamInfo}
-     *
-     * <pre>
-     * S-&gt;C
-     * </pre>
-     */
+    
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
           org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo, Builder>
@@ -10622,26 +7530,26 @@ public final class SVMPProtocol {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
+      
       private void maybeForceBuilderInitialization() {
       }
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getDefaultInstanceForType() {
         return org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
       }
-
+      
       public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo build() {
         org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -10649,53 +7557,67 @@ public final class SVMPProtocol {
         }
         return result;
       }
-
+      
+      private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo result = new org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo(this);
         return result;
       }
-
+      
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance()) return this;
         return this;
       }
-
+      
       public final boolean isInitialized() {
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
           }
         }
-        return this;
       }
-
+      
+      
       // @@protoc_insertion_point(builder_scope:svmp.VideoStreamInfo)
     }
-
+    
     static {
       defaultInstance = new VideoStreamInfo(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:svmp.VideoStreamInfo)
   }
-
-
+  
+  
   static {
   }
-
+  
   // @@protoc_insertion_point(outer_class_scope)
 }
