@@ -712,6 +712,12 @@ public final class SVMPProtocol {
           return false;
         }
       }
+      if (hasVideoRequest()) {
+        if (!getVideoRequest().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       if (hasTouch()) {
         if (!getTouch().isInitialized()) {
           memoizedIsInitialized = 0;
@@ -997,6 +1003,12 @@ public final class SVMPProtocol {
         }
         if (hasAuthentication()) {
           if (!getAuthentication().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasVideoRequest()) {
+          if (!getVideoRequest().isInitialized()) {
             
             return false;
           }
@@ -16048,6 +16060,51 @@ public final class SVMPProtocol {
 
   public interface VideoRequestOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required string ip = 1;
+    /**
+     * <code>required string ip = 1;</code>
+     */
+    boolean hasIp();
+    /**
+     * <code>required string ip = 1;</code>
+     */
+    java.lang.String getIp();
+    /**
+     * <code>required string ip = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIpBytes();
+
+    // required int32 port = 2;
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    boolean hasPort();
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    int getPort();
+
+    // optional int32 bitrate = 3;
+    /**
+     * <code>optional int32 bitrate = 3;</code>
+     *
+     * <pre>
+     * give the client a chance to request a video stream with particular parameters
+     * e.g., resolution, bitrate, FEC, etc.
+     * </pre>
+     */
+    boolean hasBitrate();
+    /**
+     * <code>optional int32 bitrate = 3;</code>
+     *
+     * <pre>
+     * give the client a chance to request a video stream with particular parameters
+     * e.g., resolution, bitrate, FEC, etc.
+     * </pre>
+     */
+    int getBitrate();
   }
   /**
    * Protobuf type {@code svmp.VideoRequest}
@@ -16080,6 +16137,7 @@ public final class SVMPProtocol {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -16093,6 +16151,21 @@ public final class SVMPProtocol {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              ip_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              port_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              bitrate_ = input.readInt32();
               break;
             }
           }
@@ -16121,13 +16194,110 @@ public final class SVMPProtocol {
       return PARSER;
     }
 
+    private int bitField0_;
+    // required string ip = 1;
+    public static final int IP_FIELD_NUMBER = 1;
+    private java.lang.Object ip_;
+    /**
+     * <code>required string ip = 1;</code>
+     */
+    public boolean hasIp() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string ip = 1;</code>
+     */
+    public java.lang.String getIp() {
+      java.lang.Object ref = ip_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          ip_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string ip = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIpBytes() {
+      java.lang.Object ref = ip_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ip_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required int32 port = 2;
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_;
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    public boolean hasPort() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 port = 2;</code>
+     */
+    public int getPort() {
+      return port_;
+    }
+
+    // optional int32 bitrate = 3;
+    public static final int BITRATE_FIELD_NUMBER = 3;
+    private int bitrate_;
+    /**
+     * <code>optional int32 bitrate = 3;</code>
+     *
+     * <pre>
+     * give the client a chance to request a video stream with particular parameters
+     * e.g., resolution, bitrate, FEC, etc.
+     * </pre>
+     */
+    public boolean hasBitrate() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 bitrate = 3;</code>
+     *
+     * <pre>
+     * give the client a chance to request a video stream with particular parameters
+     * e.g., resolution, bitrate, FEC, etc.
+     * </pre>
+     */
+    public int getBitrate() {
+      return bitrate_;
+    }
+
     private void initFields() {
+      ip_ = "";
+      port_ = 0;
+      bitrate_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
+      if (!hasIp()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPort()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -16135,6 +16305,15 @@ public final class SVMPProtocol {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIpBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, port_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, bitrate_);
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -16143,6 +16322,18 @@ public final class SVMPProtocol {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIpBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, port_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, bitrate_);
+      }
       memoizedSerializedSize = size;
       return size;
     }
@@ -16238,6 +16429,12 @@ public final class SVMPProtocol {
 
       public Builder clear() {
         super.clear();
+        ip_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        port_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bitrate_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -16259,15 +16456,49 @@ public final class SVMPProtocol {
 
       public org.mitre.svmp.protocol.SVMPProtocol.VideoRequest buildPartial() {
         org.mitre.svmp.protocol.SVMPProtocol.VideoRequest result = new org.mitre.svmp.protocol.SVMPProtocol.VideoRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.ip_ = ip_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.port_ = port_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitrate_ = bitrate_;
+        result.bitField0_ = to_bitField0_;
         return result;
       }
 
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.VideoRequest other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.VideoRequest.getDefaultInstance()) return this;
+        if (other.hasIp()) {
+          bitField0_ |= 0x00000001;
+          ip_ = other.ip_;
+          
+        }
+        if (other.hasPort()) {
+          setPort(other.getPort());
+        }
+        if (other.hasBitrate()) {
+          setBitrate(other.getBitrate());
+        }
         return this;
       }
 
       public final boolean isInitialized() {
+        if (!hasIp()) {
+          
+          return false;
+        }
+        if (!hasPort()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -16286,6 +16517,167 @@ public final class SVMPProtocol {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string ip = 1;
+      private java.lang.Object ip_ = "";
+      /**
+       * <code>required string ip = 1;</code>
+       */
+      public boolean hasIp() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string ip = 1;</code>
+       */
+      public java.lang.String getIp() {
+        java.lang.Object ref = ip_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          ip_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string ip = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIpBytes() {
+        java.lang.Object ref = ip_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ip_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string ip = 1;</code>
+       */
+      public Builder setIp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        ip_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string ip = 1;</code>
+       */
+      public Builder clearIp() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ip_ = getDefaultInstance().getIp();
+        
+        return this;
+      }
+      /**
+       * <code>required string ip = 1;</code>
+       */
+      public Builder setIpBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        ip_ = value;
+        
+        return this;
+      }
+
+      // required int32 port = 2;
+      private int port_ ;
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public boolean hasPort() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public int getPort() {
+        return port_;
+      }
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public Builder setPort(int value) {
+        bitField0_ |= 0x00000002;
+        port_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required int32 port = 2;</code>
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        port_ = 0;
+        
+        return this;
+      }
+
+      // optional int32 bitrate = 3;
+      private int bitrate_ ;
+      /**
+       * <code>optional int32 bitrate = 3;</code>
+       *
+       * <pre>
+       * give the client a chance to request a video stream with particular parameters
+       * e.g., resolution, bitrate, FEC, etc.
+       * </pre>
+       */
+      public boolean hasBitrate() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 bitrate = 3;</code>
+       *
+       * <pre>
+       * give the client a chance to request a video stream with particular parameters
+       * e.g., resolution, bitrate, FEC, etc.
+       * </pre>
+       */
+      public int getBitrate() {
+        return bitrate_;
+      }
+      /**
+       * <code>optional int32 bitrate = 3;</code>
+       *
+       * <pre>
+       * give the client a chance to request a video stream with particular parameters
+       * e.g., resolution, bitrate, FEC, etc.
+       * </pre>
+       */
+      public Builder setBitrate(int value) {
+        bitField0_ |= 0x00000004;
+        bitrate_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int32 bitrate = 3;</code>
+       *
+       * <pre>
+       * give the client a chance to request a video stream with particular parameters
+       * e.g., resolution, bitrate, FEC, etc.
+       * </pre>
+       */
+      public Builder clearBitrate() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        bitrate_ = 0;
+        
         return this;
       }
 
