@@ -285,7 +285,7 @@ message Authentication {
 
 // C->S
 message VideoRequest {
-  required string IP = 1;
+  required string ip = 1;
   required int32 port = 2;
   optional int32 bitrate = 3;
   // give the client a chance to request a video stream with particular parameters
