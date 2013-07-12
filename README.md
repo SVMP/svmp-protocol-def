@@ -16,7 +16,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-
+Third Party
+===========
 The included Google protocol buffers code is used under the following license:
 
 Copyright 2008, Google Inc.
@@ -35,4 +36,3 @@ distribution.
     * Neither the name of Google Inc. nor the names of its
 contributors may be used to endorse or promote products derived from
 this software without specific prior written permission.
-

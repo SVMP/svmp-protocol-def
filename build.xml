@@ -15,7 +15,6 @@
     <tstamp/>
     <!-- Create the build directory structure used by compile -->
     <mkdir dir="${build}"/>
-    <copy file="../svmp-protocol-def/svmp.proto" tofile="./svmp.proto"/>
   </target>
 
   <target name="compile" depends="init"
