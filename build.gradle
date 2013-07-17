@@ -1,0 +1,32 @@
+apply plugin: 'protobuf'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'ws.antonov.gradle.plugins:gradle-plugin-protobuf:0.8'
+    }
+}
+
+jar {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+task fixsrc(type:Copy) {
+    from 'build/generated-sources/main'
+    into 'src'
+ }
+
+task rmsrc(type: Delete) {
+   delete 'src/org'
+ }
+
+protocPath = '/usr/local/bin/protoc'
+
+dependencies {
+    protobuf files("svmp.proto")
+    compile files("protobuf-2.5.0/protobuf-java-2.5.0.jar")
+}
+/*build.dependsOn fixsrc*/
+/*clean.dependsOn rmsrc*/
