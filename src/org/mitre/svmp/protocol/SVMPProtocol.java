@@ -1775,6 +1775,22 @@ public final class SVMPProtocol {
        * </pre>
        */
       LOCATION(7, 7),
+      /**
+       * <code>VIDEOSTART = 8;</code>
+       *
+       * <pre>
+       * VideoPlayback status response
+       * </pre>
+       */
+      VIDEOSTART(8, 8),
+      /**
+       * <code>VIDEOSTOP = 9;</code>
+       */
+      VIDEOSTOP(9, 9),
+      /**
+       * <code>VIDEOPAUSE = 10;</code>
+       */
+      VIDEOPAUSE(10, 10),
       ;
 
       /**
@@ -1837,6 +1853,22 @@ public final class SVMPProtocol {
        * </pre>
        */
       public static final int LOCATION_VALUE = 7;
+      /**
+       * <code>VIDEOSTART = 8;</code>
+       *
+       * <pre>
+       * VideoPlayback status response
+       * </pre>
+       */
+      public static final int VIDEOSTART_VALUE = 8;
+      /**
+       * <code>VIDEOSTOP = 9;</code>
+       */
+      public static final int VIDEOSTOP_VALUE = 9;
+      /**
+       * <code>VIDEOPAUSE = 10;</code>
+       */
+      public static final int VIDEOPAUSE_VALUE = 10;
 
 
       public final int getNumber() { return value; }
@@ -1851,6 +1883,9 @@ public final class SVMPProtocol {
           case 5: return INTENT;
           case 6: return NOTIFICATION;
           case 7: return LOCATION;
+          case 8: return VIDEOSTART;
+          case 9: return VIDEOSTOP;
+          case 10: return VIDEOPAUSE;
           default: return null;
         }
       }

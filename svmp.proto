@@ -57,6 +57,9 @@ message Response
     INTENT        = 5; // intent data in 'proxy'
     NOTIFICATION  = 6; // notification data in 'proxy'
     LOCATION      = 7; // location request
+    VIDEOSTART    = 8; // VideoPlayback status response
+    VIDEOSTOP     = 9;
+    VIDEOPAUSE    = 10;
   }
 
   required ResponseType type = 1;
