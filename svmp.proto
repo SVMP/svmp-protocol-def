@@ -33,6 +33,7 @@ message Request
     SCREENINFO    = 6;
     VIDEO_START   = 7;
     VIDEO_STOP    = 8;
+    WEBRTC        = 9;
   }
 
   optional Authentication authentication = 2;
@@ -42,6 +43,8 @@ message Request
   optional SensorEvent sensor = 5;
   optional LocationRequest locationRequest = 6;
   optional Intent intent = 7;
+
+  optional WebRTCMessage webrtcMsg = 9;
 }
 
 // Server to client message wrapper
@@ -53,13 +56,14 @@ message Response
     AUTHOK        = 1;
     VMREADY       = 2; // 'message' should contain any extra info needed to contact the VM
     SCREENINFO    = 3; // touch screen coordinate scaling info
-    VIDSTREAMINFO = 4; // IP/Port info for video stream
+    VIDSTREAMINFO = 4; // Info client needs to start video (IPs, ports, ICE servers, webrtc stuff, etc.)
     INTENT        = 5; // intent data in 'proxy'
     NOTIFICATION  = 6; // notification data in 'proxy'
     LOCATION      = 7; // location request
     VIDEOSTART    = 8; // VideoPlayback status response
     VIDEOSTOP     = 9;
     VIDEOPAUSE    = 10;
+    WEBRTC        = 11; // WebRTC signalling message
   }
 
   required ResponseType type = 1;
@@ -71,7 +75,8 @@ message Response
   optional LocationResponse locationResponse = 6;
 
   optional ScreenInfo screen_info = 16;
-  optional VideoStreamInfo video_info = 17; // placeholder for future use
+  optional VideoStreamInfo video_info = 17;
+  optional WebRTCMessage webrtcMsg = 18;
 }
 
 //=====================================================================
@@ -297,11 +302,50 @@ message VideoRequest {
   // TODO
 }
 
-// S->C
-message VideoStreamInfo {
-  // ip, port, path, the SDP contents directly, etc.
-  // what parameters are not constants and can't be hard coded?
-  // TODO
-  // Currently the rtsp url is bundled in the Response.message string field in the VMREADY response
+//=====================================================================
+// WebRTC Signalling
+//=====================================================================
+
+// Message format based on the Javascript Session Establishment Protocol (JSEP)
+// and the AppRTC demonstration app.
+
+// See https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-03
+
+// Things we won't implement in the first iteration but might be nice to have later on:
+// * ICE Trickling (3.4.1)
+// * Session Rehydration (3.6)
+// Together these might help speed up connection setup the first time and on
+// disconnect / reconnect.
+
+message WebRTCMessage {
+
+  enum WebRTCType {
+    OFFER = 1;
+    ANSWER = 2;
+    CANDIDATE = 3;
+    BYE = 4;
+  }
+
+  optional WebRTCType type = 1;
+
+  // Much easier if we just pass the JSON string directly instead of deconstructing it
+  optional string json = 2;
+
+
+  // offer/answer
+  // type := { 'answer', 'offer' };
+  //optional string type = 1;
+  //optional string sdp = 2;
+
+  // candidate
+  //optional string sdpMid = 3;       // might correspond with 'id' in apprtc demo
+  //optional int32 sdpMLineIndex = 4; // might correspond with 'label' in apprtc demo
+  //optional string candidate = 5;
 }
 
+// S->C
+message VideoStreamInfo {
+  optional string iceServers = 1;
+  optional string pcConstraints = 2;
+  optional string videoConstraints = 3;
+}
