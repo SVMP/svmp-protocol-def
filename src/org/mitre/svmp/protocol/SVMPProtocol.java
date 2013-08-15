@@ -1656,23 +1656,23 @@ public final class SVMPProtocol {
      */
     org.mitre.svmp.protocol.SVMPProtocol.LocationResponse getLocationResponse();
 
-    // optional .svmp.ScreenInfo screen_info = 16;
+    // optional .svmp.ScreenInfo screenInfo = 16;
     /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
      */
     boolean hasScreenInfo();
     /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo();
 
-    // optional .svmp.VideoStreamInfo video_info = 17;
+    // optional .svmp.VideoStreamInfo videoInfo = 17;
     /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
      */
     boolean hasVideoInfo();
     /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo();
 
@@ -2177,33 +2177,33 @@ public final class SVMPProtocol {
       return locationResponse_;
     }
 
-    // optional .svmp.ScreenInfo screen_info = 16;
-    public static final int SCREEN_INFO_FIELD_NUMBER = 16;
+    // optional .svmp.ScreenInfo screenInfo = 16;
+    public static final int SCREENINFO_FIELD_NUMBER = 16;
     private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_;
     /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
      */
     public boolean hasScreenInfo() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
      */
     public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo() {
       return screenInfo_;
     }
 
-    // optional .svmp.VideoStreamInfo video_info = 17;
-    public static final int VIDEO_INFO_FIELD_NUMBER = 17;
+    // optional .svmp.VideoStreamInfo videoInfo = 17;
+    public static final int VIDEOINFO_FIELD_NUMBER = 17;
     private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_;
     /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
      */
     public boolean hasVideoInfo() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
      */
     public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
       return videoInfo_;
@@ -2884,22 +2884,22 @@ public final class SVMPProtocol {
         return this;
       }
 
-      // optional .svmp.ScreenInfo screen_info = 16;
+      // optional .svmp.ScreenInfo screenInfo = 16;
       private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
       /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public boolean hasScreenInfo() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo() {
         return screenInfo_;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public Builder setScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
         if (value == null) {
@@ -2911,7 +2911,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public Builder setScreenInfo(
           org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder builderForValue) {
@@ -2921,7 +2921,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public Builder mergeScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
         if (((bitField0_ & 0x00000020) == 0x00000020) &&
@@ -2936,7 +2936,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
+       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public Builder clearScreenInfo() {
         screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
@@ -2945,22 +2945,22 @@ public final class SVMPProtocol {
         return this;
       }
 
-      // optional .svmp.VideoStreamInfo video_info = 17;
+      // optional .svmp.VideoStreamInfo videoInfo = 17;
       private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
       /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public boolean hasVideoInfo() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
         return videoInfo_;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public Builder setVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
         if (value == null) {
@@ -2972,7 +2972,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public Builder setVideoInfo(
           org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder builderForValue) {
@@ -2982,7 +2982,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public Builder mergeVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
         if (((bitField0_ & 0x00000040) == 0x00000040) &&
@@ -2997,7 +2997,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public Builder clearVideoInfo() {
         videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();

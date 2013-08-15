@@ -74,8 +74,8 @@ message Response
   
   optional LocationResponse locationResponse = 6;
 
-  optional ScreenInfo screen_info = 16;
-  optional VideoStreamInfo video_info = 17;
+  optional ScreenInfo screenInfo = 16;
+  optional VideoStreamInfo videoInfo = 17;
   optional WebRTCMessage webrtcMsg = 18;
 }
 
