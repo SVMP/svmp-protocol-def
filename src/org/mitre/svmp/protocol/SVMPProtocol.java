@@ -305,6 +305,16 @@ public final class SVMPProtocol {
      * <code>optional .svmp.WebRTCMessage webrtcMsg = 9;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage getWebrtcMsg();
+
+    // optional .svmp.RotationInfo rotationInfo = 10;
+    /**
+     * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+     */
+    boolean hasRotationInfo();
+    /**
+     * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.RotationInfo getRotationInfo();
   }
   /**
    * Protobuf type {@code svmp.Request}
@@ -453,6 +463,19 @@ public final class SVMPProtocol {
               bitField0_ |= 0x00000080;
               break;
             }
+            case 82: {
+              org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+                subBuilder = rotationInfo_.toBuilder();
+              }
+              rotationInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rotationInfo_);
+                rotationInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -524,6 +547,10 @@ public final class SVMPProtocol {
        * <code>WEBRTC = 9;</code>
        */
       WEBRTC(9, 9),
+      /**
+       * <code>ROTATION_INFO = 10;</code>
+       */
+      ROTATION_INFO(10, 10),
       ;
 
       /**
@@ -566,6 +593,10 @@ public final class SVMPProtocol {
        * <code>WEBRTC = 9;</code>
        */
       public static final int WEBRTC_VALUE = 9;
+      /**
+       * <code>ROTATION_INFO = 10;</code>
+       */
+      public static final int ROTATION_INFO_VALUE = 10;
 
 
       public final int getNumber() { return value; }
@@ -582,6 +613,7 @@ public final class SVMPProtocol {
           case 7: return VIDEO_START;
           case 8: return VIDEO_STOP;
           case 9: return WEBRTC;
+          case 10: return ROTATION_INFO;
           default: return null;
         }
       }
@@ -736,6 +768,22 @@ public final class SVMPProtocol {
       return webrtcMsg_;
     }
 
+    // optional .svmp.RotationInfo rotationInfo = 10;
+    public static final int ROTATIONINFO_FIELD_NUMBER = 10;
+    private org.mitre.svmp.protocol.SVMPProtocol.RotationInfo rotationInfo_;
+    /**
+     * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+     */
+    public boolean hasRotationInfo() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.RotationInfo getRotationInfo() {
+      return rotationInfo_;
+    }
+
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.USERAUTH;
       authentication_ = org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance();
@@ -745,6 +793,7 @@ public final class SVMPProtocol {
       locationRequest_ = org.mitre.svmp.protocol.SVMPProtocol.LocationRequest.getDefaultInstance();
       intent_ = org.mitre.svmp.protocol.SVMPProtocol.Intent.getDefaultInstance();
       webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
+      rotationInfo_ = org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -791,6 +840,12 @@ public final class SVMPProtocol {
           return false;
         }
       }
+      if (hasRotationInfo()) {
+        if (!getRotationInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -821,6 +876,9 @@ public final class SVMPProtocol {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeMessage(9, webrtcMsg_);
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeMessage(10, rotationInfo_);
       }
     }
 
@@ -861,6 +919,10 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, webrtcMsg_);
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, rotationInfo_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -973,6 +1035,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000040);
         webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000080);
+        rotationInfo_ = org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -1028,6 +1092,10 @@ public final class SVMPProtocol {
           to_bitField0_ |= 0x00000080;
         }
         result.webrtcMsg_ = webrtcMsg_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.rotationInfo_ = rotationInfo_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -1057,6 +1125,9 @@ public final class SVMPProtocol {
         }
         if (other.hasWebrtcMsg()) {
           mergeWebrtcMsg(other.getWebrtcMsg());
+        }
+        if (other.hasRotationInfo()) {
+          mergeRotationInfo(other.getRotationInfo());
         }
         return this;
       }
@@ -1098,6 +1169,12 @@ public final class SVMPProtocol {
         }
         if (hasIntent()) {
           if (!getIntent().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasRotationInfo()) {
+          if (!getRotationInfo().isInitialized()) {
             
             return false;
           }
@@ -1587,6 +1664,67 @@ public final class SVMPProtocol {
         return this;
       }
 
+      // optional .svmp.RotationInfo rotationInfo = 10;
+      private org.mitre.svmp.protocol.SVMPProtocol.RotationInfo rotationInfo_ = org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
+      /**
+       * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+       */
+      public boolean hasRotationInfo() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.RotationInfo getRotationInfo() {
+        return rotationInfo_;
+      }
+      /**
+       * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+       */
+      public Builder setRotationInfo(org.mitre.svmp.protocol.SVMPProtocol.RotationInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rotationInfo_ = value;
+
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+       */
+      public Builder setRotationInfo(
+          org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.Builder builderForValue) {
+        rotationInfo_ = builderForValue.build();
+
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+       */
+      public Builder mergeRotationInfo(org.mitre.svmp.protocol.SVMPProtocol.RotationInfo value) {
+        if (((bitField0_ & 0x00000100) == 0x00000100) &&
+            rotationInfo_ != org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance()) {
+          rotationInfo_ =
+            org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.newBuilder(rotationInfo_).mergeFrom(value).buildPartial();
+        } else {
+          rotationInfo_ = value;
+        }
+
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.RotationInfo rotationInfo = 10;</code>
+       */
+      public Builder clearRotationInfo() {
+        rotationInfo_ = org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:svmp.Request)
     }
 
@@ -1656,23 +1794,23 @@ public final class SVMPProtocol {
      */
     org.mitre.svmp.protocol.SVMPProtocol.LocationResponse getLocationResponse();
 
-    // optional .svmp.ScreenInfo screenInfo = 16;
+    // optional .svmp.ScreenInfo screen_info = 16;
     /**
-     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
      */
     boolean hasScreenInfo();
     /**
-     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo();
 
-    // optional .svmp.VideoStreamInfo videoInfo = 17;
+    // optional .svmp.VideoStreamInfo video_info = 17;
     /**
-     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
      */
     boolean hasVideoInfo();
     /**
-     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo();
 
@@ -2177,33 +2315,33 @@ public final class SVMPProtocol {
       return locationResponse_;
     }
 
-    // optional .svmp.ScreenInfo screenInfo = 16;
-    public static final int SCREENINFO_FIELD_NUMBER = 16;
+    // optional .svmp.ScreenInfo screen_info = 16;
+    public static final int SCREEN_INFO_FIELD_NUMBER = 16;
     private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_;
     /**
-     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
      */
     public boolean hasScreenInfo() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+     * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
      */
     public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo() {
       return screenInfo_;
     }
 
-    // optional .svmp.VideoStreamInfo videoInfo = 17;
-    public static final int VIDEOINFO_FIELD_NUMBER = 17;
+    // optional .svmp.VideoStreamInfo video_info = 17;
+    public static final int VIDEO_INFO_FIELD_NUMBER = 17;
     private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_;
     /**
-     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
      */
     public boolean hasVideoInfo() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+     * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
      */
     public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
       return videoInfo_;
@@ -2884,22 +3022,22 @@ public final class SVMPProtocol {
         return this;
       }
 
-      // optional .svmp.ScreenInfo screenInfo = 16;
+      // optional .svmp.ScreenInfo screen_info = 16;
       private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
       /**
-       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
        */
       public boolean hasScreenInfo() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
        */
       public org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo getScreenInfo() {
         return screenInfo_;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
        */
       public Builder setScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
         if (value == null) {
@@ -2911,7 +3049,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
        */
       public Builder setScreenInfo(
           org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder builderForValue) {
@@ -2921,7 +3059,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
        */
       public Builder mergeScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
         if (((bitField0_ & 0x00000020) == 0x00000020) &&
@@ -2936,7 +3074,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
+       * <code>optional .svmp.ScreenInfo screen_info = 16;</code>
        */
       public Builder clearScreenInfo() {
         screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
@@ -2945,22 +3083,22 @@ public final class SVMPProtocol {
         return this;
       }
 
-      // optional .svmp.VideoStreamInfo videoInfo = 17;
+      // optional .svmp.VideoStreamInfo video_info = 17;
       private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
       /**
-       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
        */
       public boolean hasVideoInfo() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
        */
       public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
         return videoInfo_;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
        */
       public Builder setVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
         if (value == null) {
@@ -2972,7 +3110,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
        */
       public Builder setVideoInfo(
           org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder builderForValue) {
@@ -2982,7 +3120,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
        */
       public Builder mergeVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
         if (((bitField0_ & 0x00000040) == 0x00000040) &&
@@ -2997,7 +3135,7 @@ public final class SVMPProtocol {
         return this;
       }
       /**
-       * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
+       * <code>optional .svmp.VideoStreamInfo video_info = 17;</code>
        */
       public Builder clearVideoInfo() {
         videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
@@ -18291,6 +18429,355 @@ public final class SVMPProtocol {
     }
 
     // @@protoc_insertion_point(class_scope:svmp.VideoStreamInfo)
+  }
+
+  public interface RotationInfoOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required int32 rotation = 1;
+    /**
+     * <code>required int32 rotation = 1;</code>
+     */
+    boolean hasRotation();
+    /**
+     * <code>required int32 rotation = 1;</code>
+     */
+    int getRotation();
+  }
+  /**
+   * Protobuf type {@code svmp.RotationInfo}
+   *
+   * <pre>
+   * C-&gt;S
+   * </pre>
+   */
+  public static final class RotationInfo extends
+      com.google.protobuf.GeneratedMessageLite
+      implements RotationInfoOrBuilder {
+    // Use RotationInfo.newBuilder() to construct.
+    private RotationInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private RotationInfo(boolean noInit) {}
+
+    private static final RotationInfo defaultInstance;
+    public static RotationInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public RotationInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private RotationInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              rotation_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<RotationInfo> PARSER =
+        new com.google.protobuf.AbstractParser<RotationInfo>() {
+      public RotationInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RotationInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RotationInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int32 rotation = 1;
+    public static final int ROTATION_FIELD_NUMBER = 1;
+    private int rotation_;
+    /**
+     * <code>required int32 rotation = 1;</code>
+     */
+    public boolean hasRotation() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int32 rotation = 1;</code>
+     */
+    public int getRotation() {
+      return rotation_;
+    }
+
+    private void initFields() {
+      rotation_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasRotation()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, rotation_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, rotation_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.RotationInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code svmp.RotationInfo}
+     *
+     * <pre>
+     * C-&gt;S
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.RotationInfo, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.RotationInfoOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        rotation_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.RotationInfo getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.RotationInfo build() {
+        org.mitre.svmp.protocol.SVMPProtocol.RotationInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.RotationInfo buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.RotationInfo result = new org.mitre.svmp.protocol.SVMPProtocol.RotationInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.rotation_ = rotation_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.RotationInfo other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance()) return this;
+        if (other.hasRotation()) {
+          setRotation(other.getRotation());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRotation()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.mitre.svmp.protocol.SVMPProtocol.RotationInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.RotationInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int32 rotation = 1;
+      private int rotation_ ;
+      /**
+       * <code>required int32 rotation = 1;</code>
+       */
+      public boolean hasRotation() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int32 rotation = 1;</code>
+       */
+      public int getRotation() {
+        return rotation_;
+      }
+      /**
+       * <code>required int32 rotation = 1;</code>
+       */
+      public Builder setRotation(int value) {
+        bitField0_ |= 0x00000001;
+        rotation_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required int32 rotation = 1;</code>
+       */
+      public Builder clearRotation() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rotation_ = 0;
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:svmp.RotationInfo)
+    }
+
+    static {
+      defaultInstance = new RotationInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:svmp.RotationInfo)
   }
 
 
