@@ -55,7 +55,7 @@ message Response
 
   enum ResponseType {
     ERROR         = 0; // 'message' should contain a useful error string
-    AUTHOK        = 1;
+    AUTHOK        = 1; // 'message' should contain the session token to use for reconnecting
     VMREADY       = 2; // 'message' should contain any extra info needed to contact the VM
     SCREENINFO    = 3; // touch screen coordinate scaling info
     VIDSTREAMINFO = 4; // Info client needs to start video (IPs, ports, ICE servers, webrtc stuff, etc.)
@@ -291,6 +291,7 @@ message LocationResponse {
 message Authentication {
   required string un = 1;
   required string pw = 2;
+  optional string secureid = 3;
 }
 
 // C->S

@@ -2004,6 +2004,10 @@ public final class SVMPProtocol {
       ERROR(0, 0),
       /**
        * <code>AUTHOK = 1;</code>
+       *
+       * <pre>
+       * 'message' should contain the session token to use for reconnecting
+       * </pre>
        */
       AUTHOK(1, 1),
       /**
@@ -2090,6 +2094,10 @@ public final class SVMPProtocol {
       public static final int ERROR_VALUE = 0;
       /**
        * <code>AUTHOK = 1;</code>
+       *
+       * <pre>
+       * 'message' should contain the session token to use for reconnecting
+       * </pre>
        */
       public static final int AUTHOK_VALUE = 1;
       /**
@@ -15903,6 +15911,21 @@ public final class SVMPProtocol {
      */
     com.google.protobuf.ByteString
         getPwBytes();
+
+    // optional string secureid = 3;
+    /**
+     * <code>optional string secureid = 3;</code>
+     */
+    boolean hasSecureid();
+    /**
+     * <code>optional string secureid = 3;</code>
+     */
+    java.lang.String getSecureid();
+    /**
+     * <code>optional string secureid = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecureidBytes();
   }
   /**
    * Protobuf type {@code svmp.Authentication}
@@ -15955,6 +15978,11 @@ public final class SVMPProtocol {
             case 18: {
               bitField0_ |= 0x00000002;
               pw_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              secureid_ = input.readBytes();
               break;
             }
           }
@@ -16070,9 +16098,53 @@ public final class SVMPProtocol {
       }
     }
 
+    // optional string secureid = 3;
+    public static final int SECUREID_FIELD_NUMBER = 3;
+    private java.lang.Object secureid_;
+    /**
+     * <code>optional string secureid = 3;</code>
+     */
+    public boolean hasSecureid() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string secureid = 3;</code>
+     */
+    public java.lang.String getSecureid() {
+      java.lang.Object ref = secureid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          secureid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string secureid = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecureidBytes() {
+      java.lang.Object ref = secureid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secureid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       un_ = "";
       pw_ = "";
+      secureid_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -16100,6 +16172,9 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getPwBytes());
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getSecureidBytes());
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -16115,6 +16190,10 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getPwBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getSecureidBytes());
       }
       memoizedSerializedSize = size;
       return size;
@@ -16211,6 +16290,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000001);
         pw_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
+        secureid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -16242,6 +16323,10 @@ public final class SVMPProtocol {
           to_bitField0_ |= 0x00000002;
         }
         result.pw_ = pw_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.secureid_ = secureid_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -16256,6 +16341,11 @@ public final class SVMPProtocol {
         if (other.hasPw()) {
           bitField0_ |= 0x00000002;
           pw_ = other.pw_;
+          
+        }
+        if (other.hasSecureid()) {
+          bitField0_ |= 0x00000004;
+          secureid_ = other.secureid_;
           
         }
         return this;
@@ -16436,6 +16526,80 @@ public final class SVMPProtocol {
   }
   bitField0_ |= 0x00000002;
         pw_ = value;
+        
+        return this;
+      }
+
+      // optional string secureid = 3;
+      private java.lang.Object secureid_ = "";
+      /**
+       * <code>optional string secureid = 3;</code>
+       */
+      public boolean hasSecureid() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string secureid = 3;</code>
+       */
+      public java.lang.String getSecureid() {
+        java.lang.Object ref = secureid_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          secureid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string secureid = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecureidBytes() {
+        java.lang.Object ref = secureid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secureid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string secureid = 3;</code>
+       */
+      public Builder setSecureid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        secureid_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string secureid = 3;</code>
+       */
+      public Builder clearSecureid() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        secureid_ = getDefaultInstance().getSecureid();
+        
+        return this;
+      }
+      /**
+       * <code>optional string secureid = 3;</code>
+       */
+      public Builder setSecureidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        secureid_ = value;
         
         return this;
       }
