@@ -1,38 +1,50 @@
 Client                                       Proxy                            VM
 ------                                       -----                            --
-connect to port 8002
+              connect to port 8002
+   -------------------------------------------->
+
 
    -------------------------------------------->
     type = AUTH, content = Authentication
 
+
    <--------------------------------------------
                 type = AUTHOK
+
 
                                                       Connect to port 8001
                                                 ------------------------------>
 
-                                                          [optional*]
+
+                                                ------------------------------>
+                                                  type = VIDEO_PARAMS, content = VideoStreamInfo
+                                                  videoInfo = { iceServers,
+                                                                videoConstraints,
+                                                                pcConstraints }**
+
+
                                                 <------------------------------
                                                          type = VMREADY
+
 
    <--------------------------------------------
                 type = VMREADY
 
+
    -------------------------------------------->
              type = VIDEO_PARAMS
 
+
    <--------------------------------------------
-     type = VIDEO_INFO, content = WebRTCMessage
-     WebRTCMessage = { iceServers,
-                       videoConstraints,
-                       pcConstraints }**
+     type = VIDSTREAMINFO, content = VideoStreamInfo
+     videoInfo = { iceServers,
+                   videoConstraints,
+                   pcConstraints }**
+
 
    <-------------------------------------------------------------------------->
                                        PROXYING
 
-
-* Might be a good way for the proxy to find out that the VM is up and running
-  and ready to go forward with the next states without messy polling.
 
 ** All three are JSON strings. Currently these are hardcoded in TestProxy. At
    least iceServers should come from a config file. The other two shouldn't

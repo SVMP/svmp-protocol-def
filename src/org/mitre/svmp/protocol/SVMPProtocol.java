@@ -325,6 +325,16 @@ public final class SVMPProtocol {
      * <code>optional .svmp.Ping pingRequest = 11;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.Ping getPingRequest();
+
+    // optional .svmp.VideoStreamInfo videoInfo = 12;
+    /**
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+     */
+    boolean hasVideoInfo();
+    /**
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo();
   }
   /**
    * Protobuf type {@code svmp.Request}
@@ -497,6 +507,19 @@ public final class SVMPProtocol {
                 pingRequest_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000200;
+              break;
+            }
+            case 98: {
+              org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000400) == 0x00000400)) {
+                subBuilder = videoInfo_.toBuilder();
+              }
+              videoInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(videoInfo_);
+                videoInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000400;
               break;
             }
           }
@@ -840,6 +863,22 @@ public final class SVMPProtocol {
       return pingRequest_;
     }
 
+    // optional .svmp.VideoStreamInfo videoInfo = 12;
+    public static final int VIDEOINFO_FIELD_NUMBER = 12;
+    private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_;
+    /**
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+     */
+    public boolean hasVideoInfo() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
+      return videoInfo_;
+    }
+
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.AUTH;
       authRequest_ = org.mitre.svmp.protocol.SVMPProtocol.AuthRequest.getDefaultInstance();
@@ -851,6 +890,7 @@ public final class SVMPProtocol {
       webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
       rotationInfo_ = org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
       pingRequest_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
+      videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -946,6 +986,9 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeMessage(11, pingRequest_);
       }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeMessage(12, videoInfo_);
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -993,6 +1036,10 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, pingRequest_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, videoInfo_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1109,6 +1156,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000100);
         pingRequest_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000200);
+        videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -1172,6 +1221,10 @@ public final class SVMPProtocol {
           to_bitField0_ |= 0x00000200;
         }
         result.pingRequest_ = pingRequest_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.videoInfo_ = videoInfo_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -1207,6 +1260,9 @@ public final class SVMPProtocol {
         }
         if (other.hasPingRequest()) {
           mergePingRequest(other.getPingRequest());
+        }
+        if (other.hasVideoInfo()) {
+          mergeVideoInfo(other.getVideoInfo());
         }
         return this;
       }
@@ -1868,6 +1924,67 @@ public final class SVMPProtocol {
         pingRequest_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
 
         bitField0_ = (bitField0_ & ~0x00000200);
+        return this;
+      }
+
+      // optional .svmp.VideoStreamInfo videoInfo = 12;
+      private org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
+      /**
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+       */
+      public boolean hasVideoInfo() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo() {
+        return videoInfo_;
+      }
+      /**
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+       */
+      public Builder setVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        videoInfo_ = value;
+
+        bitField0_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+       */
+      public Builder setVideoInfo(
+          org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder builderForValue) {
+        videoInfo_ = builderForValue.build();
+
+        bitField0_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+       */
+      public Builder mergeVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
+        if (((bitField0_ & 0x00000400) == 0x00000400) &&
+            videoInfo_ != org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance()) {
+          videoInfo_ =
+            org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.newBuilder(videoInfo_).mergeFrom(value).buildPartial();
+        } else {
+          videoInfo_ = value;
+        }
+
+        bitField0_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
+       */
+      public Builder clearVideoInfo() {
+        videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
