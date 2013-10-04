@@ -15882,50 +15882,35 @@ public final class SVMPProtocol {
   public interface AuthenticationOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
-    // required string un = 1;
+    // required string username = 1;
     /**
-     * <code>required string un = 1;</code>
+     * <code>required string username = 1;</code>
      */
-    boolean hasUn();
+    boolean hasUsername();
     /**
-     * <code>required string un = 1;</code>
+     * <code>required string username = 1;</code>
      */
-    java.lang.String getUn();
+    java.lang.String getUsername();
     /**
-     * <code>required string un = 1;</code>
+     * <code>required string username = 1;</code>
      */
     com.google.protobuf.ByteString
-        getUnBytes();
+        getUsernameBytes();
 
-    // required string pw = 2;
+    // repeated .svmp.AuthenticationEntry entries = 2;
     /**
-     * <code>required string pw = 2;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    boolean hasPw();
+    java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry> 
+        getEntriesList();
     /**
-     * <code>required string pw = 2;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    java.lang.String getPw();
+    org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry getEntries(int index);
     /**
-     * <code>required string pw = 2;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getPwBytes();
-
-    // optional string secureid = 3;
-    /**
-     * <code>optional string secureid = 3;</code>
-     */
-    boolean hasSecureid();
-    /**
-     * <code>optional string secureid = 3;</code>
-     */
-    java.lang.String getSecureid();
-    /**
-     * <code>optional string secureid = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getSecureidBytes();
+    int getEntriesCount();
   }
   /**
    * Protobuf type {@code svmp.Authentication}
@@ -15972,17 +15957,15 @@ public final class SVMPProtocol {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              un_ = input.readBytes();
+              username_ = input.readBytes();
               break;
             }
             case 18: {
-              bitField0_ |= 0x00000002;
-              pw_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              secureid_ = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                entries_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              entries_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.PARSER, extensionRegistry));
               break;
             }
           }
@@ -15993,6 +15976,9 @@ public final class SVMPProtocol {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          entries_ = java.util.Collections.unmodifiableList(entries_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -16012,20 +15998,20 @@ public final class SVMPProtocol {
     }
 
     private int bitField0_;
-    // required string un = 1;
-    public static final int UN_FIELD_NUMBER = 1;
-    private java.lang.Object un_;
+    // required string username = 1;
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private java.lang.Object username_;
     /**
-     * <code>required string un = 1;</code>
+     * <code>required string username = 1;</code>
      */
-    public boolean hasUn() {
+    public boolean hasUsername() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required string un = 1;</code>
+     * <code>required string username = 1;</code>
      */
-    public java.lang.String getUn() {
-      java.lang.Object ref = un_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -16033,131 +16019,82 @@ public final class SVMPProtocol {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          un_ = s;
+          username_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>required string un = 1;</code>
+     * <code>required string username = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getUnBytes() {
-      java.lang.Object ref = un_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        un_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // required string pw = 2;
-    public static final int PW_FIELD_NUMBER = 2;
-    private java.lang.Object pw_;
+    // repeated .svmp.AuthenticationEntry entries = 2;
+    public static final int ENTRIES_FIELD_NUMBER = 2;
+    private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry> entries_;
     /**
-     * <code>required string pw = 2;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    public boolean hasPw() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+    public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry> getEntriesList() {
+      return entries_;
     }
     /**
-     * <code>required string pw = 2;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    public java.lang.String getPw() {
-      java.lang.Object ref = pw_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          pw_ = s;
-        }
-        return s;
-      }
+    public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntryOrBuilder> 
+        getEntriesOrBuilderList() {
+      return entries_;
     }
     /**
-     * <code>required string pw = 2;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getPwBytes() {
-      java.lang.Object ref = pw_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pw_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    // optional string secureid = 3;
-    public static final int SECUREID_FIELD_NUMBER = 3;
-    private java.lang.Object secureid_;
-    /**
-     * <code>optional string secureid = 3;</code>
-     */
-    public boolean hasSecureid() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+    public int getEntriesCount() {
+      return entries_.size();
     }
     /**
-     * <code>optional string secureid = 3;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    public java.lang.String getSecureid() {
-      java.lang.Object ref = secureid_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          secureid_ = s;
-        }
-        return s;
-      }
+    public org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry getEntries(int index) {
+      return entries_.get(index);
     }
     /**
-     * <code>optional string secureid = 3;</code>
+     * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getSecureidBytes() {
-      java.lang.Object ref = secureid_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        secureid_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntryOrBuilder getEntriesOrBuilder(
+        int index) {
+      return entries_.get(index);
     }
 
     private void initFields() {
-      un_ = "";
-      pw_ = "";
-      secureid_ = "";
+      username_ = "";
+      entries_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
 
-      if (!hasUn()) {
+      if (!hasUsername()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasPw()) {
-        memoizedIsInitialized = 0;
-        return false;
+      for (int i = 0; i < getEntriesCount(); i++) {
+        if (!getEntries(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       memoizedIsInitialized = 1;
       return true;
@@ -16167,13 +16104,10 @@ public final class SVMPProtocol {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getUnBytes());
+        output.writeBytes(1, getUsernameBytes());
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getPwBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getSecureidBytes());
+      for (int i = 0; i < entries_.size(); i++) {
+        output.writeMessage(2, entries_.get(i));
       }
     }
 
@@ -16185,15 +16119,11 @@ public final class SVMPProtocol {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getUnBytes());
+          .computeBytesSize(1, getUsernameBytes());
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      for (int i = 0; i < entries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getPwBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getSecureidBytes());
+          .computeMessageSize(2, entries_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -16286,12 +16216,10 @@ public final class SVMPProtocol {
 
       public Builder clear() {
         super.clear();
-        un_ = "";
+        username_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        pw_ = "";
+        entries_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        secureid_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -16318,47 +16246,46 @@ public final class SVMPProtocol {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.un_ = un_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
+        result.username_ = username_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          entries_ = java.util.Collections.unmodifiableList(entries_);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.pw_ = pw_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.secureid_ = secureid_;
+        result.entries_ = entries_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
 
       public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.Authentication other) {
         if (other == org.mitre.svmp.protocol.SVMPProtocol.Authentication.getDefaultInstance()) return this;
-        if (other.hasUn()) {
+        if (other.hasUsername()) {
           bitField0_ |= 0x00000001;
-          un_ = other.un_;
+          username_ = other.username_;
           
         }
-        if (other.hasPw()) {
-          bitField0_ |= 0x00000002;
-          pw_ = other.pw_;
-          
-        }
-        if (other.hasSecureid()) {
-          bitField0_ |= 0x00000004;
-          secureid_ = other.secureid_;
+        if (!other.entries_.isEmpty()) {
+          if (entries_.isEmpty()) {
+            entries_ = other.entries_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureEntriesIsMutable();
+            entries_.addAll(other.entries_);
+          }
           
         }
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasUn()) {
+        if (!hasUsername()) {
           
           return false;
         }
-        if (!hasPw()) {
-          
-          return false;
+        for (int i = 0; i < getEntriesCount(); i++) {
+          if (!getEntries(i).isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -16382,225 +16309,202 @@ public final class SVMPProtocol {
       }
       private int bitField0_;
 
-      // required string un = 1;
-      private java.lang.Object un_ = "";
+      // required string username = 1;
+      private java.lang.Object username_ = "";
       /**
-       * <code>required string un = 1;</code>
+       * <code>required string username = 1;</code>
        */
-      public boolean hasUn() {
+      public boolean hasUsername() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required string un = 1;</code>
+       * <code>required string username = 1;</code>
        */
-      public java.lang.String getUn() {
-        java.lang.Object ref = un_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          un_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>required string un = 1;</code>
+       * <code>required string username = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getUnBytes() {
-        java.lang.Object ref = un_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          un_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>required string un = 1;</code>
+       * <code>required string username = 1;</code>
        */
-      public Builder setUn(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        un_ = value;
+        username_ = value;
         
         return this;
       }
       /**
-       * <code>required string un = 1;</code>
+       * <code>required string username = 1;</code>
        */
-      public Builder clearUn() {
+      public Builder clearUsername() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        un_ = getDefaultInstance().getUn();
+        username_ = getDefaultInstance().getUsername();
         
         return this;
       }
       /**
-       * <code>required string un = 1;</code>
+       * <code>required string username = 1;</code>
        */
-      public Builder setUnBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        un_ = value;
+        username_ = value;
         
         return this;
       }
 
-      // required string pw = 2;
-      private java.lang.Object pw_ = "";
+      // repeated .svmp.AuthenticationEntry entries = 2;
+      private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry> entries_ =
+        java.util.Collections.emptyList();
+      private void ensureEntriesIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          entries_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry>(entries_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
       /**
-       * <code>required string pw = 2;</code>
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
        */
-      public boolean hasPw() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+      public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry> getEntriesList() {
+        return java.util.Collections.unmodifiableList(entries_);
       }
       /**
-       * <code>required string pw = 2;</code>
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
        */
-      public java.lang.String getPw() {
-        java.lang.Object ref = pw_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          pw_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getEntriesCount() {
+        return entries_.size();
       }
       /**
-       * <code>required string pw = 2;</code>
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPwBytes() {
-        java.lang.Object ref = pw_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pw_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+      public org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry getEntries(int index) {
+        return entries_.get(index);
       }
       /**
-       * <code>required string pw = 2;</code>
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
        */
-      public Builder setPw(
-          java.lang.String value) {
+      public Builder setEntries(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        pw_ = value;
-        
+          throw new NullPointerException();
+        }
+        ensureEntriesIsMutable();
+        entries_.set(index, value);
+
         return this;
       }
       /**
-       * <code>required string pw = 2;</code>
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
        */
-      public Builder clearPw() {
+      public Builder setEntries(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.Builder builderForValue) {
+        ensureEntriesIsMutable();
+        entries_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
+       */
+      public Builder addEntries(org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntriesIsMutable();
+        entries_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
+       */
+      public Builder addEntries(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntriesIsMutable();
+        entries_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
+       */
+      public Builder addEntries(
+          org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.Builder builderForValue) {
+        ensureEntriesIsMutable();
+        entries_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
+       */
+      public Builder addEntries(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.Builder builderForValue) {
+        ensureEntriesIsMutable();
+        entries_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
+       */
+      public Builder addAllEntries(
+          java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry> values) {
+        ensureEntriesIsMutable();
+        super.addAll(values, entries_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
+       */
+      public Builder clearEntries() {
+        entries_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        pw_ = getDefaultInstance().getPw();
-        
-        return this;
-      }
-      /**
-       * <code>required string pw = 2;</code>
-       */
-      public Builder setPwBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        pw_ = value;
-        
-        return this;
-      }
 
-      // optional string secureid = 3;
-      private java.lang.Object secureid_ = "";
-      /**
-       * <code>optional string secureid = 3;</code>
-       */
-      public boolean hasSecureid() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional string secureid = 3;</code>
-       */
-      public java.lang.String getSecureid() {
-        java.lang.Object ref = secureid_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          secureid_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string secureid = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSecureidBytes() {
-        java.lang.Object ref = secureid_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          secureid_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string secureid = 3;</code>
-       */
-      public Builder setSecureid(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        secureid_ = value;
-        
         return this;
       }
       /**
-       * <code>optional string secureid = 3;</code>
+       * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
        */
-      public Builder clearSecureid() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        secureid_ = getDefaultInstance().getSecureid();
-        
-        return this;
-      }
-      /**
-       * <code>optional string secureid = 3;</code>
-       */
-      public Builder setSecureidBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        secureid_ = value;
-        
+      public Builder removeEntries(int index) {
+        ensureEntriesIsMutable();
+        entries_.remove(index);
+
         return this;
       }
 
@@ -16613,6 +16517,514 @@ public final class SVMPProtocol {
     }
 
     // @@protoc_insertion_point(class_scope:svmp.Authentication)
+  }
+
+  public interface AuthenticationEntryOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required string key = 1;
+    /**
+     * <code>required string key = 1;</code>
+     */
+    boolean hasKey();
+    /**
+     * <code>required string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>required string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    // required bytes value = 2;
+    /**
+     * <code>required bytes value = 2;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>required bytes value = 2;</code>
+     */
+    com.google.protobuf.ByteString getValue();
+  }
+  /**
+   * Protobuf type {@code svmp.AuthenticationEntry}
+   */
+  public static final class AuthenticationEntry extends
+      com.google.protobuf.GeneratedMessageLite
+      implements AuthenticationEntryOrBuilder {
+    // Use AuthenticationEntry.newBuilder() to construct.
+    private AuthenticationEntry(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private AuthenticationEntry(boolean noInit) {}
+
+    private static final AuthenticationEntry defaultInstance;
+    public static AuthenticationEntry getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AuthenticationEntry getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private AuthenticationEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              key_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              value_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<AuthenticationEntry> PARSER =
+        new com.google.protobuf.AbstractParser<AuthenticationEntry>() {
+      public AuthenticationEntry parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AuthenticationEntry(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuthenticationEntry> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string key = 1;
+    public static final int KEY_FIELD_NUMBER = 1;
+    private java.lang.Object key_;
+    /**
+     * <code>required string key = 1;</code>
+     */
+    public boolean hasKey() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          key_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required bytes value = 2;
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString value_;
+    /**
+     * <code>required bytes value = 2;</code>
+     */
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required bytes value = 2;</code>
+     */
+    public com.google.protobuf.ByteString getValue() {
+      return value_;
+    }
+
+    private void initFields() {
+      key_ = "";
+      value_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasKey()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getKeyBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, value_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getKeyBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, value_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code svmp.AuthenticationEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntryOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        key_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.getDefaultInstance();
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry build() {
+        org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry result = new org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.key_ = key_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.value_ = value_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.getDefaultInstance()) return this;
+        if (other.hasKey()) {
+          bitField0_ |= 0x00000001;
+          key_ = other.key_;
+          
+        }
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasKey()) {
+          
+          return false;
+        }
+        if (!hasValue()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string key = 1;
+      private java.lang.Object key_ = "";
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public boolean hasKey() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        key_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public Builder clearKey() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        key_ = getDefaultInstance().getKey();
+        
+        return this;
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        key_ = value;
+        
+        return this;
+      }
+
+      // required bytes value = 2;
+      private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes value = 2;</code>
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required bytes value = 2;</code>
+       */
+      public com.google.protobuf.ByteString getValue() {
+        return value_;
+      }
+      /**
+       * <code>required bytes value = 2;</code>
+       */
+      public Builder setValue(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        value_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required bytes value = 2;</code>
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = getDefaultInstance().getValue();
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:svmp.AuthenticationEntry)
+    }
+
+    static {
+      defaultInstance = new AuthenticationEntry(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:svmp.AuthenticationEntry)
   }
 
   public interface VideoRequestOrBuilder
