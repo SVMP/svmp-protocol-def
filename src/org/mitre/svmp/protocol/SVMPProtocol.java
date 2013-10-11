@@ -15911,6 +15911,21 @@ public final class SVMPProtocol {
      * <code>repeated .svmp.AuthenticationEntry entries = 2;</code>
      */
     int getEntriesCount();
+
+    // optional string sessionToken = 3;
+    /**
+     * <code>optional string sessionToken = 3;</code>
+     */
+    boolean hasSessionToken();
+    /**
+     * <code>optional string sessionToken = 3;</code>
+     */
+    java.lang.String getSessionToken();
+    /**
+     * <code>optional string sessionToken = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSessionTokenBytes();
   }
   /**
    * Protobuf type {@code svmp.Authentication}
@@ -15966,6 +15981,11 @@ public final class SVMPProtocol {
                 mutable_bitField0_ |= 0x00000002;
               }
               entries_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AuthenticationEntry.PARSER, extensionRegistry));
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000002;
+              sessionToken_ = input.readBytes();
               break;
             }
           }
@@ -16077,9 +16097,53 @@ public final class SVMPProtocol {
       return entries_.get(index);
     }
 
+    // optional string sessionToken = 3;
+    public static final int SESSIONTOKEN_FIELD_NUMBER = 3;
+    private java.lang.Object sessionToken_;
+    /**
+     * <code>optional string sessionToken = 3;</code>
+     */
+    public boolean hasSessionToken() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string sessionToken = 3;</code>
+     */
+    public java.lang.String getSessionToken() {
+      java.lang.Object ref = sessionToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          sessionToken_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string sessionToken = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSessionTokenBytes() {
+      java.lang.Object ref = sessionToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       username_ = "";
       entries_ = java.util.Collections.emptyList();
+      sessionToken_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -16109,6 +16173,9 @@ public final class SVMPProtocol {
       for (int i = 0; i < entries_.size(); i++) {
         output.writeMessage(2, entries_.get(i));
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(3, getSessionTokenBytes());
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -16124,6 +16191,10 @@ public final class SVMPProtocol {
       for (int i = 0; i < entries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, entries_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getSessionTokenBytes());
       }
       memoizedSerializedSize = size;
       return size;
@@ -16220,6 +16291,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000001);
         entries_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        sessionToken_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -16252,6 +16325,10 @@ public final class SVMPProtocol {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.entries_ = entries_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.sessionToken_ = sessionToken_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -16271,6 +16348,11 @@ public final class SVMPProtocol {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
           }
+          
+        }
+        if (other.hasSessionToken()) {
+          bitField0_ |= 0x00000004;
+          sessionToken_ = other.sessionToken_;
           
         }
         return this;
@@ -16505,6 +16587,80 @@ public final class SVMPProtocol {
         ensureEntriesIsMutable();
         entries_.remove(index);
 
+        return this;
+      }
+
+      // optional string sessionToken = 3;
+      private java.lang.Object sessionToken_ = "";
+      /**
+       * <code>optional string sessionToken = 3;</code>
+       */
+      public boolean hasSessionToken() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string sessionToken = 3;</code>
+       */
+      public java.lang.String getSessionToken() {
+        java.lang.Object ref = sessionToken_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          sessionToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string sessionToken = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSessionTokenBytes() {
+        java.lang.Object ref = sessionToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string sessionToken = 3;</code>
+       */
+      public Builder setSessionToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        sessionToken_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string sessionToken = 3;</code>
+       */
+      public Builder clearSessionToken() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sessionToken_ = getDefaultInstance().getSessionToken();
+        
+        return this;
+      }
+      /**
+       * <code>optional string sessionToken = 3;</code>
+       */
+      public Builder setSessionTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        sessionToken_ = value;
+        
         return this;
       }
 

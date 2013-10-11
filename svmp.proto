@@ -291,6 +291,7 @@ message LocationResponse {
 message Authentication {
   required string username             = 1;
   repeated AuthenticationEntry entries = 2;
+  optional string sessionToken         = 3;
 }
 
 message AuthenticationEntry {
