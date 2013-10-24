@@ -16477,13 +16477,9 @@ public final class SVMPProtocol {
        */
       SESSION_TOKEN(0, 0),
       /**
-       * <code>PASSWORD = 1;</code>
+       * <code>AUTHENTICATION = 1;</code>
        */
-      PASSWORD(1, 1),
-      /**
-       * <code>PASSWORD_AND_SECURITY_TOKEN = 2;</code>
-       */
-      PASSWORD_AND_SECURITY_TOKEN(2, 2),
+      AUTHENTICATION(1, 1),
       ;
 
       /**
@@ -16491,13 +16487,9 @@ public final class SVMPProtocol {
        */
       public static final int SESSION_TOKEN_VALUE = 0;
       /**
-       * <code>PASSWORD = 1;</code>
+       * <code>AUTHENTICATION = 1;</code>
        */
-      public static final int PASSWORD_VALUE = 1;
-      /**
-       * <code>PASSWORD_AND_SECURITY_TOKEN = 2;</code>
-       */
-      public static final int PASSWORD_AND_SECURITY_TOKEN_VALUE = 2;
+      public static final int AUTHENTICATION_VALUE = 1;
 
 
       public final int getNumber() { return value; }
@@ -16505,8 +16497,7 @@ public final class SVMPProtocol {
       public static AuthRequestType valueOf(int value) {
         switch (value) {
           case 0: return SESSION_TOKEN;
-          case 1: return PASSWORD;
-          case 2: return PASSWORD_AND_SECURITY_TOKEN;
+          case 1: return AUTHENTICATION;
           default: return null;
         }
       }

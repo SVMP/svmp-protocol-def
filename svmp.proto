@@ -298,9 +298,8 @@ message AuthRequest {
   required AuthRequestType type = 1;
 
   enum AuthRequestType {
-    SESSION_TOKEN               = 0;
-    PASSWORD                    = 1;
-    PASSWORD_AND_SECURITY_TOKEN = 2;
+    SESSION_TOKEN  = 0;
+    AUTHENTICATION = 1; // any combination of auth input (password, security token, etc)
   }
 
   required string username      = 2;
