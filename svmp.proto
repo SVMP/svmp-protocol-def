@@ -35,6 +35,7 @@ message Request
     VIDEO_STOP    = 8;
     WEBRTC        = 9;
     ROTATION_INFO = 10;
+    PING          = 11; // client-initiated ping measurement (ms)
   }
 
   optional AuthRequest authRequest = 2;
@@ -47,6 +48,7 @@ message Request
 
   optional WebRTCMessage webrtcMsg = 9;
   optional RotationInfo rotationInfo = 10;
+  optional Ping pingRequest = 11;
 }
 
 // Server to client message wrapper
@@ -66,6 +68,7 @@ message Response
     VIDEOSTOP     = 9;
     VIDEOPAUSE    = 10;
     WEBRTC        = 11; // WebRTC signalling message
+    PING          = 12; // response to client ping measurement (ms)
   }
 
   required ResponseType type = 1;
@@ -76,6 +79,7 @@ message Response
   optional Notification notification = 5;
   
   optional LocationResponse locationResponse = 6;
+  optional Ping pingResponse = 7;
 
   optional ScreenInfo screenInfo = 16;
   optional VideoStreamInfo videoInfo = 17;
@@ -388,4 +392,9 @@ message VideoStreamInfo {
 // C->S
 message RotationInfo  {
   required int32 rotation = 1;
+}
+
+// C<->S
+message Ping {
+  required int64 startDate = 1;
 }
