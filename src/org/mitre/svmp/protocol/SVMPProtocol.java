@@ -16595,6 +16595,10 @@ public final class SVMPProtocol {
       SESSION_TOKEN(0, 0),
       /**
        * <code>AUTHENTICATION = 1;</code>
+       *
+       * <pre>
+       * any combination of auth input (password, security token, etc)
+       * </pre>
        */
       AUTHENTICATION(1, 1),
       ;
@@ -16605,6 +16609,10 @@ public final class SVMPProtocol {
       public static final int SESSION_TOKEN_VALUE = 0;
       /**
        * <code>AUTHENTICATION = 1;</code>
+       *
+       * <pre>
+       * any combination of auth input (password, security token, etc)
+       * </pre>
        */
       public static final int AUTHENTICATION_VALUE = 1;
 
@@ -17466,20 +17474,23 @@ public final class SVMPProtocol {
      */
     org.mitre.svmp.protocol.SVMPProtocol.AuthResponse.AuthResponseType getType();
 
-    // optional string sessionToken = 2;
+    // optional .svmp.SessionInfo sessionInfo = 2;
     /**
-     * <code>optional string sessionToken = 2;</code>
+     * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+     *
+     * <pre>
+     * sent with an AUTH_OK message
+     * </pre>
      */
-    boolean hasSessionToken();
+    boolean hasSessionInfo();
     /**
-     * <code>optional string sessionToken = 2;</code>
+     * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+     *
+     * <pre>
+     * sent with an AUTH_OK message
+     * </pre>
      */
-    java.lang.String getSessionToken();
-    /**
-     * <code>optional string sessionToken = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getSessionTokenBytes();
+    org.mitre.svmp.protocol.SVMPProtocol.SessionInfo getSessionInfo();
   }
   /**
    * Protobuf type {@code svmp.AuthResponse}
@@ -17538,8 +17549,16 @@ public final class SVMPProtocol {
               break;
             }
             case 18: {
+              org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = sessionInfo_.toBuilder();
+              }
+              sessionInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sessionInfo_);
+                sessionInfo_ = subBuilder.buildPartial();
+              }
               bitField0_ |= 0x00000002;
-              sessionToken_ = input.readBytes();
               break;
             }
           }
@@ -17691,52 +17710,33 @@ public final class SVMPProtocol {
       return type_;
     }
 
-    // optional string sessionToken = 2;
-    public static final int SESSIONTOKEN_FIELD_NUMBER = 2;
-    private java.lang.Object sessionToken_;
+    // optional .svmp.SessionInfo sessionInfo = 2;
+    public static final int SESSIONINFO_FIELD_NUMBER = 2;
+    private org.mitre.svmp.protocol.SVMPProtocol.SessionInfo sessionInfo_;
     /**
-     * <code>optional string sessionToken = 2;</code>
+     * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+     *
+     * <pre>
+     * sent with an AUTH_OK message
+     * </pre>
      */
-    public boolean hasSessionToken() {
+    public boolean hasSessionInfo() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional string sessionToken = 2;</code>
+     * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+     *
+     * <pre>
+     * sent with an AUTH_OK message
+     * </pre>
      */
-    public java.lang.String getSessionToken() {
-      java.lang.Object ref = sessionToken_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          sessionToken_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string sessionToken = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSessionTokenBytes() {
-      java.lang.Object ref = sessionToken_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sessionToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public org.mitre.svmp.protocol.SVMPProtocol.SessionInfo getSessionInfo() {
+      return sessionInfo_;
     }
 
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.AuthResponse.AuthResponseType.AUTH_OK;
-      sessionToken_ = "";
+      sessionInfo_ = org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -17746,6 +17746,12 @@ public final class SVMPProtocol {
       if (!hasType()) {
         memoizedIsInitialized = 0;
         return false;
+      }
+      if (hasSessionInfo()) {
+        if (!getSessionInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       memoizedIsInitialized = 1;
       return true;
@@ -17758,7 +17764,7 @@ public final class SVMPProtocol {
         output.writeEnum(1, type_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getSessionTokenBytes());
+        output.writeMessage(2, sessionInfo_);
       }
     }
 
@@ -17774,7 +17780,7 @@ public final class SVMPProtocol {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getSessionTokenBytes());
+          .computeMessageSize(2, sessionInfo_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -17873,7 +17879,7 @@ public final class SVMPProtocol {
         super.clear();
         type_ = org.mitre.svmp.protocol.SVMPProtocol.AuthResponse.AuthResponseType.AUTH_OK;
         bitField0_ = (bitField0_ & ~0x00000001);
-        sessionToken_ = "";
+        sessionInfo_ = org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -17905,7 +17911,7 @@ public final class SVMPProtocol {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.sessionToken_ = sessionToken_;
+        result.sessionInfo_ = sessionInfo_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -17915,10 +17921,8 @@ public final class SVMPProtocol {
         if (other.hasType()) {
           setType(other.getType());
         }
-        if (other.hasSessionToken()) {
-          bitField0_ |= 0x00000002;
-          sessionToken_ = other.sessionToken_;
-          
+        if (other.hasSessionInfo()) {
+          mergeSessionInfo(other.getSessionInfo());
         }
         return this;
       }
@@ -17927,6 +17931,12 @@ public final class SVMPProtocol {
         if (!hasType()) {
           
           return false;
+        }
+        if (hasSessionInfo()) {
+          if (!getSessionInfo().isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -17986,77 +17996,88 @@ public final class SVMPProtocol {
         return this;
       }
 
-      // optional string sessionToken = 2;
-      private java.lang.Object sessionToken_ = "";
+      // optional .svmp.SessionInfo sessionInfo = 2;
+      private org.mitre.svmp.protocol.SVMPProtocol.SessionInfo sessionInfo_ = org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance();
       /**
-       * <code>optional string sessionToken = 2;</code>
+       * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+       *
+       * <pre>
+       * sent with an AUTH_OK message
+       * </pre>
        */
-      public boolean hasSessionToken() {
+      public boolean hasSessionInfo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional string sessionToken = 2;</code>
+       * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+       *
+       * <pre>
+       * sent with an AUTH_OK message
+       * </pre>
        */
-      public java.lang.String getSessionToken() {
-        java.lang.Object ref = sessionToken_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          sessionToken_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public org.mitre.svmp.protocol.SVMPProtocol.SessionInfo getSessionInfo() {
+        return sessionInfo_;
       }
       /**
-       * <code>optional string sessionToken = 2;</code>
+       * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+       *
+       * <pre>
+       * sent with an AUTH_OK message
+       * </pre>
        */
-      public com.google.protobuf.ByteString
-          getSessionTokenBytes() {
-        java.lang.Object ref = sessionToken_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sessionToken_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string sessionToken = 2;</code>
-       */
-      public Builder setSessionToken(
-          java.lang.String value) {
+      public Builder setSessionInfo(org.mitre.svmp.protocol.SVMPProtocol.SessionInfo value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        sessionToken_ = value;
-        
+          throw new NullPointerException();
+        }
+        sessionInfo_ = value;
+
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional string sessionToken = 2;</code>
+       * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+       *
+       * <pre>
+       * sent with an AUTH_OK message
+       * </pre>
        */
-      public Builder clearSessionToken() {
+      public Builder setSessionInfo(
+          org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.Builder builderForValue) {
+        sessionInfo_ = builderForValue.build();
+
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+       *
+       * <pre>
+       * sent with an AUTH_OK message
+       * </pre>
+       */
+      public Builder mergeSessionInfo(org.mitre.svmp.protocol.SVMPProtocol.SessionInfo value) {
+        if (((bitField0_ & 0x00000002) == 0x00000002) &&
+            sessionInfo_ != org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance()) {
+          sessionInfo_ =
+            org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.newBuilder(sessionInfo_).mergeFrom(value).buildPartial();
+        } else {
+          sessionInfo_ = value;
+        }
+
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.SessionInfo sessionInfo = 2;</code>
+       *
+       * <pre>
+       * sent with an AUTH_OK message
+       * </pre>
+       */
+      public Builder clearSessionInfo() {
+        sessionInfo_ = org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance();
+
         bitField0_ = (bitField0_ & ~0x00000002);
-        sessionToken_ = getDefaultInstance().getSessionToken();
-        
-        return this;
-      }
-      /**
-       * <code>optional string sessionToken = 2;</code>
-       */
-      public Builder setSessionTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-        sessionToken_ = value;
-        
         return this;
       }
 
@@ -18069,6 +18090,712 @@ public final class SVMPProtocol {
     }
 
     // @@protoc_insertion_point(class_scope:svmp.AuthResponse)
+  }
+
+  public interface SessionInfoOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required string token = 1;
+    /**
+     * <code>required string token = 1;</code>
+     *
+     * <pre>
+     * randomly generated token identifier
+     * </pre>
+     */
+    boolean hasToken();
+    /**
+     * <code>required string token = 1;</code>
+     *
+     * <pre>
+     * randomly generated token identifier
+     * </pre>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>required string token = 1;</code>
+     *
+     * <pre>
+     * randomly generated token identifier
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    // required int32 maxLength = 2;
+    /**
+     * <code>required int32 maxLength = 2;</code>
+     *
+     * <pre>
+     * max life in seconds of the session before it expires (server: max_session_length)
+     * </pre>
+     */
+    boolean hasMaxLength();
+    /**
+     * <code>required int32 maxLength = 2;</code>
+     *
+     * <pre>
+     * max life in seconds of the session before it expires (server: max_session_length)
+     * </pre>
+     */
+    int getMaxLength();
+
+    // required int32 gracePeriod = 3;
+    /**
+     * <code>required int32 gracePeriod = 3;</code>
+     *
+     * <pre>
+     * time period in seconds that the session can reconnect (server: session_token_ttl)
+     * </pre>
+     */
+    boolean hasGracePeriod();
+    /**
+     * <code>required int32 gracePeriod = 3;</code>
+     *
+     * <pre>
+     * time period in seconds that the session can reconnect (server: session_token_ttl)
+     * </pre>
+     */
+    int getGracePeriod();
+  }
+  /**
+   * Protobuf type {@code svmp.SessionInfo}
+   */
+  public static final class SessionInfo extends
+      com.google.protobuf.GeneratedMessageLite
+      implements SessionInfoOrBuilder {
+    // Use SessionInfo.newBuilder() to construct.
+    private SessionInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private SessionInfo(boolean noInit) {}
+
+    private static final SessionInfo defaultInstance;
+    public static SessionInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public SessionInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private SessionInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              token_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              maxLength_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              gracePeriod_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<SessionInfo> PARSER =
+        new com.google.protobuf.AbstractParser<SessionInfo>() {
+      public SessionInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SessionInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SessionInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string token = 1;
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private java.lang.Object token_;
+    /**
+     * <code>required string token = 1;</code>
+     *
+     * <pre>
+     * randomly generated token identifier
+     * </pre>
+     */
+    public boolean hasToken() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string token = 1;</code>
+     *
+     * <pre>
+     * randomly generated token identifier
+     * </pre>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          token_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string token = 1;</code>
+     *
+     * <pre>
+     * randomly generated token identifier
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required int32 maxLength = 2;
+    public static final int MAXLENGTH_FIELD_NUMBER = 2;
+    private int maxLength_;
+    /**
+     * <code>required int32 maxLength = 2;</code>
+     *
+     * <pre>
+     * max life in seconds of the session before it expires (server: max_session_length)
+     * </pre>
+     */
+    public boolean hasMaxLength() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required int32 maxLength = 2;</code>
+     *
+     * <pre>
+     * max life in seconds of the session before it expires (server: max_session_length)
+     * </pre>
+     */
+    public int getMaxLength() {
+      return maxLength_;
+    }
+
+    // required int32 gracePeriod = 3;
+    public static final int GRACEPERIOD_FIELD_NUMBER = 3;
+    private int gracePeriod_;
+    /**
+     * <code>required int32 gracePeriod = 3;</code>
+     *
+     * <pre>
+     * time period in seconds that the session can reconnect (server: session_token_ttl)
+     * </pre>
+     */
+    public boolean hasGracePeriod() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 gracePeriod = 3;</code>
+     *
+     * <pre>
+     * time period in seconds that the session can reconnect (server: session_token_ttl)
+     * </pre>
+     */
+    public int getGracePeriod() {
+      return gracePeriod_;
+    }
+
+    private void initFields() {
+      token_ = "";
+      maxLength_ = 0;
+      gracePeriod_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasToken()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMaxLength()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasGracePeriod()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getTokenBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, maxLength_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, gracePeriod_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getTokenBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, maxLength_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, gracePeriod_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.SessionInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code svmp.SessionInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.SessionInfo, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.SessionInfoOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        token_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        maxLength_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gracePeriod_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.SessionInfo getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance();
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.SessionInfo build() {
+        org.mitre.svmp.protocol.SVMPProtocol.SessionInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.SessionInfo buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.SessionInfo result = new org.mitre.svmp.protocol.SVMPProtocol.SessionInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.token_ = token_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.maxLength_ = maxLength_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.gracePeriod_ = gracePeriod_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.SessionInfo other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.SessionInfo.getDefaultInstance()) return this;
+        if (other.hasToken()) {
+          bitField0_ |= 0x00000001;
+          token_ = other.token_;
+          
+        }
+        if (other.hasMaxLength()) {
+          setMaxLength(other.getMaxLength());
+        }
+        if (other.hasGracePeriod()) {
+          setGracePeriod(other.getGracePeriod());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasToken()) {
+          
+          return false;
+        }
+        if (!hasMaxLength()) {
+          
+          return false;
+        }
+        if (!hasGracePeriod()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.mitre.svmp.protocol.SVMPProtocol.SessionInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.SessionInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string token = 1;
+      private java.lang.Object token_ = "";
+      /**
+       * <code>required string token = 1;</code>
+       *
+       * <pre>
+       * randomly generated token identifier
+       * </pre>
+       */
+      public boolean hasToken() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string token = 1;</code>
+       *
+       * <pre>
+       * randomly generated token identifier
+       * </pre>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string token = 1;</code>
+       *
+       * <pre>
+       * randomly generated token identifier
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string token = 1;</code>
+       *
+       * <pre>
+       * randomly generated token identifier
+       * </pre>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        token_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string token = 1;</code>
+       *
+       * <pre>
+       * randomly generated token identifier
+       * </pre>
+       */
+      public Builder clearToken() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        token_ = getDefaultInstance().getToken();
+        
+        return this;
+      }
+      /**
+       * <code>required string token = 1;</code>
+       *
+       * <pre>
+       * randomly generated token identifier
+       * </pre>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        token_ = value;
+        
+        return this;
+      }
+
+      // required int32 maxLength = 2;
+      private int maxLength_ ;
+      /**
+       * <code>required int32 maxLength = 2;</code>
+       *
+       * <pre>
+       * max life in seconds of the session before it expires (server: max_session_length)
+       * </pre>
+       */
+      public boolean hasMaxLength() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required int32 maxLength = 2;</code>
+       *
+       * <pre>
+       * max life in seconds of the session before it expires (server: max_session_length)
+       * </pre>
+       */
+      public int getMaxLength() {
+        return maxLength_;
+      }
+      /**
+       * <code>required int32 maxLength = 2;</code>
+       *
+       * <pre>
+       * max life in seconds of the session before it expires (server: max_session_length)
+       * </pre>
+       */
+      public Builder setMaxLength(int value) {
+        bitField0_ |= 0x00000002;
+        maxLength_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required int32 maxLength = 2;</code>
+       *
+       * <pre>
+       * max life in seconds of the session before it expires (server: max_session_length)
+       * </pre>
+       */
+      public Builder clearMaxLength() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxLength_ = 0;
+        
+        return this;
+      }
+
+      // required int32 gracePeriod = 3;
+      private int gracePeriod_ ;
+      /**
+       * <code>required int32 gracePeriod = 3;</code>
+       *
+       * <pre>
+       * time period in seconds that the session can reconnect (server: session_token_ttl)
+       * </pre>
+       */
+      public boolean hasGracePeriod() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 gracePeriod = 3;</code>
+       *
+       * <pre>
+       * time period in seconds that the session can reconnect (server: session_token_ttl)
+       * </pre>
+       */
+      public int getGracePeriod() {
+        return gracePeriod_;
+      }
+      /**
+       * <code>required int32 gracePeriod = 3;</code>
+       *
+       * <pre>
+       * time period in seconds that the session can reconnect (server: session_token_ttl)
+       * </pre>
+       */
+      public Builder setGracePeriod(int value) {
+        bitField0_ |= 0x00000004;
+        gracePeriod_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required int32 gracePeriod = 3;</code>
+       *
+       * <pre>
+       * time period in seconds that the session can reconnect (server: session_token_ttl)
+       * </pre>
+       */
+      public Builder clearGracePeriod() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        gracePeriod_ = 0;
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:svmp.SessionInfo)
+    }
+
+    static {
+      defaultInstance = new SessionInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:svmp.SessionInfo)
   }
 
   public interface VideoRequestOrBuilder
