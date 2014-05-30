@@ -335,6 +335,21 @@ public final class SVMPProtocol {
      * <code>optional .svmp.VideoStreamInfo videoInfo = 12;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo getVideoInfo();
+
+    // optional string timezoneId = 13;
+    /**
+     * <code>optional string timezoneId = 13;</code>
+     */
+    boolean hasTimezoneId();
+    /**
+     * <code>optional string timezoneId = 13;</code>
+     */
+    java.lang.String getTimezoneId();
+    /**
+     * <code>optional string timezoneId = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getTimezoneIdBytes();
   }
   /**
    * Protobuf type {@code svmp.Request}
@@ -522,6 +537,11 @@ public final class SVMPProtocol {
               bitField0_ |= 0x00000400;
               break;
             }
+            case 106: {
+              bitField0_ |= 0x00000800;
+              timezoneId_ = input.readBytes();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -605,6 +625,10 @@ public final class SVMPProtocol {
        * </pre>
        */
       PING(11, 11),
+      /**
+       * <code>TIMEZONE = 12;</code>
+       */
+      TIMEZONE(12, 12),
       ;
 
       /**
@@ -659,6 +683,10 @@ public final class SVMPProtocol {
        * </pre>
        */
       public static final int PING_VALUE = 11;
+      /**
+       * <code>TIMEZONE = 12;</code>
+       */
+      public static final int TIMEZONE_VALUE = 12;
 
 
       public final int getNumber() { return value; }
@@ -677,6 +705,7 @@ public final class SVMPProtocol {
           case 9: return WEBRTC;
           case 10: return ROTATION_INFO;
           case 11: return PING;
+          case 12: return TIMEZONE;
           default: return null;
         }
       }
@@ -879,6 +908,49 @@ public final class SVMPProtocol {
       return videoInfo_;
     }
 
+    // optional string timezoneId = 13;
+    public static final int TIMEZONEID_FIELD_NUMBER = 13;
+    private java.lang.Object timezoneId_;
+    /**
+     * <code>optional string timezoneId = 13;</code>
+     */
+    public boolean hasTimezoneId() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional string timezoneId = 13;</code>
+     */
+    public java.lang.String getTimezoneId() {
+      java.lang.Object ref = timezoneId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          timezoneId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string timezoneId = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTimezoneIdBytes() {
+      java.lang.Object ref = timezoneId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timezoneId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.AUTH;
       authRequest_ = org.mitre.svmp.protocol.SVMPProtocol.AuthRequest.getDefaultInstance();
@@ -891,6 +963,7 @@ public final class SVMPProtocol {
       rotationInfo_ = org.mitre.svmp.protocol.SVMPProtocol.RotationInfo.getDefaultInstance();
       pingRequest_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
       videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
+      timezoneId_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -989,6 +1062,9 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeMessage(12, videoInfo_);
       }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeBytes(13, getTimezoneIdBytes());
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -1040,6 +1116,10 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, videoInfo_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getTimezoneIdBytes());
       }
       memoizedSerializedSize = size;
       return size;
@@ -1158,6 +1238,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000200);
         videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000400);
+        timezoneId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -1225,6 +1307,10 @@ public final class SVMPProtocol {
           to_bitField0_ |= 0x00000400;
         }
         result.videoInfo_ = videoInfo_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.timezoneId_ = timezoneId_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -1263,6 +1349,11 @@ public final class SVMPProtocol {
         }
         if (other.hasVideoInfo()) {
           mergeVideoInfo(other.getVideoInfo());
+        }
+        if (other.hasTimezoneId()) {
+          bitField0_ |= 0x00000800;
+          timezoneId_ = other.timezoneId_;
+          
         }
         return this;
       }
@@ -1985,6 +2076,80 @@ public final class SVMPProtocol {
         videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
 
         bitField0_ = (bitField0_ & ~0x00000400);
+        return this;
+      }
+
+      // optional string timezoneId = 13;
+      private java.lang.Object timezoneId_ = "";
+      /**
+       * <code>optional string timezoneId = 13;</code>
+       */
+      public boolean hasTimezoneId() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional string timezoneId = 13;</code>
+       */
+      public java.lang.String getTimezoneId() {
+        java.lang.Object ref = timezoneId_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          timezoneId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string timezoneId = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTimezoneIdBytes() {
+        java.lang.Object ref = timezoneId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          timezoneId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string timezoneId = 13;</code>
+       */
+      public Builder setTimezoneId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        timezoneId_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string timezoneId = 13;</code>
+       */
+      public Builder clearTimezoneId() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        timezoneId_ = getDefaultInstance().getTimezoneId();
+        
+        return this;
+      }
+      /**
+       * <code>optional string timezoneId = 13;</code>
+       */
+      public Builder setTimezoneIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        timezoneId_ = value;
+        
         return this;
       }
 

@@ -36,6 +36,7 @@ message Request
     WEBRTC        = 9;
     ROTATION_INFO = 10;
     PING          = 11; // client-initiated ping measurement (ms)
+    TIMEZONE      = 12;
   }
 
   optional AuthRequest authRequest = 2;
@@ -50,6 +51,7 @@ message Request
   optional RotationInfo rotationInfo = 10;
   optional Ping pingRequest = 11;
   optional VideoStreamInfo videoInfo = 12;
+  optional string timezoneId = 13;
 }
 
 // Server to client message wrapper
