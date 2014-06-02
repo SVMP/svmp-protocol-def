@@ -7184,6 +7184,51 @@ public final class SVMPProtocol {
      * <code>repeated .svmp.TouchEvent.PointerCoords items = 2;</code>
      */
     int getItemsCount();
+
+    // optional int64 downTime = 3;
+    /**
+     * <code>optional int64 downTime = 3;</code>
+     */
+    boolean hasDownTime();
+    /**
+     * <code>optional int64 downTime = 3;</code>
+     */
+    long getDownTime();
+
+    // optional int64 eventTime = 4;
+    /**
+     * <code>optional int64 eventTime = 4;</code>
+     */
+    boolean hasEventTime();
+    /**
+     * <code>optional int64 eventTime = 4;</code>
+     */
+    long getEventTime();
+
+    // repeated .svmp.TouchEvent.HistoricalEvent historical = 5;
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent> 
+        getHistoricalList();
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent getHistorical(int index);
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    int getHistoricalCount();
+
+    // optional int32 edgeFlags = 6;
+    /**
+     * <code>optional int32 edgeFlags = 6;</code>
+     */
+    boolean hasEdgeFlags();
+    /**
+     * <code>optional int32 edgeFlags = 6;</code>
+     */
+    int getEdgeFlags();
   }
   /**
    * Protobuf type {@code svmp.TouchEvent}
@@ -7245,6 +7290,29 @@ public final class SVMPProtocol {
               items_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.PARSER, extensionRegistry));
               break;
             }
+            case 24: {
+              bitField0_ |= 0x00000002;
+              downTime_ = input.readInt64();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              eventTime_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                historical_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              historical_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.PARSER, extensionRegistry));
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000008;
+              edgeFlags_ = input.readInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7255,6 +7323,9 @@ public final class SVMPProtocol {
       } finally {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           items_ = java.util.Collections.unmodifiableList(items_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          historical_ = java.util.Collections.unmodifiableList(historical_);
         }
         makeExtensionsImmutable();
       }
@@ -7793,6 +7864,571 @@ public final class SVMPProtocol {
       // @@protoc_insertion_point(class_scope:svmp.TouchEvent.PointerCoords)
     }
 
+    public interface HistoricalEventOrBuilder
+        extends com.google.protobuf.MessageLiteOrBuilder {
+
+      // required int64 eventTime = 1;
+      /**
+       * <code>required int64 eventTime = 1;</code>
+       */
+      boolean hasEventTime();
+      /**
+       * <code>required int64 eventTime = 1;</code>
+       */
+      long getEventTime();
+
+      // repeated .svmp.TouchEvent.PointerCoords coords = 2;
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> 
+          getCoordsList();
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getCoords(int index);
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      int getCoordsCount();
+    }
+    /**
+     * Protobuf type {@code svmp.TouchEvent.HistoricalEvent}
+     */
+    public static final class HistoricalEvent extends
+        com.google.protobuf.GeneratedMessageLite
+        implements HistoricalEventOrBuilder {
+      // Use HistoricalEvent.newBuilder() to construct.
+      private HistoricalEvent(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+        super(builder);
+
+      }
+      private HistoricalEvent(boolean noInit) {}
+
+      private static final HistoricalEvent defaultInstance;
+      public static HistoricalEvent getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public HistoricalEvent getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private HistoricalEvent(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                bitField0_ |= 0x00000001;
+                eventTime_ = input.readInt64();
+                break;
+              }
+              case 18: {
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  coords_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                coords_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.PARSER, extensionRegistry));
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            coords_ = java.util.Collections.unmodifiableList(coords_);
+          }
+          makeExtensionsImmutable();
+        }
+      }
+      public static com.google.protobuf.Parser<HistoricalEvent> PARSER =
+          new com.google.protobuf.AbstractParser<HistoricalEvent>() {
+        public HistoricalEvent parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new HistoricalEvent(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<HistoricalEvent> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      // required int64 eventTime = 1;
+      public static final int EVENTTIME_FIELD_NUMBER = 1;
+      private long eventTime_;
+      /**
+       * <code>required int64 eventTime = 1;</code>
+       */
+      public boolean hasEventTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 eventTime = 1;</code>
+       */
+      public long getEventTime() {
+        return eventTime_;
+      }
+
+      // repeated .svmp.TouchEvent.PointerCoords coords = 2;
+      public static final int COORDS_FIELD_NUMBER = 2;
+      private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> coords_;
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> getCoordsList() {
+        return coords_;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoordsOrBuilder> 
+          getCoordsOrBuilderList() {
+        return coords_;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      public int getCoordsCount() {
+        return coords_.size();
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getCoords(int index) {
+        return coords_.get(index);
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoordsOrBuilder getCoordsOrBuilder(
+          int index) {
+        return coords_.get(index);
+      }
+
+      private void initFields() {
+        eventTime_ = 0L;
+        coords_ = java.util.Collections.emptyList();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        if (!hasEventTime()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        for (int i = 0; i < getCoordsCount(); i++) {
+          if (!getCoords(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeInt64(1, eventTime_);
+        }
+        for (int i = 0; i < coords_.size(); i++) {
+          output.writeMessage(2, coords_.get(i));
+        }
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(1, eventTime_);
+        }
+        for (int i = 0; i < coords_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, coords_.get(i));
+        }
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      /**
+       * Protobuf type {@code svmp.TouchEvent.HistoricalEvent}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageLite.Builder<
+            org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent, Builder>
+          implements org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEventOrBuilder {
+        // Construct using org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          eventTime_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          coords_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent getDefaultInstanceForType() {
+          return org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.getDefaultInstance();
+        }
+
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent build() {
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent buildPartial() {
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent result = new org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.eventTime_ = eventTime_;
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            coords_ = java.util.Collections.unmodifiableList(coords_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.coords_ = coords_;
+          result.bitField0_ = to_bitField0_;
+          return result;
+        }
+
+        public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent other) {
+          if (other == org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.getDefaultInstance()) return this;
+          if (other.hasEventTime()) {
+            setEventTime(other.getEventTime());
+          }
+          if (!other.coords_.isEmpty()) {
+            if (coords_.isEmpty()) {
+              coords_ = other.coords_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureCoordsIsMutable();
+              coords_.addAll(other.coords_);
+            }
+            
+          }
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          if (!hasEventTime()) {
+            
+            return false;
+          }
+          for (int i = 0; i < getCoordsCount(); i++) {
+            if (!getCoords(i).isInitialized()) {
+              
+              return false;
+            }
+          }
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        // required int64 eventTime = 1;
+        private long eventTime_ ;
+        /**
+         * <code>required int64 eventTime = 1;</code>
+         */
+        public boolean hasEventTime() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required int64 eventTime = 1;</code>
+         */
+        public long getEventTime() {
+          return eventTime_;
+        }
+        /**
+         * <code>required int64 eventTime = 1;</code>
+         */
+        public Builder setEventTime(long value) {
+          bitField0_ |= 0x00000001;
+          eventTime_ = value;
+          
+          return this;
+        }
+        /**
+         * <code>required int64 eventTime = 1;</code>
+         */
+        public Builder clearEventTime() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          eventTime_ = 0L;
+          
+          return this;
+        }
+
+        // repeated .svmp.TouchEvent.PointerCoords coords = 2;
+        private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> coords_ =
+          java.util.Collections.emptyList();
+        private void ensureCoordsIsMutable() {
+          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+            coords_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords>(coords_);
+            bitField0_ |= 0x00000002;
+           }
+        }
+
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> getCoordsList() {
+          return java.util.Collections.unmodifiableList(coords_);
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public int getCoordsCount() {
+          return coords_.size();
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords getCoords(int index) {
+          return coords_.get(index);
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder setCoords(
+            int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCoordsIsMutable();
+          coords_.set(index, value);
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder setCoords(
+            int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder builderForValue) {
+          ensureCoordsIsMutable();
+          coords_.set(index, builderForValue.build());
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder addCoords(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCoordsIsMutable();
+          coords_.add(value);
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder addCoords(
+            int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCoordsIsMutable();
+          coords_.add(index, value);
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder addCoords(
+            org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder builderForValue) {
+          ensureCoordsIsMutable();
+          coords_.add(builderForValue.build());
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder addCoords(
+            int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords.Builder builderForValue) {
+          ensureCoordsIsMutable();
+          coords_.add(index, builderForValue.build());
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder addAllCoords(
+            java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.PointerCoords> values) {
+          ensureCoordsIsMutable();
+          super.addAll(values, coords_);
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder clearCoords() {
+          coords_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+
+          return this;
+        }
+        /**
+         * <code>repeated .svmp.TouchEvent.PointerCoords coords = 2;</code>
+         */
+        public Builder removeCoords(int index) {
+          ensureCoordsIsMutable();
+          coords_.remove(index);
+
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:svmp.TouchEvent.HistoricalEvent)
+      }
+
+      static {
+        defaultInstance = new HistoricalEvent(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:svmp.TouchEvent.HistoricalEvent)
+    }
+
     private int bitField0_;
     // required int32 action = 1;
     public static final int ACTION_FIELD_NUMBER = 1;
@@ -7846,9 +8482,97 @@ public final class SVMPProtocol {
       return items_.get(index);
     }
 
+    // optional int64 downTime = 3;
+    public static final int DOWNTIME_FIELD_NUMBER = 3;
+    private long downTime_;
+    /**
+     * <code>optional int64 downTime = 3;</code>
+     */
+    public boolean hasDownTime() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 downTime = 3;</code>
+     */
+    public long getDownTime() {
+      return downTime_;
+    }
+
+    // optional int64 eventTime = 4;
+    public static final int EVENTTIME_FIELD_NUMBER = 4;
+    private long eventTime_;
+    /**
+     * <code>optional int64 eventTime = 4;</code>
+     */
+    public boolean hasEventTime() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 eventTime = 4;</code>
+     */
+    public long getEventTime() {
+      return eventTime_;
+    }
+
+    // repeated .svmp.TouchEvent.HistoricalEvent historical = 5;
+    public static final int HISTORICAL_FIELD_NUMBER = 5;
+    private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent> historical_;
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent> getHistoricalList() {
+      return historical_;
+    }
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEventOrBuilder> 
+        getHistoricalOrBuilderList() {
+      return historical_;
+    }
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    public int getHistoricalCount() {
+      return historical_.size();
+    }
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent getHistorical(int index) {
+      return historical_.get(index);
+    }
+    /**
+     * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEventOrBuilder getHistoricalOrBuilder(
+        int index) {
+      return historical_.get(index);
+    }
+
+    // optional int32 edgeFlags = 6;
+    public static final int EDGEFLAGS_FIELD_NUMBER = 6;
+    private int edgeFlags_;
+    /**
+     * <code>optional int32 edgeFlags = 6;</code>
+     */
+    public boolean hasEdgeFlags() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int32 edgeFlags = 6;</code>
+     */
+    public int getEdgeFlags() {
+      return edgeFlags_;
+    }
+
     private void initFields() {
       action_ = 0;
       items_ = java.util.Collections.emptyList();
+      downTime_ = 0L;
+      eventTime_ = 0L;
+      historical_ = java.util.Collections.emptyList();
+      edgeFlags_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7861,6 +8585,12 @@ public final class SVMPProtocol {
       }
       for (int i = 0; i < getItemsCount(); i++) {
         if (!getItems(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getHistoricalCount(); i++) {
+        if (!getHistorical(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -7878,6 +8608,18 @@ public final class SVMPProtocol {
       for (int i = 0; i < items_.size(); i++) {
         output.writeMessage(2, items_.get(i));
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(3, downTime_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(4, eventTime_);
+      }
+      for (int i = 0; i < historical_.size(); i++) {
+        output.writeMessage(5, historical_.get(i));
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(6, edgeFlags_);
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -7893,6 +8635,22 @@ public final class SVMPProtocol {
       for (int i = 0; i < items_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, items_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, downTime_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, eventTime_);
+      }
+      for (int i = 0; i < historical_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, historical_.get(i));
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, edgeFlags_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -7993,6 +8751,14 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000001);
         items_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        downTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        eventTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        historical_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        edgeFlags_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -8025,6 +8791,23 @@ public final class SVMPProtocol {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.items_ = items_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.downTime_ = downTime_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.eventTime_ = eventTime_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          historical_ = java.util.Collections.unmodifiableList(historical_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.historical_ = historical_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.edgeFlags_ = edgeFlags_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -8044,6 +8827,25 @@ public final class SVMPProtocol {
           }
           
         }
+        if (other.hasDownTime()) {
+          setDownTime(other.getDownTime());
+        }
+        if (other.hasEventTime()) {
+          setEventTime(other.getEventTime());
+        }
+        if (!other.historical_.isEmpty()) {
+          if (historical_.isEmpty()) {
+            historical_ = other.historical_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureHistoricalIsMutable();
+            historical_.addAll(other.historical_);
+          }
+          
+        }
+        if (other.hasEdgeFlags()) {
+          setEdgeFlags(other.getEdgeFlags());
+        }
         return this;
       }
 
@@ -8054,6 +8856,12 @@ public final class SVMPProtocol {
         }
         for (int i = 0; i < getItemsCount(); i++) {
           if (!getItems(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getHistoricalCount(); i++) {
+          if (!getHistorical(i).isInitialized()) {
             
             return false;
           }
@@ -8235,6 +9043,230 @@ public final class SVMPProtocol {
         ensureItemsIsMutable();
         items_.remove(index);
 
+        return this;
+      }
+
+      // optional int64 downTime = 3;
+      private long downTime_ ;
+      /**
+       * <code>optional int64 downTime = 3;</code>
+       */
+      public boolean hasDownTime() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 downTime = 3;</code>
+       */
+      public long getDownTime() {
+        return downTime_;
+      }
+      /**
+       * <code>optional int64 downTime = 3;</code>
+       */
+      public Builder setDownTime(long value) {
+        bitField0_ |= 0x00000004;
+        downTime_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int64 downTime = 3;</code>
+       */
+      public Builder clearDownTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        downTime_ = 0L;
+        
+        return this;
+      }
+
+      // optional int64 eventTime = 4;
+      private long eventTime_ ;
+      /**
+       * <code>optional int64 eventTime = 4;</code>
+       */
+      public boolean hasEventTime() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 eventTime = 4;</code>
+       */
+      public long getEventTime() {
+        return eventTime_;
+      }
+      /**
+       * <code>optional int64 eventTime = 4;</code>
+       */
+      public Builder setEventTime(long value) {
+        bitField0_ |= 0x00000008;
+        eventTime_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int64 eventTime = 4;</code>
+       */
+      public Builder clearEventTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        eventTime_ = 0L;
+        
+        return this;
+      }
+
+      // repeated .svmp.TouchEvent.HistoricalEvent historical = 5;
+      private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent> historical_ =
+        java.util.Collections.emptyList();
+      private void ensureHistoricalIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          historical_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent>(historical_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent> getHistoricalList() {
+        return java.util.Collections.unmodifiableList(historical_);
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public int getHistoricalCount() {
+        return historical_.size();
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent getHistorical(int index) {
+        return historical_.get(index);
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder setHistorical(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHistoricalIsMutable();
+        historical_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder setHistorical(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.Builder builderForValue) {
+        ensureHistoricalIsMutable();
+        historical_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder addHistorical(org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHistoricalIsMutable();
+        historical_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder addHistorical(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHistoricalIsMutable();
+        historical_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder addHistorical(
+          org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.Builder builderForValue) {
+        ensureHistoricalIsMutable();
+        historical_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder addHistorical(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent.Builder builderForValue) {
+        ensureHistoricalIsMutable();
+        historical_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder addAllHistorical(
+          java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.TouchEvent.HistoricalEvent> values) {
+        ensureHistoricalIsMutable();
+        super.addAll(values, historical_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder clearHistorical() {
+        historical_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.TouchEvent.HistoricalEvent historical = 5;</code>
+       */
+      public Builder removeHistorical(int index) {
+        ensureHistoricalIsMutable();
+        historical_.remove(index);
+
+        return this;
+      }
+
+      // optional int32 edgeFlags = 6;
+      private int edgeFlags_ ;
+      /**
+       * <code>optional int32 edgeFlags = 6;</code>
+       */
+      public boolean hasEdgeFlags() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int32 edgeFlags = 6;</code>
+       */
+      public int getEdgeFlags() {
+        return edgeFlags_;
+      }
+      /**
+       * <code>optional int32 edgeFlags = 6;</code>
+       */
+      public Builder setEdgeFlags(int value) {
+        bitField0_ |= 0x00000020;
+        edgeFlags_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int32 edgeFlags = 6;</code>
+       */
+      public Builder clearEdgeFlags() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        edgeFlags_ = 0;
+        
         return this;
       }
 
