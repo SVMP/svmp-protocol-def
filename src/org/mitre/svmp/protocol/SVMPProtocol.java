@@ -350,6 +350,16 @@ public final class SVMPProtocol {
      */
     com.google.protobuf.ByteString
         getTimezoneIdBytes();
+
+    // optional .svmp.AppsRequest apps = 14;
+    /**
+     * <code>optional .svmp.AppsRequest apps = 14;</code>
+     */
+    boolean hasApps();
+    /**
+     * <code>optional .svmp.AppsRequest apps = 14;</code>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.AppsRequest getApps();
   }
   /**
    * Protobuf type {@code svmp.Request}
@@ -542,6 +552,19 @@ public final class SVMPProtocol {
               timezoneId_ = input.readBytes();
               break;
             }
+            case 114: {
+              org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.Builder subBuilder = null;
+              if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                subBuilder = apps_.toBuilder();
+              }
+              apps_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(apps_);
+                apps_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00001000;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -629,6 +652,14 @@ public final class SVMPProtocol {
        * <code>TIMEZONE = 12;</code>
        */
       TIMEZONE(12, 12),
+      /**
+       * <code>APPS = 13;</code>
+       *
+       * <pre>
+       * client request for available apps on the VM
+       * </pre>
+       */
+      APPS(13, 13),
       ;
 
       /**
@@ -687,6 +718,14 @@ public final class SVMPProtocol {
        * <code>TIMEZONE = 12;</code>
        */
       public static final int TIMEZONE_VALUE = 12;
+      /**
+       * <code>APPS = 13;</code>
+       *
+       * <pre>
+       * client request for available apps on the VM
+       * </pre>
+       */
+      public static final int APPS_VALUE = 13;
 
 
       public final int getNumber() { return value; }
@@ -706,6 +745,7 @@ public final class SVMPProtocol {
           case 10: return ROTATION_INFO;
           case 11: return PING;
           case 12: return TIMEZONE;
+          case 13: return APPS;
           default: return null;
         }
       }
@@ -951,6 +991,22 @@ public final class SVMPProtocol {
       }
     }
 
+    // optional .svmp.AppsRequest apps = 14;
+    public static final int APPS_FIELD_NUMBER = 14;
+    private org.mitre.svmp.protocol.SVMPProtocol.AppsRequest apps_;
+    /**
+     * <code>optional .svmp.AppsRequest apps = 14;</code>
+     */
+    public boolean hasApps() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional .svmp.AppsRequest apps = 14;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest getApps() {
+      return apps_;
+    }
+
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.Request.RequestType.AUTH;
       authRequest_ = org.mitre.svmp.protocol.SVMPProtocol.AuthRequest.getDefaultInstance();
@@ -964,6 +1020,7 @@ public final class SVMPProtocol {
       pingRequest_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
       videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
       timezoneId_ = "";
+      apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1022,6 +1079,12 @@ public final class SVMPProtocol {
           return false;
         }
       }
+      if (hasApps()) {
+        if (!getApps().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -1064,6 +1127,9 @@ public final class SVMPProtocol {
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBytes(13, getTimezoneIdBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(14, apps_);
       }
     }
 
@@ -1120,6 +1186,10 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, getTimezoneIdBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, apps_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1240,6 +1310,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000400);
         timezoneId_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
+        apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -1311,6 +1383,10 @@ public final class SVMPProtocol {
           to_bitField0_ |= 0x00000800;
         }
         result.timezoneId_ = timezoneId_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.apps_ = apps_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -1354,6 +1430,9 @@ public final class SVMPProtocol {
           bitField0_ |= 0x00000800;
           timezoneId_ = other.timezoneId_;
           
+        }
+        if (other.hasApps()) {
+          mergeApps(other.getApps());
         }
         return this;
       }
@@ -1407,6 +1486,12 @@ public final class SVMPProtocol {
         }
         if (hasPingRequest()) {
           if (!getPingRequest().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasApps()) {
+          if (!getApps().isInitialized()) {
             
             return false;
           }
@@ -2153,6 +2238,67 @@ public final class SVMPProtocol {
         return this;
       }
 
+      // optional .svmp.AppsRequest apps = 14;
+      private org.mitre.svmp.protocol.SVMPProtocol.AppsRequest apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance();
+      /**
+       * <code>optional .svmp.AppsRequest apps = 14;</code>
+       */
+      public boolean hasApps() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional .svmp.AppsRequest apps = 14;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest getApps() {
+        return apps_;
+      }
+      /**
+       * <code>optional .svmp.AppsRequest apps = 14;</code>
+       */
+      public Builder setApps(org.mitre.svmp.protocol.SVMPProtocol.AppsRequest value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apps_ = value;
+
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.AppsRequest apps = 14;</code>
+       */
+      public Builder setApps(
+          org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.Builder builderForValue) {
+        apps_ = builderForValue.build();
+
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.AppsRequest apps = 14;</code>
+       */
+      public Builder mergeApps(org.mitre.svmp.protocol.SVMPProtocol.AppsRequest value) {
+        if (((bitField0_ & 0x00001000) == 0x00001000) &&
+            apps_ != org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance()) {
+          apps_ =
+            org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.newBuilder(apps_).mergeFrom(value).buildPartial();
+        } else {
+          apps_ = value;
+        }
+
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.AppsRequest apps = 14;</code>
+       */
+      public Builder clearApps() {
+        apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00001000);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:svmp.Request)
     }
 
@@ -2241,6 +2387,16 @@ public final class SVMPProtocol {
      * <code>optional .svmp.Ping pingResponse = 7;</code>
      */
     org.mitre.svmp.protocol.SVMPProtocol.Ping getPingResponse();
+
+    // optional .svmp.AppsResponse apps = 8;
+    /**
+     * <code>optional .svmp.AppsResponse apps = 8;</code>
+     */
+    boolean hasApps();
+    /**
+     * <code>optional .svmp.AppsResponse apps = 8;</code>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.AppsResponse getApps();
 
     // optional .svmp.ScreenInfo screenInfo = 16;
     /**
@@ -2398,9 +2554,22 @@ public final class SVMPProtocol {
               bitField0_ |= 0x00000040;
               break;
             }
+            case 66: {
+              org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                subBuilder = apps_.toBuilder();
+              }
+              apps_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(apps_);
+                apps_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
+              break;
+            }
             case 130: {
               org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) == 0x00000080)) {
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
                 subBuilder = screenInfo_.toBuilder();
               }
               screenInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.PARSER, extensionRegistry);
@@ -2408,12 +2577,12 @@ public final class SVMPProtocol {
                 subBuilder.mergeFrom(screenInfo_);
                 screenInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             }
             case 138: {
               org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+              if (((bitField0_ & 0x00000200) == 0x00000200)) {
                 subBuilder = videoInfo_.toBuilder();
               }
               videoInfo_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.PARSER, extensionRegistry);
@@ -2421,12 +2590,12 @@ public final class SVMPProtocol {
                 subBuilder.mergeFrom(videoInfo_);
                 videoInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             }
             case 146: {
               org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) == 0x00000200)) {
+              if (((bitField0_ & 0x00000400) == 0x00000400)) {
                 subBuilder = webrtcMsg_.toBuilder();
               }
               webrtcMsg_ = input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.PARSER, extensionRegistry);
@@ -2434,7 +2603,7 @@ public final class SVMPProtocol {
                 subBuilder.mergeFrom(webrtcMsg_);
                 webrtcMsg_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               break;
             }
           }
@@ -2560,6 +2729,14 @@ public final class SVMPProtocol {
        * </pre>
        */
       PING(12, 12),
+      /**
+       * <code>APPS = 13;</code>
+       *
+       * <pre>
+       * response to client request for available apps
+       * </pre>
+       */
+      APPS(13, 13),
       ;
 
       /**
@@ -2654,6 +2831,14 @@ public final class SVMPProtocol {
        * </pre>
        */
       public static final int PING_VALUE = 12;
+      /**
+       * <code>APPS = 13;</code>
+       *
+       * <pre>
+       * response to client request for available apps
+       * </pre>
+       */
+      public static final int APPS_VALUE = 13;
 
 
       public final int getNumber() { return value; }
@@ -2673,6 +2858,7 @@ public final class SVMPProtocol {
           case 10: return VIDEOPAUSE;
           case 11: return WEBRTC;
           case 12: return PING;
+          case 13: return APPS;
           default: return null;
         }
       }
@@ -2838,6 +3024,22 @@ public final class SVMPProtocol {
       return pingResponse_;
     }
 
+    // optional .svmp.AppsResponse apps = 8;
+    public static final int APPS_FIELD_NUMBER = 8;
+    private org.mitre.svmp.protocol.SVMPProtocol.AppsResponse apps_;
+    /**
+     * <code>optional .svmp.AppsResponse apps = 8;</code>
+     */
+    public boolean hasApps() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional .svmp.AppsResponse apps = 8;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppsResponse getApps() {
+      return apps_;
+    }
+
     // optional .svmp.ScreenInfo screenInfo = 16;
     public static final int SCREENINFO_FIELD_NUMBER = 16;
     private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_;
@@ -2845,7 +3047,7 @@ public final class SVMPProtocol {
      * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
      */
     public boolean hasScreenInfo() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
@@ -2861,7 +3063,7 @@ public final class SVMPProtocol {
      * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
      */
     public boolean hasVideoInfo() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
@@ -2877,7 +3079,7 @@ public final class SVMPProtocol {
      * <code>optional .svmp.WebRTCMessage webrtcMsg = 18;</code>
      */
     public boolean hasWebrtcMsg() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional .svmp.WebRTCMessage webrtcMsg = 18;</code>
@@ -2894,6 +3096,7 @@ public final class SVMPProtocol {
       notification_ = org.mitre.svmp.protocol.SVMPProtocol.Notification.getDefaultInstance();
       locationResponse_ = org.mitre.svmp.protocol.SVMPProtocol.LocationResponse.getDefaultInstance();
       pingResponse_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
+      apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance();
       screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
       videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
       webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
@@ -2937,6 +3140,12 @@ public final class SVMPProtocol {
           return false;
         }
       }
+      if (hasApps()) {
+        if (!getApps().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       if (hasScreenInfo()) {
         if (!getScreenInfo().isInitialized()) {
           memoizedIsInitialized = 0;
@@ -2972,12 +3181,15 @@ public final class SVMPProtocol {
         output.writeMessage(7, pingResponse_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeMessage(16, screenInfo_);
+        output.writeMessage(8, apps_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeMessage(17, videoInfo_);
+        output.writeMessage(16, screenInfo_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeMessage(17, videoInfo_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeMessage(18, webrtcMsg_);
       }
     }
@@ -3018,13 +3230,17 @@ public final class SVMPProtocol {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, screenInfo_);
+          .computeMessageSize(8, apps_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, videoInfo_);
+          .computeMessageSize(16, screenInfo_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, videoInfo_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(18, webrtcMsg_);
       }
@@ -3137,12 +3353,14 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000020);
         pingResponse_ = org.mitre.svmp.protocol.SVMPProtocol.Ping.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000040);
-        screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
+        apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000080);
-        videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
+        screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000100);
-        webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
+        videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
         bitField0_ = (bitField0_ & ~0x00000200);
+        webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -3197,13 +3415,17 @@ public final class SVMPProtocol {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.screenInfo_ = screenInfo_;
+        result.apps_ = apps_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.videoInfo_ = videoInfo_;
+        result.screenInfo_ = screenInfo_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
+        }
+        result.videoInfo_ = videoInfo_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
         }
         result.webrtcMsg_ = webrtcMsg_;
         result.bitField0_ = to_bitField0_;
@@ -3234,6 +3456,9 @@ public final class SVMPProtocol {
         }
         if (other.hasPingResponse()) {
           mergePingResponse(other.getPingResponse());
+        }
+        if (other.hasApps()) {
+          mergeApps(other.getApps());
         }
         if (other.hasScreenInfo()) {
           mergeScreenInfo(other.getScreenInfo());
@@ -3278,6 +3503,12 @@ public final class SVMPProtocol {
         }
         if (hasPingResponse()) {
           if (!getPingResponse().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasApps()) {
+          if (!getApps().isInitialized()) {
             
             return false;
           }
@@ -3725,13 +3956,74 @@ public final class SVMPProtocol {
         return this;
       }
 
+      // optional .svmp.AppsResponse apps = 8;
+      private org.mitre.svmp.protocol.SVMPProtocol.AppsResponse apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance();
+      /**
+       * <code>optional .svmp.AppsResponse apps = 8;</code>
+       */
+      public boolean hasApps() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional .svmp.AppsResponse apps = 8;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsResponse getApps() {
+        return apps_;
+      }
+      /**
+       * <code>optional .svmp.AppsResponse apps = 8;</code>
+       */
+      public Builder setApps(org.mitre.svmp.protocol.SVMPProtocol.AppsResponse value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apps_ = value;
+
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.AppsResponse apps = 8;</code>
+       */
+      public Builder setApps(
+          org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.Builder builderForValue) {
+        apps_ = builderForValue.build();
+
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.AppsResponse apps = 8;</code>
+       */
+      public Builder mergeApps(org.mitre.svmp.protocol.SVMPProtocol.AppsResponse value) {
+        if (((bitField0_ & 0x00000080) == 0x00000080) &&
+            apps_ != org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance()) {
+          apps_ =
+            org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.newBuilder(apps_).mergeFrom(value).buildPartial();
+        } else {
+          apps_ = value;
+        }
+
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .svmp.AppsResponse apps = 8;</code>
+       */
+      public Builder clearApps() {
+        apps_ = org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance();
+
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
       // optional .svmp.ScreenInfo screenInfo = 16;
       private org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
       /**
        * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public boolean hasScreenInfo() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
@@ -3748,7 +4040,7 @@ public final class SVMPProtocol {
         }
         screenInfo_ = value;
 
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -3758,14 +4050,14 @@ public final class SVMPProtocol {
           org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.Builder builderForValue) {
         screenInfo_ = builderForValue.build();
 
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
        * <code>optional .svmp.ScreenInfo screenInfo = 16;</code>
        */
       public Builder mergeScreenInfo(org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo value) {
-        if (((bitField0_ & 0x00000080) == 0x00000080) &&
+        if (((bitField0_ & 0x00000100) == 0x00000100) &&
             screenInfo_ != org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance()) {
           screenInfo_ =
             org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.newBuilder(screenInfo_).mergeFrom(value).buildPartial();
@@ -3773,7 +4065,7 @@ public final class SVMPProtocol {
           screenInfo_ = value;
         }
 
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
@@ -3782,7 +4074,7 @@ public final class SVMPProtocol {
       public Builder clearScreenInfo() {
         screenInfo_ = org.mitre.svmp.protocol.SVMPProtocol.ScreenInfo.getDefaultInstance();
 
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -3792,7 +4084,7 @@ public final class SVMPProtocol {
        * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public boolean hasVideoInfo() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
@@ -3809,7 +4101,7 @@ public final class SVMPProtocol {
         }
         videoInfo_ = value;
 
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -3819,14 +4111,14 @@ public final class SVMPProtocol {
           org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.Builder builderForValue) {
         videoInfo_ = builderForValue.build();
 
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
        * <code>optional .svmp.VideoStreamInfo videoInfo = 17;</code>
        */
       public Builder mergeVideoInfo(org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo value) {
-        if (((bitField0_ & 0x00000100) == 0x00000100) &&
+        if (((bitField0_ & 0x00000200) == 0x00000200) &&
             videoInfo_ != org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance()) {
           videoInfo_ =
             org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.newBuilder(videoInfo_).mergeFrom(value).buildPartial();
@@ -3834,7 +4126,7 @@ public final class SVMPProtocol {
           videoInfo_ = value;
         }
 
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -3843,7 +4135,7 @@ public final class SVMPProtocol {
       public Builder clearVideoInfo() {
         videoInfo_ = org.mitre.svmp.protocol.SVMPProtocol.VideoStreamInfo.getDefaultInstance();
 
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
 
@@ -3853,7 +4145,7 @@ public final class SVMPProtocol {
        * <code>optional .svmp.WebRTCMessage webrtcMsg = 18;</code>
        */
       public boolean hasWebrtcMsg() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional .svmp.WebRTCMessage webrtcMsg = 18;</code>
@@ -3870,7 +4162,7 @@ public final class SVMPProtocol {
         }
         webrtcMsg_ = value;
 
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
@@ -3880,14 +4172,14 @@ public final class SVMPProtocol {
           org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.Builder builderForValue) {
         webrtcMsg_ = builderForValue.build();
 
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
        * <code>optional .svmp.WebRTCMessage webrtcMsg = 18;</code>
        */
       public Builder mergeWebrtcMsg(org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage value) {
-        if (((bitField0_ & 0x00000200) == 0x00000200) &&
+        if (((bitField0_ & 0x00000400) == 0x00000400) &&
             webrtcMsg_ != org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance()) {
           webrtcMsg_ =
             org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.newBuilder(webrtcMsg_).mergeFrom(value).buildPartial();
@@ -3895,7 +4187,7 @@ public final class SVMPProtocol {
           webrtcMsg_ = value;
         }
 
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
@@ -3904,7 +4196,7 @@ public final class SVMPProtocol {
       public Builder clearWebrtcMsg() {
         webrtcMsg_ = org.mitre.svmp.protocol.SVMPProtocol.WebRTCMessage.getDefaultInstance();
 
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -21639,6 +21931,3073 @@ public final class SVMPProtocol {
     }
 
     // @@protoc_insertion_point(class_scope:svmp.Ping)
+  }
+
+  public interface AppsRequestOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required .svmp.AppsRequest.AppsRequestType type = 1;
+    /**
+     * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType getType();
+
+    // repeated .svmp.AppInfo current = 2;
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> 
+        getCurrentList();
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.AppInfo getCurrent(int index);
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    int getCurrentCount();
+
+    // optional int32 screenDensity = 3;
+    /**
+     * <code>optional int32 screenDensity = 3;</code>
+     *
+     * <pre>
+     * the screen density of the device
+     * </pre>
+     */
+    boolean hasScreenDensity();
+    /**
+     * <code>optional int32 screenDensity = 3;</code>
+     *
+     * <pre>
+     * the screen density of the device
+     * </pre>
+     */
+    int getScreenDensity();
+
+    // optional string pkgName = 4;
+    /**
+     * <code>optional string pkgName = 4;</code>
+     *
+     * <pre>
+     * used for type LAUNCH
+     * </pre>
+     */
+    boolean hasPkgName();
+    /**
+     * <code>optional string pkgName = 4;</code>
+     *
+     * <pre>
+     * used for type LAUNCH
+     * </pre>
+     */
+    java.lang.String getPkgName();
+    /**
+     * <code>optional string pkgName = 4;</code>
+     *
+     * <pre>
+     * used for type LAUNCH
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPkgNameBytes();
+  }
+  /**
+   * Protobuf type {@code svmp.AppsRequest}
+   *
+   * <pre>
+   * C-&gt;S
+   * </pre>
+   */
+  public static final class AppsRequest extends
+      com.google.protobuf.GeneratedMessageLite
+      implements AppsRequestOrBuilder {
+    // Use AppsRequest.newBuilder() to construct.
+    private AppsRequest(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private AppsRequest(boolean noInit) {}
+
+    private static final AppsRequest defaultInstance;
+    public static AppsRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AppsRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private AppsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType value = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType.valueOf(rawValue);
+              if (value != null) {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                current_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AppInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              current_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AppInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000002;
+              screenDensity_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000004;
+              pkgName_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          current_ = java.util.Collections.unmodifiableList(current_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<AppsRequest> PARSER =
+        new com.google.protobuf.AbstractParser<AppsRequest>() {
+      public AppsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AppsRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code svmp.AppsRequest.AppsRequestType}
+     */
+    public enum AppsRequestType
+        implements com.google.protobuf.Internal.EnumLite {
+      /**
+       * <code>REFRESH = 1;</code>
+       */
+      REFRESH(0, 1),
+      /**
+       * <code>LAUNCH = 2;</code>
+       */
+      LAUNCH(1, 2),
+      ;
+
+      /**
+       * <code>REFRESH = 1;</code>
+       */
+      public static final int REFRESH_VALUE = 1;
+      /**
+       * <code>LAUNCH = 2;</code>
+       */
+      public static final int LAUNCH_VALUE = 2;
+
+
+      public final int getNumber() { return value; }
+
+      public static AppsRequestType valueOf(int value) {
+        switch (value) {
+          case 1: return REFRESH;
+          case 2: return LAUNCH;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AppsRequestType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<AppsRequestType>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AppsRequestType>() {
+              public AppsRequestType findValueByNumber(int number) {
+                return AppsRequestType.valueOf(number);
+              }
+            };
+
+      private final int value;
+
+      private AppsRequestType(int index, int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:svmp.AppsRequest.AppsRequestType)
+    }
+
+    private int bitField0_;
+    // required .svmp.AppsRequest.AppsRequestType type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType type_;
+    /**
+     * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType getType() {
+      return type_;
+    }
+
+    // repeated .svmp.AppInfo current = 2;
+    public static final int CURRENT_FIELD_NUMBER = 2;
+    private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> current_;
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> getCurrentList() {
+      return current_;
+    }
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder> 
+        getCurrentOrBuilderList() {
+      return current_;
+    }
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    public int getCurrentCount() {
+      return current_.size();
+    }
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getCurrent(int index) {
+      return current_.get(index);
+    }
+    /**
+     * <code>repeated .svmp.AppInfo current = 2;</code>
+     *
+     * <pre>
+     * used for type REFRESH
+     * </pre>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder getCurrentOrBuilder(
+        int index) {
+      return current_.get(index);
+    }
+
+    // optional int32 screenDensity = 3;
+    public static final int SCREENDENSITY_FIELD_NUMBER = 3;
+    private int screenDensity_;
+    /**
+     * <code>optional int32 screenDensity = 3;</code>
+     *
+     * <pre>
+     * the screen density of the device
+     * </pre>
+     */
+    public boolean hasScreenDensity() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 screenDensity = 3;</code>
+     *
+     * <pre>
+     * the screen density of the device
+     * </pre>
+     */
+    public int getScreenDensity() {
+      return screenDensity_;
+    }
+
+    // optional string pkgName = 4;
+    public static final int PKGNAME_FIELD_NUMBER = 4;
+    private java.lang.Object pkgName_;
+    /**
+     * <code>optional string pkgName = 4;</code>
+     *
+     * <pre>
+     * used for type LAUNCH
+     * </pre>
+     */
+    public boolean hasPkgName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string pkgName = 4;</code>
+     *
+     * <pre>
+     * used for type LAUNCH
+     * </pre>
+     */
+    public java.lang.String getPkgName() {
+      java.lang.Object ref = pkgName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          pkgName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string pkgName = 4;</code>
+     *
+     * <pre>
+     * used for type LAUNCH
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPkgNameBytes() {
+      java.lang.Object ref = pkgName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pkgName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      type_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType.REFRESH;
+      current_ = java.util.Collections.emptyList();
+      screenDensity_ = 0;
+      pkgName_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getCurrentCount(); i++) {
+        if (!getCurrent(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      for (int i = 0; i < current_.size(); i++) {
+        output.writeMessage(2, current_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(3, screenDensity_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(4, getPkgNameBytes());
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      for (int i = 0; i < current_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, current_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, screenDensity_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getPkgNameBytes());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.AppsRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code svmp.AppsRequest}
+     *
+     * <pre>
+     * C-&gt;S
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.AppsRequest, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.AppsRequestOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        type_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType.REFRESH;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        current_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        screenDensity_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pkgName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance();
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest build() {
+        org.mitre.svmp.protocol.SVMPProtocol.AppsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.AppsRequest result = new org.mitre.svmp.protocol.SVMPProtocol.AppsRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          current_ = java.util.Collections.unmodifiableList(current_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.current_ = current_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.screenDensity_ = screenDensity_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.pkgName_ = pkgName_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.AppsRequest other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (!other.current_.isEmpty()) {
+          if (current_.isEmpty()) {
+            current_ = other.current_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCurrentIsMutable();
+            current_.addAll(other.current_);
+          }
+          
+        }
+        if (other.hasScreenDensity()) {
+          setScreenDensity(other.getScreenDensity());
+        }
+        if (other.hasPkgName()) {
+          bitField0_ |= 0x00000008;
+          pkgName_ = other.pkgName_;
+          
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getCurrentCount(); i++) {
+          if (!getCurrent(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.mitre.svmp.protocol.SVMPProtocol.AppsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.AppsRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required .svmp.AppsRequest.AppsRequestType type = 1;
+      private org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType type_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType.REFRESH;
+      /**
+       * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType getType() {
+        return type_;
+      }
+      /**
+       * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+       */
+      public Builder setType(org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required .svmp.AppsRequest.AppsRequestType type = 1;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = org.mitre.svmp.protocol.SVMPProtocol.AppsRequest.AppsRequestType.REFRESH;
+        
+        return this;
+      }
+
+      // repeated .svmp.AppInfo current = 2;
+      private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> current_ =
+        java.util.Collections.emptyList();
+      private void ensureCurrentIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          current_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AppInfo>(current_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> getCurrentList() {
+        return java.util.Collections.unmodifiableList(current_);
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public int getCurrentCount() {
+        return current_.size();
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getCurrent(int index) {
+        return current_.get(index);
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder setCurrent(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCurrentIsMutable();
+        current_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder setCurrent(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureCurrentIsMutable();
+        current_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder addCurrent(org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCurrentIsMutable();
+        current_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder addCurrent(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCurrentIsMutable();
+        current_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder addCurrent(
+          org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureCurrentIsMutable();
+        current_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder addCurrent(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureCurrentIsMutable();
+        current_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder addAllCurrent(
+          java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.AppInfo> values) {
+        ensureCurrentIsMutable();
+        super.addAll(values, current_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder clearCurrent() {
+        current_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo current = 2;</code>
+       *
+       * <pre>
+       * used for type REFRESH
+       * </pre>
+       */
+      public Builder removeCurrent(int index) {
+        ensureCurrentIsMutable();
+        current_.remove(index);
+
+        return this;
+      }
+
+      // optional int32 screenDensity = 3;
+      private int screenDensity_ ;
+      /**
+       * <code>optional int32 screenDensity = 3;</code>
+       *
+       * <pre>
+       * the screen density of the device
+       * </pre>
+       */
+      public boolean hasScreenDensity() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 screenDensity = 3;</code>
+       *
+       * <pre>
+       * the screen density of the device
+       * </pre>
+       */
+      public int getScreenDensity() {
+        return screenDensity_;
+      }
+      /**
+       * <code>optional int32 screenDensity = 3;</code>
+       *
+       * <pre>
+       * the screen density of the device
+       * </pre>
+       */
+      public Builder setScreenDensity(int value) {
+        bitField0_ |= 0x00000004;
+        screenDensity_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int32 screenDensity = 3;</code>
+       *
+       * <pre>
+       * the screen density of the device
+       * </pre>
+       */
+      public Builder clearScreenDensity() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        screenDensity_ = 0;
+        
+        return this;
+      }
+
+      // optional string pkgName = 4;
+      private java.lang.Object pkgName_ = "";
+      /**
+       * <code>optional string pkgName = 4;</code>
+       *
+       * <pre>
+       * used for type LAUNCH
+       * </pre>
+       */
+      public boolean hasPkgName() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string pkgName = 4;</code>
+       *
+       * <pre>
+       * used for type LAUNCH
+       * </pre>
+       */
+      public java.lang.String getPkgName() {
+        java.lang.Object ref = pkgName_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          pkgName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string pkgName = 4;</code>
+       *
+       * <pre>
+       * used for type LAUNCH
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPkgNameBytes() {
+        java.lang.Object ref = pkgName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pkgName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string pkgName = 4;</code>
+       *
+       * <pre>
+       * used for type LAUNCH
+       * </pre>
+       */
+      public Builder setPkgName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        pkgName_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string pkgName = 4;</code>
+       *
+       * <pre>
+       * used for type LAUNCH
+       * </pre>
+       */
+      public Builder clearPkgName() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pkgName_ = getDefaultInstance().getPkgName();
+        
+        return this;
+      }
+      /**
+       * <code>optional string pkgName = 4;</code>
+       *
+       * <pre>
+       * used for type LAUNCH
+       * </pre>
+       */
+      public Builder setPkgNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        pkgName_ = value;
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:svmp.AppsRequest)
+    }
+
+    static {
+      defaultInstance = new AppsRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:svmp.AppsRequest)
+  }
+
+  public interface AppsResponseOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // repeated .svmp.AppInfo new = 1;
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> 
+        getNewList();
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.AppInfo getNew(int index);
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    int getNewCount();
+
+    // repeated .svmp.AppInfo updated = 2;
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> 
+        getUpdatedList();
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    org.mitre.svmp.protocol.SVMPProtocol.AppInfo getUpdated(int index);
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    int getUpdatedCount();
+
+    // repeated string removed = 3;
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    java.util.List<java.lang.String>
+    getRemovedList();
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    int getRemovedCount();
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    java.lang.String getRemoved(int index);
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getRemovedBytes(int index);
+  }
+  /**
+   * Protobuf type {@code svmp.AppsResponse}
+   *
+   * <pre>
+   * S-&gt;C
+   * </pre>
+   */
+  public static final class AppsResponse extends
+      com.google.protobuf.GeneratedMessageLite
+      implements AppsResponseOrBuilder {
+    // Use AppsResponse.newBuilder() to construct.
+    private AppsResponse(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private AppsResponse(boolean noInit) {}
+
+    private static final AppsResponse defaultInstance;
+    public static AppsResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AppsResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private AppsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                new_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AppInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              new_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AppInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                updated_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AppInfo>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              updated_.add(input.readMessage(org.mitre.svmp.protocol.SVMPProtocol.AppInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                removed_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              removed_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          new_ = java.util.Collections.unmodifiableList(new_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          updated_ = java.util.Collections.unmodifiableList(updated_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          removed_ = new com.google.protobuf.UnmodifiableLazyStringList(removed_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<AppsResponse> PARSER =
+        new com.google.protobuf.AbstractParser<AppsResponse>() {
+      public AppsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AppsResponse(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated .svmp.AppInfo new = 1;
+    public static final int NEW_FIELD_NUMBER = 1;
+    private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> new_;
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> getNewList() {
+      return new_;
+    }
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder> 
+        getNewOrBuilderList() {
+      return new_;
+    }
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    public int getNewCount() {
+      return new_.size();
+    }
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getNew(int index) {
+      return new_.get(index);
+    }
+    /**
+     * <code>repeated .svmp.AppInfo new = 1;</code>
+     *
+     * <pre>
+     * list of apps to insert
+     * </pre>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder getNewOrBuilder(
+        int index) {
+      return new_.get(index);
+    }
+
+    // repeated .svmp.AppInfo updated = 2;
+    public static final int UPDATED_FIELD_NUMBER = 2;
+    private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> updated_;
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> getUpdatedList() {
+      return updated_;
+    }
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    public java.util.List<? extends org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder> 
+        getUpdatedOrBuilderList() {
+      return updated_;
+    }
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    public int getUpdatedCount() {
+      return updated_.size();
+    }
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getUpdated(int index) {
+      return updated_.get(index);
+    }
+    /**
+     * <code>repeated .svmp.AppInfo updated = 2;</code>
+     *
+     * <pre>
+     * list of apps to update (changed name/icon?)
+     * </pre>
+     */
+    public org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder getUpdatedOrBuilder(
+        int index) {
+      return updated_.get(index);
+    }
+
+    // repeated string removed = 3;
+    public static final int REMOVED_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList removed_;
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    public java.util.List<java.lang.String>
+        getRemovedList() {
+      return removed_;
+    }
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    public int getRemovedCount() {
+      return removed_.size();
+    }
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    public java.lang.String getRemoved(int index) {
+      return removed_.get(index);
+    }
+    /**
+     * <code>repeated string removed = 3;</code>
+     *
+     * <pre>
+     * list of apps to remove (only pkgName needed)
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getRemovedBytes(int index) {
+      return removed_.getByteString(index);
+    }
+
+    private void initFields() {
+      new_ = java.util.Collections.emptyList();
+      updated_ = java.util.Collections.emptyList();
+      removed_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      for (int i = 0; i < getNewCount(); i++) {
+        if (!getNew(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getUpdatedCount(); i++) {
+        if (!getUpdated(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < new_.size(); i++) {
+        output.writeMessage(1, new_.get(i));
+      }
+      for (int i = 0; i < updated_.size(); i++) {
+        output.writeMessage(2, updated_.get(i));
+      }
+      for (int i = 0; i < removed_.size(); i++) {
+        output.writeBytes(3, removed_.getByteString(i));
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < new_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, new_.get(i));
+      }
+      for (int i = 0; i < updated_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, updated_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < removed_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(removed_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getRemovedList().size();
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.AppsResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code svmp.AppsResponse}
+     *
+     * <pre>
+     * S-&gt;C
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.AppsResponse, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.AppsResponseOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        new_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        updated_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        removed_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsResponse getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance();
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsResponse build() {
+        org.mitre.svmp.protocol.SVMPProtocol.AppsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppsResponse buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.AppsResponse result = new org.mitre.svmp.protocol.SVMPProtocol.AppsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          new_ = java.util.Collections.unmodifiableList(new_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.new_ = new_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          updated_ = java.util.Collections.unmodifiableList(updated_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.updated_ = updated_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          removed_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              removed_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.removed_ = removed_;
+        return result;
+      }
+
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.AppsResponse other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.AppsResponse.getDefaultInstance()) return this;
+        if (!other.new_.isEmpty()) {
+          if (new_.isEmpty()) {
+            new_ = other.new_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNewIsMutable();
+            new_.addAll(other.new_);
+          }
+          
+        }
+        if (!other.updated_.isEmpty()) {
+          if (updated_.isEmpty()) {
+            updated_ = other.updated_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUpdatedIsMutable();
+            updated_.addAll(other.updated_);
+          }
+          
+        }
+        if (!other.removed_.isEmpty()) {
+          if (removed_.isEmpty()) {
+            removed_ = other.removed_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureRemovedIsMutable();
+            removed_.addAll(other.removed_);
+          }
+          
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        for (int i = 0; i < getNewCount(); i++) {
+          if (!getNew(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i < getUpdatedCount(); i++) {
+          if (!getUpdated(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.mitre.svmp.protocol.SVMPProtocol.AppsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.AppsResponse) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .svmp.AppInfo new = 1;
+      private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> new_ =
+        java.util.Collections.emptyList();
+      private void ensureNewIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          new_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AppInfo>(new_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> getNewList() {
+        return java.util.Collections.unmodifiableList(new_);
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public int getNewCount() {
+        return new_.size();
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getNew(int index) {
+        return new_.get(index);
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder setNew(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNewIsMutable();
+        new_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder setNew(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureNewIsMutable();
+        new_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder addNew(org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNewIsMutable();
+        new_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder addNew(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNewIsMutable();
+        new_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder addNew(
+          org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureNewIsMutable();
+        new_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder addNew(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureNewIsMutable();
+        new_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder addAllNew(
+          java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.AppInfo> values) {
+        ensureNewIsMutable();
+        super.addAll(values, new_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder clearNew() {
+        new_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo new = 1;</code>
+       *
+       * <pre>
+       * list of apps to insert
+       * </pre>
+       */
+      public Builder removeNew(int index) {
+        ensureNewIsMutable();
+        new_.remove(index);
+
+        return this;
+      }
+
+      // repeated .svmp.AppInfo updated = 2;
+      private java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> updated_ =
+        java.util.Collections.emptyList();
+      private void ensureUpdatedIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          updated_ = new java.util.ArrayList<org.mitre.svmp.protocol.SVMPProtocol.AppInfo>(updated_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public java.util.List<org.mitre.svmp.protocol.SVMPProtocol.AppInfo> getUpdatedList() {
+        return java.util.Collections.unmodifiableList(updated_);
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public int getUpdatedCount() {
+        return updated_.size();
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getUpdated(int index) {
+        return updated_.get(index);
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder setUpdated(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpdatedIsMutable();
+        updated_.set(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder setUpdated(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureUpdatedIsMutable();
+        updated_.set(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder addUpdated(org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpdatedIsMutable();
+        updated_.add(value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder addUpdated(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUpdatedIsMutable();
+        updated_.add(index, value);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder addUpdated(
+          org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureUpdatedIsMutable();
+        updated_.add(builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder addUpdated(
+          int index, org.mitre.svmp.protocol.SVMPProtocol.AppInfo.Builder builderForValue) {
+        ensureUpdatedIsMutable();
+        updated_.add(index, builderForValue.build());
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder addAllUpdated(
+          java.lang.Iterable<? extends org.mitre.svmp.protocol.SVMPProtocol.AppInfo> values) {
+        ensureUpdatedIsMutable();
+        super.addAll(values, updated_);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder clearUpdated() {
+        updated_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+
+        return this;
+      }
+      /**
+       * <code>repeated .svmp.AppInfo updated = 2;</code>
+       *
+       * <pre>
+       * list of apps to update (changed name/icon?)
+       * </pre>
+       */
+      public Builder removeUpdated(int index) {
+        ensureUpdatedIsMutable();
+        updated_.remove(index);
+
+        return this;
+      }
+
+      // repeated string removed = 3;
+      private com.google.protobuf.LazyStringList removed_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRemovedIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          removed_ = new com.google.protobuf.LazyStringArrayList(removed_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public java.util.List<java.lang.String>
+          getRemovedList() {
+        return java.util.Collections.unmodifiableList(removed_);
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public int getRemovedCount() {
+        return removed_.size();
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public java.lang.String getRemoved(int index) {
+        return removed_.get(index);
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getRemovedBytes(int index) {
+        return removed_.getByteString(index);
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public Builder setRemoved(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRemovedIsMutable();
+        removed_.set(index, value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public Builder addRemoved(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRemovedIsMutable();
+        removed_.add(value);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public Builder addAllRemoved(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRemovedIsMutable();
+        super.addAll(values, removed_);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public Builder clearRemoved() {
+        removed_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        
+        return this;
+      }
+      /**
+       * <code>repeated string removed = 3;</code>
+       *
+       * <pre>
+       * list of apps to remove (only pkgName needed)
+       * </pre>
+       */
+      public Builder addRemovedBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRemovedIsMutable();
+        removed_.add(value);
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:svmp.AppsResponse)
+    }
+
+    static {
+      defaultInstance = new AppsResponse(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:svmp.AppsResponse)
+  }
+
+  public interface AppInfoOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // required string pkgName = 1;
+    /**
+     * <code>required string pkgName = 1;</code>
+     *
+     * <pre>
+     * primary key, ex: org.mitre.svmp.client
+     * </pre>
+     */
+    boolean hasPkgName();
+    /**
+     * <code>required string pkgName = 1;</code>
+     *
+     * <pre>
+     * primary key, ex: org.mitre.svmp.client
+     * </pre>
+     */
+    java.lang.String getPkgName();
+    /**
+     * <code>required string pkgName = 1;</code>
+     *
+     * <pre>
+     * primary key, ex: org.mitre.svmp.client
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getPkgNameBytes();
+
+    // required string appName = 2;
+    /**
+     * <code>required string appName = 2;</code>
+     *
+     * <pre>
+     * user-friendly name, ex: SVMP Client
+     * </pre>
+     */
+    boolean hasAppName();
+    /**
+     * <code>required string appName = 2;</code>
+     *
+     * <pre>
+     * user-friendly name, ex: SVMP Client
+     * </pre>
+     */
+    java.lang.String getAppName();
+    /**
+     * <code>required string appName = 2;</code>
+     *
+     * <pre>
+     * user-friendly name, ex: SVMP Client
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAppNameBytes();
+
+    // optional bytes icon = 3;
+    /**
+     * <code>optional bytes icon = 3;</code>
+     *
+     * <pre>
+     * null in Request
+     * </pre>
+     */
+    boolean hasIcon();
+    /**
+     * <code>optional bytes icon = 3;</code>
+     *
+     * <pre>
+     * null in Request
+     * </pre>
+     */
+    com.google.protobuf.ByteString getIcon();
+
+    // optional bytes iconHash = 4;
+    /**
+     * <code>optional bytes iconHash = 4;</code>
+     *
+     * <pre>
+     * null in Response
+     * </pre>
+     */
+    boolean hasIconHash();
+    /**
+     * <code>optional bytes iconHash = 4;</code>
+     *
+     * <pre>
+     * null in Response
+     * </pre>
+     */
+    com.google.protobuf.ByteString getIconHash();
+  }
+  /**
+   * Protobuf type {@code svmp.AppInfo}
+   *
+   * <pre>
+   * C&lt;-&gt;S
+   * </pre>
+   */
+  public static final class AppInfo extends
+      com.google.protobuf.GeneratedMessageLite
+      implements AppInfoOrBuilder {
+    // Use AppInfo.newBuilder() to construct.
+    private AppInfo(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private AppInfo(boolean noInit) {}
+
+    private static final AppInfo defaultInstance;
+    public static AppInfo getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AppInfo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private AppInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              pkgName_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              appName_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              icon_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              iconHash_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<AppInfo> PARSER =
+        new com.google.protobuf.AbstractParser<AppInfo>() {
+      public AppInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AppInfo(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppInfo> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string pkgName = 1;
+    public static final int PKGNAME_FIELD_NUMBER = 1;
+    private java.lang.Object pkgName_;
+    /**
+     * <code>required string pkgName = 1;</code>
+     *
+     * <pre>
+     * primary key, ex: org.mitre.svmp.client
+     * </pre>
+     */
+    public boolean hasPkgName() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string pkgName = 1;</code>
+     *
+     * <pre>
+     * primary key, ex: org.mitre.svmp.client
+     * </pre>
+     */
+    public java.lang.String getPkgName() {
+      java.lang.Object ref = pkgName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          pkgName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string pkgName = 1;</code>
+     *
+     * <pre>
+     * primary key, ex: org.mitre.svmp.client
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getPkgNameBytes() {
+      java.lang.Object ref = pkgName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pkgName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string appName = 2;
+    public static final int APPNAME_FIELD_NUMBER = 2;
+    private java.lang.Object appName_;
+    /**
+     * <code>required string appName = 2;</code>
+     *
+     * <pre>
+     * user-friendly name, ex: SVMP Client
+     * </pre>
+     */
+    public boolean hasAppName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string appName = 2;</code>
+     *
+     * <pre>
+     * user-friendly name, ex: SVMP Client
+     * </pre>
+     */
+    public java.lang.String getAppName() {
+      java.lang.Object ref = appName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          appName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string appName = 2;</code>
+     *
+     * <pre>
+     * user-friendly name, ex: SVMP Client
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAppNameBytes() {
+      java.lang.Object ref = appName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional bytes icon = 3;
+    public static final int ICON_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString icon_;
+    /**
+     * <code>optional bytes icon = 3;</code>
+     *
+     * <pre>
+     * null in Request
+     * </pre>
+     */
+    public boolean hasIcon() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bytes icon = 3;</code>
+     *
+     * <pre>
+     * null in Request
+     * </pre>
+     */
+    public com.google.protobuf.ByteString getIcon() {
+      return icon_;
+    }
+
+    // optional bytes iconHash = 4;
+    public static final int ICONHASH_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString iconHash_;
+    /**
+     * <code>optional bytes iconHash = 4;</code>
+     *
+     * <pre>
+     * null in Response
+     * </pre>
+     */
+    public boolean hasIconHash() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional bytes iconHash = 4;</code>
+     *
+     * <pre>
+     * null in Response
+     * </pre>
+     */
+    public com.google.protobuf.ByteString getIconHash() {
+      return iconHash_;
+    }
+
+    private void initFields() {
+      pkgName_ = "";
+      appName_ = "";
+      icon_ = com.google.protobuf.ByteString.EMPTY;
+      iconHash_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasPkgName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAppName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getPkgNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getAppNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, icon_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, iconHash_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getPkgNameBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getAppNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, icon_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, iconHash_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.mitre.svmp.protocol.SVMPProtocol.AppInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.mitre.svmp.protocol.SVMPProtocol.AppInfo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code svmp.AppInfo}
+     *
+     * <pre>
+     * C&lt;-&gt;S
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          org.mitre.svmp.protocol.SVMPProtocol.AppInfo, Builder>
+        implements org.mitre.svmp.protocol.SVMPProtocol.AppInfoOrBuilder {
+      // Construct using org.mitre.svmp.protocol.SVMPProtocol.AppInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        pkgName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        appName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        icon_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        iconHash_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppInfo getDefaultInstanceForType() {
+        return org.mitre.svmp.protocol.SVMPProtocol.AppInfo.getDefaultInstance();
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppInfo build() {
+        org.mitre.svmp.protocol.SVMPProtocol.AppInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.mitre.svmp.protocol.SVMPProtocol.AppInfo buildPartial() {
+        org.mitre.svmp.protocol.SVMPProtocol.AppInfo result = new org.mitre.svmp.protocol.SVMPProtocol.AppInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.pkgName_ = pkgName_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.appName_ = appName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.icon_ = icon_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.iconHash_ = iconHash_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(org.mitre.svmp.protocol.SVMPProtocol.AppInfo other) {
+        if (other == org.mitre.svmp.protocol.SVMPProtocol.AppInfo.getDefaultInstance()) return this;
+        if (other.hasPkgName()) {
+          bitField0_ |= 0x00000001;
+          pkgName_ = other.pkgName_;
+          
+        }
+        if (other.hasAppName()) {
+          bitField0_ |= 0x00000002;
+          appName_ = other.appName_;
+          
+        }
+        if (other.hasIcon()) {
+          setIcon(other.getIcon());
+        }
+        if (other.hasIconHash()) {
+          setIconHash(other.getIconHash());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasPkgName()) {
+          
+          return false;
+        }
+        if (!hasAppName()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.mitre.svmp.protocol.SVMPProtocol.AppInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.mitre.svmp.protocol.SVMPProtocol.AppInfo) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string pkgName = 1;
+      private java.lang.Object pkgName_ = "";
+      /**
+       * <code>required string pkgName = 1;</code>
+       *
+       * <pre>
+       * primary key, ex: org.mitre.svmp.client
+       * </pre>
+       */
+      public boolean hasPkgName() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string pkgName = 1;</code>
+       *
+       * <pre>
+       * primary key, ex: org.mitre.svmp.client
+       * </pre>
+       */
+      public java.lang.String getPkgName() {
+        java.lang.Object ref = pkgName_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          pkgName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string pkgName = 1;</code>
+       *
+       * <pre>
+       * primary key, ex: org.mitre.svmp.client
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getPkgNameBytes() {
+        java.lang.Object ref = pkgName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pkgName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string pkgName = 1;</code>
+       *
+       * <pre>
+       * primary key, ex: org.mitre.svmp.client
+       * </pre>
+       */
+      public Builder setPkgName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        pkgName_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string pkgName = 1;</code>
+       *
+       * <pre>
+       * primary key, ex: org.mitre.svmp.client
+       * </pre>
+       */
+      public Builder clearPkgName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pkgName_ = getDefaultInstance().getPkgName();
+        
+        return this;
+      }
+      /**
+       * <code>required string pkgName = 1;</code>
+       *
+       * <pre>
+       * primary key, ex: org.mitre.svmp.client
+       * </pre>
+       */
+      public Builder setPkgNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        pkgName_ = value;
+        
+        return this;
+      }
+
+      // required string appName = 2;
+      private java.lang.Object appName_ = "";
+      /**
+       * <code>required string appName = 2;</code>
+       *
+       * <pre>
+       * user-friendly name, ex: SVMP Client
+       * </pre>
+       */
+      public boolean hasAppName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string appName = 2;</code>
+       *
+       * <pre>
+       * user-friendly name, ex: SVMP Client
+       * </pre>
+       */
+      public java.lang.String getAppName() {
+        java.lang.Object ref = appName_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          appName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string appName = 2;</code>
+       *
+       * <pre>
+       * user-friendly name, ex: SVMP Client
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAppNameBytes() {
+        java.lang.Object ref = appName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string appName = 2;</code>
+       *
+       * <pre>
+       * user-friendly name, ex: SVMP Client
+       * </pre>
+       */
+      public Builder setAppName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        appName_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>required string appName = 2;</code>
+       *
+       * <pre>
+       * user-friendly name, ex: SVMP Client
+       * </pre>
+       */
+      public Builder clearAppName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        appName_ = getDefaultInstance().getAppName();
+        
+        return this;
+      }
+      /**
+       * <code>required string appName = 2;</code>
+       *
+       * <pre>
+       * user-friendly name, ex: SVMP Client
+       * </pre>
+       */
+      public Builder setAppNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        appName_ = value;
+        
+        return this;
+      }
+
+      // optional bytes icon = 3;
+      private com.google.protobuf.ByteString icon_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes icon = 3;</code>
+       *
+       * <pre>
+       * null in Request
+       * </pre>
+       */
+      public boolean hasIcon() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bytes icon = 3;</code>
+       *
+       * <pre>
+       * null in Request
+       * </pre>
+       */
+      public com.google.protobuf.ByteString getIcon() {
+        return icon_;
+      }
+      /**
+       * <code>optional bytes icon = 3;</code>
+       *
+       * <pre>
+       * null in Request
+       * </pre>
+       */
+      public Builder setIcon(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        icon_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes icon = 3;</code>
+       *
+       * <pre>
+       * null in Request
+       * </pre>
+       */
+      public Builder clearIcon() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        icon_ = getDefaultInstance().getIcon();
+        
+        return this;
+      }
+
+      // optional bytes iconHash = 4;
+      private com.google.protobuf.ByteString iconHash_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes iconHash = 4;</code>
+       *
+       * <pre>
+       * null in Response
+       * </pre>
+       */
+      public boolean hasIconHash() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional bytes iconHash = 4;</code>
+       *
+       * <pre>
+       * null in Response
+       * </pre>
+       */
+      public com.google.protobuf.ByteString getIconHash() {
+        return iconHash_;
+      }
+      /**
+       * <code>optional bytes iconHash = 4;</code>
+       *
+       * <pre>
+       * null in Response
+       * </pre>
+       */
+      public Builder setIconHash(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        iconHash_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional bytes iconHash = 4;</code>
+       *
+       * <pre>
+       * null in Response
+       * </pre>
+       */
+      public Builder clearIconHash() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        iconHash_ = getDefaultInstance().getIconHash();
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:svmp.AppInfo)
+    }
+
+    static {
+      defaultInstance = new AppInfo(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:svmp.AppInfo)
   }
 
 
