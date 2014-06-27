@@ -16938,6 +16938,33 @@ public final class SVMPProtocol {
      */
     com.google.protobuf.ByteString
         getSecurityTokenBytes();
+
+    // optional string newPassword = 6;
+    /**
+     * <code>optional string newPassword = 6;</code>
+     *
+     * <pre>
+     * only used with PASSWORD_CHANGE type
+     * </pre>
+     */
+    boolean hasNewPassword();
+    /**
+     * <code>optional string newPassword = 6;</code>
+     *
+     * <pre>
+     * only used with PASSWORD_CHANGE type
+     * </pre>
+     */
+    java.lang.String getNewPassword();
+    /**
+     * <code>optional string newPassword = 6;</code>
+     *
+     * <pre>
+     * only used with PASSWORD_CHANGE type
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getNewPasswordBytes();
   }
   /**
    * Protobuf type {@code svmp.AuthRequest}
@@ -17015,6 +17042,11 @@ public final class SVMPProtocol {
               securityToken_ = input.readBytes();
               break;
             }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              newPassword_ = input.readBytes();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -17058,6 +17090,10 @@ public final class SVMPProtocol {
        * </pre>
        */
       AUTHENTICATION(1, 1),
+      /**
+       * <code>PASSWORD_CHANGE = 2;</code>
+       */
+      PASSWORD_CHANGE(2, 2),
       ;
 
       /**
@@ -17072,6 +17108,10 @@ public final class SVMPProtocol {
        * </pre>
        */
       public static final int AUTHENTICATION_VALUE = 1;
+      /**
+       * <code>PASSWORD_CHANGE = 2;</code>
+       */
+      public static final int PASSWORD_CHANGE_VALUE = 2;
 
 
       public final int getNumber() { return value; }
@@ -17080,6 +17120,7 @@ public final class SVMPProtocol {
         switch (value) {
           case 0: return SESSION_TOKEN;
           case 1: return AUTHENTICATION;
+          case 2: return PASSWORD_CHANGE;
           default: return null;
         }
       }
@@ -17294,12 +17335,68 @@ public final class SVMPProtocol {
       }
     }
 
+    // optional string newPassword = 6;
+    public static final int NEWPASSWORD_FIELD_NUMBER = 6;
+    private java.lang.Object newPassword_;
+    /**
+     * <code>optional string newPassword = 6;</code>
+     *
+     * <pre>
+     * only used with PASSWORD_CHANGE type
+     * </pre>
+     */
+    public boolean hasNewPassword() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string newPassword = 6;</code>
+     *
+     * <pre>
+     * only used with PASSWORD_CHANGE type
+     * </pre>
+     */
+    public java.lang.String getNewPassword() {
+      java.lang.Object ref = newPassword_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          newPassword_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string newPassword = 6;</code>
+     *
+     * <pre>
+     * only used with PASSWORD_CHANGE type
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getNewPasswordBytes() {
+      java.lang.Object ref = newPassword_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        newPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       type_ = org.mitre.svmp.protocol.SVMPProtocol.AuthRequest.AuthRequestType.SESSION_TOKEN;
       username_ = "";
       sessionToken_ = "";
       password_ = "";
       securityToken_ = "";
+      newPassword_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -17336,6 +17433,9 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getSecurityTokenBytes());
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getNewPasswordBytes());
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -17363,6 +17463,10 @@ public final class SVMPProtocol {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(5, getSecurityTokenBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getNewPasswordBytes());
       }
       memoizedSerializedSize = size;
       return size;
@@ -17469,6 +17573,8 @@ public final class SVMPProtocol {
         bitField0_ = (bitField0_ & ~0x00000008);
         securityToken_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        newPassword_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -17512,6 +17618,10 @@ public final class SVMPProtocol {
           to_bitField0_ |= 0x00000010;
         }
         result.securityToken_ = securityToken_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.newPassword_ = newPassword_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -17539,6 +17649,11 @@ public final class SVMPProtocol {
         if (other.hasSecurityToken()) {
           bitField0_ |= 0x00000010;
           securityToken_ = other.securityToken_;
+          
+        }
+        if (other.hasNewPassword()) {
+          bitField0_ |= 0x00000020;
+          newPassword_ = other.newPassword_;
           
         }
         return this;
@@ -17907,6 +18022,104 @@ public final class SVMPProtocol {
         return this;
       }
 
+      // optional string newPassword = 6;
+      private java.lang.Object newPassword_ = "";
+      /**
+       * <code>optional string newPassword = 6;</code>
+       *
+       * <pre>
+       * only used with PASSWORD_CHANGE type
+       * </pre>
+       */
+      public boolean hasNewPassword() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string newPassword = 6;</code>
+       *
+       * <pre>
+       * only used with PASSWORD_CHANGE type
+       * </pre>
+       */
+      public java.lang.String getNewPassword() {
+        java.lang.Object ref = newPassword_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          newPassword_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string newPassword = 6;</code>
+       *
+       * <pre>
+       * only used with PASSWORD_CHANGE type
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getNewPasswordBytes() {
+        java.lang.Object ref = newPassword_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          newPassword_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string newPassword = 6;</code>
+       *
+       * <pre>
+       * only used with PASSWORD_CHANGE type
+       * </pre>
+       */
+      public Builder setNewPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        newPassword_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string newPassword = 6;</code>
+       *
+       * <pre>
+       * only used with PASSWORD_CHANGE type
+       * </pre>
+       */
+      public Builder clearNewPassword() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        newPassword_ = getDefaultInstance().getNewPassword();
+        
+        return this;
+      }
+      /**
+       * <code>optional string newPassword = 6;</code>
+       *
+       * <pre>
+       * only used with PASSWORD_CHANGE type
+       * </pre>
+       */
+      public Builder setNewPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        newPassword_ = value;
+        
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:svmp.AuthRequest)
     }
 
@@ -18081,6 +18294,22 @@ public final class SVMPProtocol {
        * </pre>
        */
       SESSION_IDLE_TIMEOUT(3, 3),
+      /**
+       * <code>NEED_PASSWORD_CHANGE = 4;</code>
+       *
+       * <pre>
+       * sent when user needs to change their password
+       * </pre>
+       */
+      NEED_PASSWORD_CHANGE(4, 4),
+      /**
+       * <code>PASSWORD_CHANGE_FAIL = 5;</code>
+       *
+       * <pre>
+       * sent when a PASSWORD_CHANGE request auth fails
+       * </pre>
+       */
+      PASSWORD_CHANGE_FAIL(5, 5),
       ;
 
       /**
@@ -18115,6 +18344,22 @@ public final class SVMPProtocol {
        * </pre>
        */
       public static final int SESSION_IDLE_TIMEOUT_VALUE = 3;
+      /**
+       * <code>NEED_PASSWORD_CHANGE = 4;</code>
+       *
+       * <pre>
+       * sent when user needs to change their password
+       * </pre>
+       */
+      public static final int NEED_PASSWORD_CHANGE_VALUE = 4;
+      /**
+       * <code>PASSWORD_CHANGE_FAIL = 5;</code>
+       *
+       * <pre>
+       * sent when a PASSWORD_CHANGE request auth fails
+       * </pre>
+       */
+      public static final int PASSWORD_CHANGE_FAIL_VALUE = 5;
 
 
       public final int getNumber() { return value; }
@@ -18125,6 +18370,8 @@ public final class SVMPProtocol {
           case 1: return AUTH_FAIL;
           case 2: return SESSION_MAX_TIMEOUT;
           case 3: return SESSION_IDLE_TIMEOUT;
+          case 4: return NEED_PASSWORD_CHANGE;
+          case 5: return PASSWORD_CHANGE_FAIL;
           default: return null;
         }
       }
